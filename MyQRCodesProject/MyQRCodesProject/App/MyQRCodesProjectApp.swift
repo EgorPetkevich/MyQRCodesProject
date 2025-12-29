@@ -25,22 +25,23 @@ struct MyQRCodesProjectApp: App {
     }
     
     init() {
-        Apphud.start(apiKey: Constants.apphudKey)
+//        Apphud.start(apiKey: Constants.apphudKey)
     }
     
     @ViewBuilder
     private var contentView: some View {
-        LounchScreen()
+        
+//        if onboardingPassed {
+//            LounchScreen()
+//        } else {
+            OnbFirstScreenVC()
+                .withRouter(OnbRouter())
+//        }
+        
+       
     }
     
     func initializeApphud() {
-        for family in UIFont.familyNames {
-            print(family)
-            for name in UIFont.fontNames(forFamilyName: family) {
-                print("  \(name)")
-            }
-        }
-        
         guard
             !apphudService.hasActiveSubscription()
         else { return }

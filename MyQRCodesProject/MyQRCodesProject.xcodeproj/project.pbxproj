@@ -8,32 +8,72 @@
 
 /* Begin PBXBuildFile section */
 		F2F238892F02BFAD00625BDA /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F2F238882F02BFAD00625BDA /* ApphudSDK */; };
+		F2F90AFF2F032B2B00319ACB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F90AD92F032B2B00319ACB /* Launch Screen.storyboard */; };
+		F2F90B002F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2F90AEA2F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf */; };
+		F2F90B012F032B2B00319ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F90AEF2F032B2B00319ACB /* Assets.xcassets */; };
+		F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90ACF2F032B2B00319ACB /* AppRouter.swift */; };
+		F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AD12F032B2B00319ACB /* MyQRCodesProjectApp.swift */; };
+		F2F90B052F032B2B00319ACB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AD32F032B2B00319ACB /* Constants.swift */; };
+		F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AD52F032B2B00319ACB /* ActionButton.swift */; };
+		F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AD62F032B2B00319ACB /* PageControl.swift */; };
+		F2F90B082F032B2B00319ACB /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AD72F032B2B00319ACB /* TextButton.swift */; };
+		F2F90B092F032B2B00319ACB /* LounchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90ADA2F032B2B00319ACB /* LounchScreen.swift */; };
+		F2F90B0A2F032B2B00319ACB /* OnbFirstScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90ADC2F032B2B00319ACB /* OnbFirstScreenVC.swift */; };
+		F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90ADF2F032B2B00319ACB /* OnbPath.swift */; };
+		F2F90B0C2F032B2B00319ACB /* OnbRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AE12F032B2B00319ACB /* OnbRouter.swift */; };
+		F2F90B0D2F032B2B00319ACB /* OnbRouterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AE22F032B2B00319ACB /* OnbRouterModifier.swift */; };
+		F2F90B0E2F032B2B00319ACB /* OnbSecondScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AE42F032B2B00319ACB /* OnbSecondScreenVC.swift */; };
+		F2F90B0F2F032B2B00319ACB /* OnbThirdScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AE62F032B2B00319ACB /* OnbThirdScreenVC.swift */; };
+		F2F90B102F032B2B00319ACB /* AppTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AEC2F032B2B00319ACB /* AppTextStyle.swift */; };
+		F2F90B112F032B2B00319ACB /* InterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AED2F032B2B00319ACB /* InterStyle.swift */; };
+		F2F90B122F032B2B00319ACB /* ApphudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF12F032B2B00319ACB /* ApphudService.swift */; };
+		F2F90B132F032B2B00319ACB /* UDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF32F032B2B00319ACB /* UDManager.swift */; };
+		F2F90B142F032B2B00319ACB /* AppStorage+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF52F032B2B00319ACB /* AppStorage+Keys.swift */; };
+		F2F90B152F032B2B00319ACB /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF62F032B2B00319ACB /* Color+Hex.swift */; };
+		F2F90B162F032B2B00319ACB /* Font+AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF72F032B2B00319ACB /* Font+AppFont.swift */; };
+		F2F90B172F032B2B00319ACB /* Font+Inter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF82F032B2B00319ACB /* Font+Inter.swift */; };
+		F2F90B182F032B2B00319ACB /* LinearGradient+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF92F032B2B00319ACB /* LinearGradient+App.swift */; };
+		F2F90B192F032B2B00319ACB /* View+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AFA2F032B2B00319ACB /* View+Router.swift */; };
+		F2F90B1A2F032B2B00319ACB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AFC2F032B2B00319ACB /* ContentView.swift */; };
+		F2F90B1C2F032B3C00319ACB /* OnbFourthScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90B1B2F032B3C00319ACB /* OnbFourthScreenVC.swift */; };
+		F2F90B202F0332D900319ACB /* PaywallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90B1F2F0332D900319ACB /* PaywallVC.swift */; };
+		F2F90B222F0332DF00319ACB /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90B212F0332DF00319ACB /* PaywallViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F2F2386A2F02BB5500625BDA /* MyQRCodesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyQRCodesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F90ACF2F032B2B00319ACB /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		F2F90AD12F032B2B00319ACB /* MyQRCodesProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRCodesProjectApp.swift; sourceTree = "<group>"; };
+		F2F90AD32F032B2B00319ACB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F2F90AD52F032B2B00319ACB /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		F2F90AD62F032B2B00319ACB /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		F2F90AD72F032B2B00319ACB /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		F2F90AD92F032B2B00319ACB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F2F90ADA2F032B2B00319ACB /* LounchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LounchScreen.swift; sourceTree = "<group>"; };
+		F2F90ADC2F032B2B00319ACB /* OnbFirstScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbFirstScreenVC.swift; sourceTree = "<group>"; };
+		F2F90ADF2F032B2B00319ACB /* OnbPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbPath.swift; sourceTree = "<group>"; };
+		F2F90AE12F032B2B00319ACB /* OnbRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbRouter.swift; sourceTree = "<group>"; };
+		F2F90AE22F032B2B00319ACB /* OnbRouterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbRouterModifier.swift; sourceTree = "<group>"; };
+		F2F90AE42F032B2B00319ACB /* OnbSecondScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbSecondScreenVC.swift; sourceTree = "<group>"; };
+		F2F90AE62F032B2B00319ACB /* OnbThirdScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbThirdScreenVC.swift; sourceTree = "<group>"; };
+		F2F90AEA2F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
+		F2F90AEC2F032B2B00319ACB /* AppTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextStyle.swift; sourceTree = "<group>"; };
+		F2F90AED2F032B2B00319ACB /* InterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterStyle.swift; sourceTree = "<group>"; };
+		F2F90AEF2F032B2B00319ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2F90AF12F032B2B00319ACB /* ApphudService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApphudService.swift; sourceTree = "<group>"; };
+		F2F90AF32F032B2B00319ACB /* UDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDManager.swift; sourceTree = "<group>"; };
+		F2F90AF52F032B2B00319ACB /* AppStorage+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStorage+Keys.swift"; sourceTree = "<group>"; };
+		F2F90AF62F032B2B00319ACB /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		F2F90AF72F032B2B00319ACB /* Font+AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+AppFont.swift"; sourceTree = "<group>"; };
+		F2F90AF82F032B2B00319ACB /* Font+Inter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Inter.swift"; sourceTree = "<group>"; };
+		F2F90AF92F032B2B00319ACB /* LinearGradient+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+App.swift"; sourceTree = "<group>"; };
+		F2F90AFA2F032B2B00319ACB /* View+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Router.swift"; sourceTree = "<group>"; };
+		F2F90AFC2F032B2B00319ACB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2F90AFD2F032B2B00319ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2F90B1B2F032B3C00319ACB /* OnbFourthScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbFourthScreenVC.swift; sourceTree = "<group>"; };
+		F2F90B1F2F0332D900319ACB /* PaywallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallVC.swift; sourceTree = "<group>"; };
+		F2F90B212F0332DF00319ACB /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F2F238A72F02D3BA00625BDA /* Exceptions for "MyQRCodesProject" folder in "MyQRCodesProject" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = F2F238692F02BB5500625BDA /* MyQRCodesProject */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F2F2386C2F02BB5500625BDA /* MyQRCodesProject */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F2F238A72F02D3BA00625BDA /* Exceptions for "MyQRCodesProject" folder in "MyQRCodesProject" target */,
-			);
-			path = MyQRCodesProject;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F2F238672F02BB5500625BDA /* Frameworks */ = {
@@ -50,7 +90,7 @@
 		F2F238612F02BB5500625BDA = {
 			isa = PBXGroup;
 			children = (
-				F2F2386C2F02BB5500625BDA /* MyQRCodesProject */,
+				F2F90AFE2F032B2B00319ACB /* MyQRCodesProject */,
 				F2F2386B2F02BB5500625BDA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +101,204 @@
 				F2F2386A2F02BB5500625BDA /* MyQRCodesProject.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F2F90AD02F032B2B00319ACB /* AppRouter */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90ACF2F032B2B00319ACB /* AppRouter.swift */,
+			);
+			path = AppRouter;
+			sourceTree = "<group>";
+		};
+		F2F90AD22F032B2B00319ACB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AD02F032B2B00319ACB /* AppRouter */,
+				F2F90AD12F032B2B00319ACB /* MyQRCodesProjectApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F2F90AD42F032B2B00319ACB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AD32F032B2B00319ACB /* Constants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F2F90AD82F032B2B00319ACB /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AD52F032B2B00319ACB /* ActionButton.swift */,
+				F2F90AD62F032B2B00319ACB /* PageControl.swift */,
+				F2F90AD72F032B2B00319ACB /* TextButton.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		F2F90ADB2F032B2B00319ACB /* LauchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AD92F032B2B00319ACB /* Launch Screen.storyboard */,
+				F2F90ADA2F032B2B00319ACB /* LounchScreen.swift */,
+			);
+			path = LauchScreen;
+			sourceTree = "<group>";
+		};
+		F2F90ADD2F032B2B00319ACB /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90ADC2F032B2B00319ACB /* OnbFirstScreenVC.swift */,
+			);
+			path = FirstScreen;
+			sourceTree = "<group>";
+		};
+		F2F90ADE2F032B2B00319ACB /* FourthScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90B1B2F032B3C00319ACB /* OnbFourthScreenVC.swift */,
+			);
+			path = FourthScreen;
+			sourceTree = "<group>";
+		};
+		F2F90AE02F032B2B00319ACB /* Path */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90ADF2F032B2B00319ACB /* OnbPath.swift */,
+			);
+			path = Path;
+			sourceTree = "<group>";
+		};
+		F2F90AE32F032B2B00319ACB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AE02F032B2B00319ACB /* Path */,
+				F2F90AE12F032B2B00319ACB /* OnbRouter.swift */,
+				F2F90AE22F032B2B00319ACB /* OnbRouterModifier.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F2F90AE52F032B2B00319ACB /* SecondScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AE42F032B2B00319ACB /* OnbSecondScreenVC.swift */,
+			);
+			path = SecondScreen;
+			sourceTree = "<group>";
+		};
+		F2F90AE72F032B2B00319ACB /* ThirdScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AE62F032B2B00319ACB /* OnbThirdScreenVC.swift */,
+			);
+			path = ThirdScreen;
+			sourceTree = "<group>";
+		};
+		F2F90AE82F032B2B00319ACB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AE32F032B2B00319ACB /* Router */,
+				F2F90ADD2F032B2B00319ACB /* FirstScreen */,
+				F2F90AE52F032B2B00319ACB /* SecondScreen */,
+				F2F90AE72F032B2B00319ACB /* ThirdScreen */,
+				F2F90ADE2F032B2B00319ACB /* FourthScreen */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F2F90AE92F032B2B00319ACB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AE82F032B2B00319ACB /* Onboarding */,
+				F2F90B1D2F032F9B00319ACB /* Paywall */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F2F90AEB2F032B2B00319ACB /* ttf */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AEA2F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf */,
+			);
+			path = ttf;
+			sourceTree = "<group>";
+		};
+		F2F90AEE2F032B2B00319ACB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AEB2F032B2B00319ACB /* ttf */,
+				F2F90AEC2F032B2B00319ACB /* AppTextStyle.swift */,
+				F2F90AED2F032B2B00319ACB /* InterStyle.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F2F90AF02F032B2B00319ACB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AEE2F032B2B00319ACB /* Fonts */,
+				F2F90AEF2F032B2B00319ACB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2F90AF22F032B2B00319ACB /* Apphud */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AF12F032B2B00319ACB /* ApphudService.swift */,
+			);
+			path = Apphud;
+			sourceTree = "<group>";
+		};
+		F2F90AF42F032B2B00319ACB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AF22F032B2B00319ACB /* Apphud */,
+				F2F90AF32F032B2B00319ACB /* UDManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F2F90AFB2F032B2B00319ACB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AF52F032B2B00319ACB /* AppStorage+Keys.swift */,
+				F2F90AF62F032B2B00319ACB /* Color+Hex.swift */,
+				F2F90AF72F032B2B00319ACB /* Font+AppFont.swift */,
+				F2F90AF82F032B2B00319ACB /* Font+Inter.swift */,
+				F2F90AF92F032B2B00319ACB /* LinearGradient+App.swift */,
+				F2F90AFA2F032B2B00319ACB /* View+Router.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F2F90AFE2F032B2B00319ACB /* MyQRCodesProject */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90AD22F032B2B00319ACB /* App */,
+				F2F90AD42F032B2B00319ACB /* Core */,
+				F2F90AD82F032B2B00319ACB /* Custom */,
+				F2F90ADB2F032B2B00319ACB /* LauchScreen */,
+				F2F90AE92F032B2B00319ACB /* Modules */,
+				F2F90AF02F032B2B00319ACB /* Resources */,
+				F2F90AF42F032B2B00319ACB /* Services */,
+				F2F90AFB2F032B2B00319ACB /* Utils */,
+				F2F90AFC2F032B2B00319ACB /* ContentView.swift */,
+				F2F90AFD2F032B2B00319ACB /* Info.plist */,
+			);
+			path = MyQRCodesProject;
+			sourceTree = "<group>";
+		};
+		F2F90B1D2F032F9B00319ACB /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90B1F2F0332D900319ACB /* PaywallVC.swift */,
+				F2F90B212F0332DF00319ACB /* PaywallViewModel.swift */,
+			);
+			path = Paywall;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +315,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F2F2386C2F02BB5500625BDA /* MyQRCodesProject */,
 			);
 			name = MyQRCodesProject;
 			packageProductDependencies = (
@@ -131,6 +366,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F90AFF2F032B2B00319ACB /* Launch Screen.storyboard in Resources */,
+				F2F90B002F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf in Resources */,
+				F2F90B012F032B2B00319ACB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +379,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
+				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
+				F2F90B052F032B2B00319ACB /* Constants.swift in Sources */,
+				F2F90B202F0332D900319ACB /* PaywallVC.swift in Sources */,
+				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
+				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
+				F2F90B082F032B2B00319ACB /* TextButton.swift in Sources */,
+				F2F90B092F032B2B00319ACB /* LounchScreen.swift in Sources */,
+				F2F90B0A2F032B2B00319ACB /* OnbFirstScreenVC.swift in Sources */,
+				F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */,
+				F2F90B0C2F032B2B00319ACB /* OnbRouter.swift in Sources */,
+				F2F90B0D2F032B2B00319ACB /* OnbRouterModifier.swift in Sources */,
+				F2F90B0E2F032B2B00319ACB /* OnbSecondScreenVC.swift in Sources */,
+				F2F90B0F2F032B2B00319ACB /* OnbThirdScreenVC.swift in Sources */,
+				F2F90B102F032B2B00319ACB /* AppTextStyle.swift in Sources */,
+				F2F90B112F032B2B00319ACB /* InterStyle.swift in Sources */,
+				F2F90B222F0332DF00319ACB /* PaywallViewModel.swift in Sources */,
+				F2F90B122F032B2B00319ACB /* ApphudService.swift in Sources */,
+				F2F90B132F032B2B00319ACB /* UDManager.swift in Sources */,
+				F2F90B142F032B2B00319ACB /* AppStorage+Keys.swift in Sources */,
+				F2F90B152F032B2B00319ACB /* Color+Hex.swift in Sources */,
+				F2F90B162F032B2B00319ACB /* Font+AppFont.swift in Sources */,
+				F2F90B172F032B2B00319ACB /* Font+Inter.swift in Sources */,
+				F2F90B182F032B2B00319ACB /* LinearGradient+App.swift in Sources */,
+				F2F90B192F032B2B00319ACB /* View+Router.swift in Sources */,
+				F2F90B1C2F032B3C00319ACB /* OnbFourthScreenVC.swift in Sources */,
+				F2F90B1A2F032B2B00319ACB /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
