@@ -16,7 +16,7 @@ enum PaywallType: String {
 enum ProductType {
     case weekly
     case monthly
-    case yearly
+//    case yearly
     
     var decodingName: String {
         switch self {
@@ -24,8 +24,8 @@ enum ProductType {
             return "sonicforge_weekly"
         case .monthly:
             return "sonicforge_monthly"
-        case .yearly:
-            return "sonicforge_yearly"
+//        case .yearly:
+//            return "sonicforge_yearly"
         }
     }
 }
@@ -44,7 +44,7 @@ final class ApphudService {
     }
     
     //Published Properties (Outputs)
-    @Published var config = PaywallConfig()
+//    @Published var config = PaywallConfig()
     @Published var products: [PaywallProduct] = []
     @Published var paywallType: PaywallType = .main
     
@@ -119,15 +119,20 @@ extension ApphudService {
     
     @MainActor
     func makePurchase(
-        product: ApphudProduct,
-        completion: @escaping (Result<Void, Error>) -> Void
+        product: PaywallProduct,
+        completion: @escaping (Result<Void, ApphudError>) -> Void
     ) {
         
-        Apphud.purchase(product) { result in
+        guard let apphudProduct = product.apphudProduct else {
+            completion(.failure(ApphudError.unknownPurchaseError))
+            return
+        }
+        
+        Apphud.purchase(apphudProduct) { result in
             if let subscription = result.subscription, subscription.isActive() {
                 completion(.success(()))
             } else {
-                completion(.failure(result.error ?? ApphudError.unknownPurchaseError))
+                completion(.failure(ApphudError.unknownPurchaseError))
             }
         }
     }
@@ -188,20 +193,20 @@ private extension ApphudService {
         }
     }
     
-    func decodeConfig(from paywall: ApphudPaywall) throws -> PaywallConfig {
-        guard let json = paywall.json else {
-            throw ApphudError.remoteConfigFetchFailed
-        }
-
-        do {
-            let data = try JSONSerialization.data(withJSONObject: json)
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return try decoder.decode(PaywallConfig.self, from: data)
-        } catch {
-            throw ApphudError.remoteConfigFetchFailed
-        }
-    }
+//    func decodeConfig(from paywall: ApphudPaywall) throws -> PaywallConfig {
+//        guard let json = paywall.json else {
+//            throw ApphudError.remoteConfigFetchFailed
+//        }
+//
+//        do {
+//            let data = try JSONSerialization.data(withJSONObject: json)
+//            let decoder = JSONDecoder()
+//            decoder.keyDecodingStrategy = .convertFromSnakeCase
+//            return try decoder.decode(PaywallConfig.self, from: data)
+//        } catch {
+//            throw ApphudError.remoteConfigFetchFailed
+//        }
+//    }
     
     func isNetworkReachable() async -> Bool {
         await withCheckedContinuation { cont in
@@ -235,17 +240,17 @@ struct PaywallProduct: Identifiable {
     }
 }
 
-struct PaywallConfig: Decodable {
-    
-    var onboardingCloseDelay: Double = 0
-    var paywallCloseDelay: Double = 0
-    var onboardingButtonTitle: String?
-    var paywallButtonTitle: String?
-    var onboardingSubtitleAlpha: Double = 1.0
-    var isPagingEnabled: Bool = false
-    var isReviewEnabled: Bool = false
-    
-}
+//struct PaywallConfig: Decodable {
+//    
+//    var onboardingCloseDelay: Double = 0
+//    var paywallCloseDelay: Double = 0
+//    var onboardingButtonTitle: String?
+//    var paywallButtonTitle: String?
+//    var onboardingSubtitleAlpha: Double = 1.0
+//    var isPagingEnabled: Bool = false
+//    var isReviewEnabled: Bool = false
+//    
+//}
 
 enum ApphudError: Error, LocalizedError {
     case productNotFound

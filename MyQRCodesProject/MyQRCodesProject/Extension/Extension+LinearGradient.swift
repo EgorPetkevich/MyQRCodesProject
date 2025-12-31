@@ -29,4 +29,13 @@ extension LinearGradient {
         endPoint: .bottom
     )
     
+    static let paywallOnbBg = LinearGradient(
+        colors: [
+            .init(hex: "#E8F7FF"),
+            .init(hex: "#FFFFFF")
+        ],
+        startPoint: .top,
+        endPoint: .bottom
+    )
+    
 }

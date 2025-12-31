@@ -20,3 +20,10 @@ extension Font {
         }
     }
 }
+
+extension Font {
+    static func inter(size: CGFloat, style: InterStyle) -> Font {
+        .custom(style.postScriptName, size: size)
+    }
+}
+

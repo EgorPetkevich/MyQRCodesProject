@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F52F054DB000574736 /* PaywallProductCard.swift */; };
+		F2B896F82F0551A000574736 /* Extension+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F72F0551A000574736 /* Extension+Text.swift */; };
+		F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */; };
+		F2B896FD2F05585400574736 /* ApphudService+Paywall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896FC2F05585400574736 /* ApphudService+Paywall.swift */; };
+		F2B896FF2F05604100574736 /* Extension+UIAplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896FE2F05604100574736 /* Extension+UIAplication.swift */; };
 		F2F238892F02BFAD00625BDA /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F2F238882F02BFAD00625BDA /* ApphudSDK */; };
 		F2F90AFF2F032B2B00319ACB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F90AD92F032B2B00319ACB /* Launch Screen.storyboard */; };
 		F2F90B002F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2F90AEA2F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf */; };
@@ -28,19 +33,25 @@
 		F2F90B112F032B2B00319ACB /* InterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AED2F032B2B00319ACB /* InterStyle.swift */; };
 		F2F90B122F032B2B00319ACB /* ApphudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF12F032B2B00319ACB /* ApphudService.swift */; };
 		F2F90B132F032B2B00319ACB /* UDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF32F032B2B00319ACB /* UDManager.swift */; };
-		F2F90B142F032B2B00319ACB /* AppStorage+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF52F032B2B00319ACB /* AppStorage+Keys.swift */; };
-		F2F90B152F032B2B00319ACB /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF62F032B2B00319ACB /* Color+Hex.swift */; };
-		F2F90B162F032B2B00319ACB /* Font+AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF72F032B2B00319ACB /* Font+AppFont.swift */; };
-		F2F90B172F032B2B00319ACB /* Font+Inter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF82F032B2B00319ACB /* Font+Inter.swift */; };
-		F2F90B182F032B2B00319ACB /* LinearGradient+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF92F032B2B00319ACB /* LinearGradient+App.swift */; };
-		F2F90B192F032B2B00319ACB /* View+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AFA2F032B2B00319ACB /* View+Router.swift */; };
+		F2F90B142F032B2B00319ACB /* Extension+AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF52F032B2B00319ACB /* Extension+AppStorage.swift */; };
+		F2F90B152F032B2B00319ACB /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF62F032B2B00319ACB /* Extension+Color.swift */; };
+		F2F90B162F032B2B00319ACB /* Extension+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF72F032B2B00319ACB /* Extension+Font.swift */; };
+		F2F90B182F032B2B00319ACB /* Extension+LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AF92F032B2B00319ACB /* Extension+LinearGradient.swift */; };
+		F2F90B192F032B2B00319ACB /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AFA2F032B2B00319ACB /* Extension+View.swift */; };
 		F2F90B1A2F032B2B00319ACB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90AFC2F032B2B00319ACB /* ContentView.swift */; };
 		F2F90B1C2F032B3C00319ACB /* OnbFourthScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90B1B2F032B3C00319ACB /* OnbFourthScreenVC.swift */; };
 		F2F90B202F0332D900319ACB /* PaywallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90B1F2F0332D900319ACB /* PaywallVC.swift */; };
 		F2F90B222F0332DF00319ACB /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90B212F0332DF00319ACB /* PaywallViewModel.swift */; };
+		F2F90B262F033AAF00319ACB /* PaywallSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90B252F033AAF00319ACB /* PaywallSections.swift */; };
+		F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F90B272F033D7600319ACB /* PaywallDescriptionCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2B896F52F054DB000574736 /* PaywallProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallProductCard.swift; sourceTree = "<group>"; };
+		F2B896F72F0551A000574736 /* Extension+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Text.swift"; sourceTree = "<group>"; };
+		F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallMonthlyProductCard.swift; sourceTree = "<group>"; };
+		F2B896FC2F05585400574736 /* ApphudService+Paywall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApphudService+Paywall.swift"; sourceTree = "<group>"; };
+		F2B896FE2F05604100574736 /* Extension+UIAplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIAplication.swift"; sourceTree = "<group>"; };
 		F2F2386A2F02BB5500625BDA /* MyQRCodesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyQRCodesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F90ACF2F032B2B00319ACB /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		F2F90AD12F032B2B00319ACB /* MyQRCodesProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRCodesProjectApp.swift; sourceTree = "<group>"; };
@@ -62,17 +73,18 @@
 		F2F90AEF2F032B2B00319ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F90AF12F032B2B00319ACB /* ApphudService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApphudService.swift; sourceTree = "<group>"; };
 		F2F90AF32F032B2B00319ACB /* UDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDManager.swift; sourceTree = "<group>"; };
-		F2F90AF52F032B2B00319ACB /* AppStorage+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStorage+Keys.swift"; sourceTree = "<group>"; };
-		F2F90AF62F032B2B00319ACB /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
-		F2F90AF72F032B2B00319ACB /* Font+AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+AppFont.swift"; sourceTree = "<group>"; };
-		F2F90AF82F032B2B00319ACB /* Font+Inter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Inter.swift"; sourceTree = "<group>"; };
-		F2F90AF92F032B2B00319ACB /* LinearGradient+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+App.swift"; sourceTree = "<group>"; };
-		F2F90AFA2F032B2B00319ACB /* View+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Router.swift"; sourceTree = "<group>"; };
+		F2F90AF52F032B2B00319ACB /* Extension+AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+AppStorage.swift"; sourceTree = "<group>"; };
+		F2F90AF62F032B2B00319ACB /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		F2F90AF72F032B2B00319ACB /* Extension+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Font.swift"; sourceTree = "<group>"; };
+		F2F90AF92F032B2B00319ACB /* Extension+LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+LinearGradient.swift"; sourceTree = "<group>"; };
+		F2F90AFA2F032B2B00319ACB /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		F2F90AFC2F032B2B00319ACB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2F90AFD2F032B2B00319ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2F90B1B2F032B3C00319ACB /* OnbFourthScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbFourthScreenVC.swift; sourceTree = "<group>"; };
 		F2F90B1F2F0332D900319ACB /* PaywallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallVC.swift; sourceTree = "<group>"; };
 		F2F90B212F0332DF00319ACB /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModel.swift; sourceTree = "<group>"; };
+		F2F90B252F033AAF00319ACB /* PaywallSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallSections.swift; sourceTree = "<group>"; };
+		F2F90B272F033D7600319ACB /* PaywallDescriptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallDescriptionCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2B896FB2F05584100574736 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F2B896FC2F05585400574736 /* ApphudService+Paywall.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		F2F238612F02BB5500625BDA = {
 			isa = PBXGroup;
 			children = (
@@ -262,17 +282,18 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		F2F90AFB2F032B2B00319ACB /* Utils */ = {
+		F2F90AFB2F032B2B00319ACB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F2F90AF52F032B2B00319ACB /* AppStorage+Keys.swift */,
-				F2F90AF62F032B2B00319ACB /* Color+Hex.swift */,
-				F2F90AF72F032B2B00319ACB /* Font+AppFont.swift */,
-				F2F90AF82F032B2B00319ACB /* Font+Inter.swift */,
-				F2F90AF92F032B2B00319ACB /* LinearGradient+App.swift */,
-				F2F90AFA2F032B2B00319ACB /* View+Router.swift */,
+				F2F90AF52F032B2B00319ACB /* Extension+AppStorage.swift */,
+				F2F90AF62F032B2B00319ACB /* Extension+Color.swift */,
+				F2F90AF72F032B2B00319ACB /* Extension+Font.swift */,
+				F2F90AF92F032B2B00319ACB /* Extension+LinearGradient.swift */,
+				F2F90AFA2F032B2B00319ACB /* Extension+View.swift */,
+				F2B896F72F0551A000574736 /* Extension+Text.swift */,
+				F2B896FE2F05604100574736 /* Extension+UIAplication.swift */,
 			);
-			path = Utils;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		F2F90AFE2F032B2B00319ACB /* MyQRCodesProject */ = {
@@ -285,7 +306,7 @@
 				F2F90AE92F032B2B00319ACB /* Modules */,
 				F2F90AF02F032B2B00319ACB /* Resources */,
 				F2F90AF42F032B2B00319ACB /* Services */,
-				F2F90AFB2F032B2B00319ACB /* Utils */,
+				F2F90AFB2F032B2B00319ACB /* Extension */,
 				F2F90AFC2F032B2B00319ACB /* ContentView.swift */,
 				F2F90AFD2F032B2B00319ACB /* Info.plist */,
 			);
@@ -295,10 +316,31 @@
 		F2F90B1D2F032F9B00319ACB /* Paywall */ = {
 			isa = PBXGroup;
 			children = (
+				F2B896FB2F05584100574736 /* UseCases */,
+				F2F90B232F033A9200319ACB /* Adapter */,
 				F2F90B1F2F0332D900319ACB /* PaywallVC.swift */,
 				F2F90B212F0332DF00319ACB /* PaywallViewModel.swift */,
 			);
 			path = Paywall;
+			sourceTree = "<group>";
+		};
+		F2F90B232F033A9200319ACB /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90B242F033A9E00319ACB /* Cards */,
+				F2F90B252F033AAF00319ACB /* PaywallSections.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		F2F90B242F033A9E00319ACB /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				F2F90B272F033D7600319ACB /* PaywallDescriptionCard.swift */,
+				F2B896F52F054DB000574736 /* PaywallProductCard.swift */,
+				F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,15 +423,19 @@
 			files = (
 				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
 				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
+				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
 				F2F90B052F032B2B00319ACB /* Constants.swift in Sources */,
 				F2F90B202F0332D900319ACB /* PaywallVC.swift in Sources */,
 				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
+				F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */,
 				F2F90B082F032B2B00319ACB /* TextButton.swift in Sources */,
 				F2F90B092F032B2B00319ACB /* LounchScreen.swift in Sources */,
 				F2F90B0A2F032B2B00319ACB /* OnbFirstScreenVC.swift in Sources */,
+				F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */,
 				F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */,
 				F2F90B0C2F032B2B00319ACB /* OnbRouter.swift in Sources */,
+				F2B896FD2F05585400574736 /* ApphudService+Paywall.swift in Sources */,
 				F2F90B0D2F032B2B00319ACB /* OnbRouterModifier.swift in Sources */,
 				F2F90B0E2F032B2B00319ACB /* OnbSecondScreenVC.swift in Sources */,
 				F2F90B0F2F032B2B00319ACB /* OnbThirdScreenVC.swift in Sources */,
@@ -398,12 +444,14 @@
 				F2F90B222F0332DF00319ACB /* PaywallViewModel.swift in Sources */,
 				F2F90B122F032B2B00319ACB /* ApphudService.swift in Sources */,
 				F2F90B132F032B2B00319ACB /* UDManager.swift in Sources */,
-				F2F90B142F032B2B00319ACB /* AppStorage+Keys.swift in Sources */,
-				F2F90B152F032B2B00319ACB /* Color+Hex.swift in Sources */,
-				F2F90B162F032B2B00319ACB /* Font+AppFont.swift in Sources */,
-				F2F90B172F032B2B00319ACB /* Font+Inter.swift in Sources */,
-				F2F90B182F032B2B00319ACB /* LinearGradient+App.swift in Sources */,
-				F2F90B192F032B2B00319ACB /* View+Router.swift in Sources */,
+				F2F90B142F032B2B00319ACB /* Extension+AppStorage.swift in Sources */,
+				F2B896FF2F05604100574736 /* Extension+UIAplication.swift in Sources */,
+				F2F90B152F032B2B00319ACB /* Extension+Color.swift in Sources */,
+				F2F90B162F032B2B00319ACB /* Extension+Font.swift in Sources */,
+				F2F90B262F033AAF00319ACB /* PaywallSections.swift in Sources */,
+				F2F90B182F032B2B00319ACB /* Extension+LinearGradient.swift in Sources */,
+				F2B896F82F0551A000574736 /* Extension+Text.swift in Sources */,
+				F2F90B192F032B2B00319ACB /* Extension+View.swift in Sources */,
 				F2F90B1C2F032B3C00319ACB /* OnbFourthScreenVC.swift in Sources */,
 				F2F90B1A2F032B2B00319ACB /* ContentView.swift in Sources */,
 			);
