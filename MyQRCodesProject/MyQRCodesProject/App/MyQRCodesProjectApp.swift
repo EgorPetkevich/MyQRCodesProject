@@ -45,7 +45,7 @@ struct MyQRCodesProjectApp: App {
         if isLoadingPaywall || !configLoaded {
             LounchScreen()
         } else if onboardingPassed {
-            PaywallVC(viewModel: PaywallViewModel(apphudService: apphudService))
+            TabBarVC()
         } else {
             OnbFirstScreenVC()
                 .withRouter(OnbRouter())

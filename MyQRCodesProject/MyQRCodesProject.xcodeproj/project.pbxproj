@@ -12,6 +12,9 @@
 		F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */; };
 		F2B896FD2F05585400574736 /* ApphudService+Paywall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896FC2F05585400574736 /* ApphudService+Paywall.swift */; };
 		F2B896FF2F05604100574736 /* Extension+UIAplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896FE2F05604100574736 /* Extension+UIAplication.swift */; };
+		F2B897032F05980B00574736 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B897022F05980B00574736 /* TabBarVC.swift */; };
+		F2B897052F05983200574736 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B897042F05983200574736 /* TabItem.swift */; };
+		F2B897072F05997A00574736 /* TabBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B897062F05997A00574736 /* TabBarBackground.swift */; };
 		F2F238892F02BFAD00625BDA /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F2F238882F02BFAD00625BDA /* ApphudSDK */; };
 		F2F90AFF2F032B2B00319ACB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F90AD92F032B2B00319ACB /* Launch Screen.storyboard */; };
 		F2F90B002F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2F90AEA2F032B2B00319ACB /* Inter-VariableFont_opsz,wght.ttf */; };
@@ -52,6 +55,9 @@
 		F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallMonthlyProductCard.swift; sourceTree = "<group>"; };
 		F2B896FC2F05585400574736 /* ApphudService+Paywall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApphudService+Paywall.swift"; sourceTree = "<group>"; };
 		F2B896FE2F05604100574736 /* Extension+UIAplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIAplication.swift"; sourceTree = "<group>"; };
+		F2B897022F05980B00574736 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		F2B897042F05983200574736 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		F2B897062F05997A00574736 /* TabBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBackground.swift; sourceTree = "<group>"; };
 		F2F2386A2F02BB5500625BDA /* MyQRCodesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyQRCodesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F90ACF2F032B2B00319ACB /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		F2F90AD12F032B2B00319ACB /* MyQRCodesProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRCodesProjectApp.swift; sourceTree = "<group>"; };
@@ -105,6 +111,48 @@
 				F2B896FC2F05585400574736 /* ApphudService+Paywall.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F2B897002F0596DF00574736 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F2B897012F0596E300574736 /* TabBar */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F2B897012F0596E300574736 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F2B897082F059F7E00574736 /* Container */,
+				F2B897022F05980B00574736 /* TabBarVC.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F2B897082F059F7E00574736 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				F2B8970A2F059FB900574736 /* Content */,
+				F2B897092F059FB000574736 /* Shape */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		F2B897092F059FB000574736 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				F2B897062F05997A00574736 /* TabBarBackground.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
+		F2B8970A2F059FB900574736 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				F2B897042F05983200574736 /* TabItem.swift */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		F2F238612F02BB5500625BDA = {
@@ -232,6 +280,7 @@
 		F2F90AE92F032B2B00319ACB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F2B897002F0596DF00574736 /* Main */,
 				F2F90AE82F032B2B00319ACB /* Onboarding */,
 				F2F90B1D2F032F9B00319ACB /* Paywall */,
 			);
@@ -424,7 +473,9 @@
 				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
 				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
 				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
+				F2B897052F05983200574736 /* TabItem.swift in Sources */,
 				F2F90B052F032B2B00319ACB /* Constants.swift in Sources */,
+				F2B897032F05980B00574736 /* TabBarVC.swift in Sources */,
 				F2F90B202F0332D900319ACB /* PaywallVC.swift in Sources */,
 				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
@@ -444,6 +495,7 @@
 				F2F90B222F0332DF00319ACB /* PaywallViewModel.swift in Sources */,
 				F2F90B122F032B2B00319ACB /* ApphudService.swift in Sources */,
 				F2F90B132F032B2B00319ACB /* UDManager.swift in Sources */,
+				F2B897072F05997A00574736 /* TabBarBackground.swift in Sources */,
 				F2F90B142F032B2B00319ACB /* Extension+AppStorage.swift in Sources */,
 				F2B896FF2F05604100574736 /* Extension+UIAplication.swift in Sources */,
 				F2F90B152F032B2B00319ACB /* Extension+Color.swift in Sources */,
