@@ -11,6 +11,8 @@ import ApphudSDK
 @main
 struct MyQRCodesProjectApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegate
+    
     @AppStorage(.onboardingPassed) private var onboardingPassed: Bool = false
     
     @State private var configLoaded = false
@@ -32,6 +34,12 @@ struct MyQRCodesProjectApp: App {
                     Button(ErrorAlert.cancelButtonTitle, role: .cancel) { }
                 } message: {
                     Text(ErrorAlert.textMessage)
+                }
+                .onReceive(
+                    NotificationCenter.default
+                        .publisher(for: UIApplication.didBecomeActiveNotification)
+                ) { _ in
+                    
                 }
         }
     }

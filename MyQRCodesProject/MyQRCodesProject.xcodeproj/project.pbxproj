@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F24A83EE2F0814C60033FEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83ED2F0814C60033FEEA /* AppDelegate.swift */; };
+		F24A83F12F0814FF0033FEEA /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = F24A83F02F0814FF0033FEEA /* AppsFlyerLib */; };
+		F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */; };
+		F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */; };
+		F24A83FB2F08496A0033FEEA /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83FA2F08496A0033FEEA /* TrackingService.swift */; };
 		F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F52F054DB000574736 /* PaywallProductCard.swift */; };
 		F2B896F82F0551A000574736 /* Extension+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F72F0551A000574736 /* Extension+Text.swift */; };
 		F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */; };
@@ -50,6 +55,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F24A83ED2F0814C60033FEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		F24A83FA2F08496A0033FEEA /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
 		F2B896F52F054DB000574736 /* PaywallProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallProductCard.swift; sourceTree = "<group>"; };
 		F2B896F72F0551A000574736 /* Extension+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Text.swift"; sourceTree = "<group>"; };
 		F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallMonthlyProductCard.swift; sourceTree = "<group>"; };
@@ -99,12 +108,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F238892F02BFAD00625BDA /* ApphudSDK in Frameworks */,
+				F24A83F12F0814FF0033FEEA /* AppsFlyerLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F24A83F42F0846B40033FEEA /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				F24A83F72F0846E60033FEEA /* Event */,
+				F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		F24A83F72F0846E60033FEEA /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		F2B896FB2F05584100574736 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +211,7 @@
 			children = (
 				F2F90AD02F032B2B00319ACB /* AppRouter */,
 				F2F90AD12F032B2B00319ACB /* MyQRCodesProjectApp.swift */,
+				F24A83ED2F0814C60033FEEA /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -326,6 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				F2F90AF22F032B2B00319ACB /* Apphud */,
+				F24A83F42F0846B40033FEEA /* Analytics */,
+				F24A83FA2F08496A0033FEEA /* TrackingService.swift */,
 				F2F90AF32F032B2B00319ACB /* UDManager.swift */,
 			);
 			path = Services;
@@ -410,6 +440,7 @@
 			name = MyQRCodesProject;
 			packageProductDependencies = (
 				F2F238882F02BFAD00625BDA /* ApphudSDK */,
+				F24A83F02F0814FF0033FEEA /* AppsFlyerLib */,
 			);
 			productName = MyQRCodesProject;
 			productReference = F2F2386A2F02BB5500625BDA /* MyQRCodesProject.app */;
@@ -441,6 +472,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F2F238872F02BFAD00625BDA /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+				F24A83EF2F0814FF0033FEEA /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F2F2386B2F02BB5500625BDA /* Products */;
@@ -480,11 +512,14 @@
 				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
 				F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */,
+				F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */,
 				F2F90B082F032B2B00319ACB /* TextButton.swift in Sources */,
 				F2F90B092F032B2B00319ACB /* LounchScreen.swift in Sources */,
 				F2F90B0A2F032B2B00319ACB /* OnbFirstScreenVC.swift in Sources */,
+				F24A83EE2F0814C60033FEEA /* AppDelegate.swift in Sources */,
 				F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */,
 				F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */,
+				F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */,
 				F2F90B0C2F032B2B00319ACB /* OnbRouter.swift in Sources */,
 				F2B896FD2F05585400574736 /* ApphudService+Paywall.swift in Sources */,
 				F2F90B0D2F032B2B00319ACB /* OnbRouterModifier.swift in Sources */,
@@ -503,6 +538,7 @@
 				F2F90B262F033AAF00319ACB /* PaywallSections.swift in Sources */,
 				F2F90B182F032B2B00319ACB /* Extension+LinearGradient.swift in Sources */,
 				F2B896F82F0551A000574736 /* Extension+Text.swift in Sources */,
+				F24A83FB2F08496A0033FEEA /* TrackingService.swift in Sources */,
 				F2F90B192F032B2B00319ACB /* Extension+View.swift in Sources */,
 				F2F90B1C2F032B3C00319ACB /* OnbFourthScreenVC.swift in Sources */,
 				F2F90B1A2F032B2B00319ACB /* ContentView.swift in Sources */,
@@ -729,6 +765,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F24A83EF2F0814FF0033FEEA /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.17.8;
+			};
+		};
 		F2F238872F02BFAD00625BDA /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apphud/ApphudSDK";
@@ -740,6 +784,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F24A83F02F0814FF0033FEEA /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F24A83EF2F0814FF0033FEEA /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
 		F2F238882F02BFAD00625BDA /* ApphudSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F2F238872F02BFAD00625BDA /* XCRemoteSwiftPackageReference "ApphudSDK" */;
