@@ -7,17 +7,25 @@
 
 import SwiftUI
 
+@Observable
+final class TabBarState {
+    var selection: TabItem = .home
+    var bottomSafeAreaInset: CGFloat = 112
+}
+
 struct TabBarVC: View {
     
-    @State private var selection: TabItem = .home
+    @State private var tabBarState = TabBarState()
 
     var body: some View {
         ZStack {
             Group {
-                switch selection {
+                switch tabBarState.selection {
                 case .home:
-                    ContentView()
+                    HomeVC(viewModel: HomeVM())
                 case .scan:
+                    ContentView()
+                case .create:
                     ContentView()
                 case .myQrCodes:
                     ContentView()
@@ -26,64 +34,73 @@ struct TabBarVC: View {
                         
                 }
             }
+            .environment(tabBarState)
+            
+            //tabBar setup
 
             VStack(spacing: 0) {
                 Spacer()
                 ZStack {
                     TabBarBackground()
                         .fill(.appPrimaryBg)
-                        .shadow(color: .black.opacity(0.05), radius: 8, y: -4)
+                        .setShadow(with: 8)
                         .frame(height: 92)
                     
-                    HStack {
-                        ForEach(
-                            [
-                                TabItem.home,
-                                TabItem.scan
-                            ],
-                            id: \.self
-                        ) { item in
-                            tabButton(for: item)
-                        }
-                        
-                        Spacer().frame(width: 80)
-                        
-                        ForEach(
-                            [
-                                TabItem.myQrCodes,
-                                TabItem.history
-                            ],
-                            id: \.self
-                        ) { item in
-                            tabButton(for: item)
-                        }
-                    }
-                    .padding(.horizontal)
-                    
-                    Button(action: {
-                        
-                    }) {
-                        Image(.iconAdd)
-                            .scaledToFit()
-                            .background(
-                                Circle()
-                                    .fill(.appAccentSuccess)
-                                    .frame(width: 52, height: 52)
-                                    .setShadow(with: 24, color: .appAccentSuccess)
-                            )
-                        
-                    }
-                    .offset(y: -32)
+                    tabBarItems
+                    plusButton
                 }
             }
         }
         .edgesIgnoringSafeArea(.bottom)
-    }
 
+    }
+    
+    private var tabBarItems: some View {
+        HStack {
+            ForEach(
+                [
+                    TabItem.home,
+                    TabItem.scan
+                ],
+                id: \.self
+            ) { item in
+                tabButton(for: item)
+            }
+            
+            Spacer().frame(width: 80)
+            
+            ForEach(
+                [
+                    TabItem.myQrCodes,
+                    TabItem.history
+                ],
+                id: \.self
+            ) { item in
+                tabButton(for: item)
+            }
+        }
+        .padding(.horizontal)
+    }
+    
+    private var plusButton: some View {
+        Button(action: { tabBarState.selection = .create }) {
+            Image(.iconAdd)
+                .scaledToFit()
+                .background(
+                    Circle()
+                        .fill(.appAccentSuccess)
+                        .frame(width: 52, height: 52)
+                        .setShadow(with: 24, color: .appAccentSuccess)
+                )
+            
+        }
+        .offset(y: -32)
+    }
+    
     @ViewBuilder
     private func tabButton(for item: TabItem) -> some View {
         Button(action: {
-            selection = item
+            tabBarState.selection = item
         }) {
             VStack(spacing: 8) {
                 Image(item.icon)
@@ -92,7 +109,7 @@ struct TabBarVC: View {
                     .font(.inter(size: 10, style: .medium))
                     .frame(maxWidth: .infinity)
             }
-            .foregroundColor(selection == item ? .appAccentPrimary : .appTextDisabled)
+            .foregroundColor(tabBarState.selection == item ? .appAccentPrimary : .appTextDisabled)
         }
         .frame(maxWidth: .infinity)
     }

@@ -10,8 +10,8 @@ import ApphudSDK
 
 @main
 struct MyQRCodesProjectApp: App {
-    
-    @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegate
+    //FIXME: uncomment the line below
+//    @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     
     @AppStorage(.onboardingPassed) private var onboardingPassed: Bool = false
     
@@ -45,19 +45,23 @@ struct MyQRCodesProjectApp: App {
     }
     
     init() {
-        Apphud.start(apiKey: Constants.apphudKey)
+        //FIXME: uncomment the line below
+//        Apphud.start(apiKey: Constants.apphudKey)
     }
     
     @ViewBuilder
     private var contentView: some View {
-        if isLoadingPaywall || !configLoaded {
-            LounchScreen()
-        } else if onboardingPassed {
-            TabBarVC()
-        } else {
-            OnbFirstScreenVC()
-                .withRouter(OnbRouter())
-        }
+        //FIXME: uncomment the condition below
+//        if isLoadingPaywall || !configLoaded {
+//            LounchScreen()
+//        } else if onboardingPassed {
+//            TabBarVC()
+//        } else {
+//            OnbFirstScreenVC()
+//                .withRouter(OnbRouter())
+//        }
+        //FIXME: remove the line below
+        TabBarVC()
     }
     
     func initializeApphud() {

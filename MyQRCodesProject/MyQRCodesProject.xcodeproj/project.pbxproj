@@ -12,6 +12,15 @@
 		F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */; };
 		F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */; };
 		F24A83FB2F08496A0033FEEA /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83FA2F08496A0033FEEA /* TrackingService.swift */; };
+		F24A83FE2F0961BF0033FEEA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83FD2F0961BF0033FEEA /* HomeVC.swift */; };
+		F24A84022F0962A50033FEEA /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84012F0962A50033FEEA /* HomeCard.swift */; };
+		F24A84042F0963760033FEEA /* Extension+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84032F0963760033FEEA /* Extension+Image.swift */; };
+		F24A84072F0965970033FEEA /* RoundedRectangleAsBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84052F0965970033FEEA /* RoundedRectangleAsBackgroundModifier.swift */; };
+		F24A84092F0966BD0033FEEA /* HomeCardsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84082F0966BD0033FEEA /* HomeCardsSection.swift */; };
+		F24A84222F096C1D0033FEEA /* HomeCardsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84212F096C1D0033FEEA /* HomeCardsAdapter.swift */; };
+		F24A84242F096EB10033FEEA /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84232F096EB10033FEEA /* HomeVM.swift */; };
+		F24A842B2F0976B80033FEEA /* HomeRecentActiviryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A842A2F0976B80033FEEA /* HomeRecentActiviryRow.swift */; };
+		F24A842D2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A842C2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift */; };
 		F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F52F054DB000574736 /* PaywallProductCard.swift */; };
 		F2B896F82F0551A000574736 /* Extension+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F72F0551A000574736 /* Extension+Text.swift */; };
 		F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */; };
@@ -59,6 +68,15 @@
 		F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		F24A83FA2F08496A0033FEEA /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
+		F24A83FD2F0961BF0033FEEA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F24A84012F0962A50033FEEA /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
+		F24A84032F0963760033FEEA /* Extension+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Image.swift"; sourceTree = "<group>"; };
+		F24A84052F0965970033FEEA /* RoundedRectangleAsBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleAsBackgroundModifier.swift; sourceTree = "<group>"; };
+		F24A84082F0966BD0033FEEA /* HomeCardsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardsSection.swift; sourceTree = "<group>"; };
+		F24A84212F096C1D0033FEEA /* HomeCardsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardsAdapter.swift; sourceTree = "<group>"; };
+		F24A84232F096EB10033FEEA /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		F24A842A2F0976B80033FEEA /* HomeRecentActiviryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentActiviryRow.swift; sourceTree = "<group>"; };
+		F24A842C2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentActivityAdapter.swift; sourceTree = "<group>"; };
 		F2B896F52F054DB000574736 /* PaywallProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallProductCard.swift; sourceTree = "<group>"; };
 		F2B896F72F0551A000574736 /* Extension+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Text.swift"; sourceTree = "<group>"; };
 		F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallMonthlyProductCard.swift; sourceTree = "<group>"; };
@@ -132,6 +150,68 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		F24A83FC2F0961B30033FEEA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F24A83FF2F09628A0033FEEA /* Adapter */,
+				F24A83FD2F0961BF0033FEEA /* HomeVC.swift */,
+				F24A84232F096EB10033FEEA /* HomeVM.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F24A83FF2F09628A0033FEEA /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84262F0976730033FEEA /* HomeRecentActivityAdapter */,
+				F24A84252F09765F0033FEEA /* HomeCardsAdapter */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		F24A84002F0962910033FEEA /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84012F0962A50033FEEA /* HomeCard.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		F24A84062F0965970033FEEA /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84052F0965970033FEEA /* RoundedRectangleAsBackgroundModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		F24A84252F09765F0033FEEA /* HomeCardsAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84002F0962910033FEEA /* Cards */,
+				F24A84082F0966BD0033FEEA /* HomeCardsSection.swift */,
+				F24A84212F096C1D0033FEEA /* HomeCardsAdapter.swift */,
+			);
+			path = HomeCardsAdapter;
+			sourceTree = "<group>";
+		};
+		F24A84262F0976730033FEEA /* HomeRecentActivityAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84292F09769B0033FEEA /* Row */,
+				F24A842C2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift */,
+			);
+			path = HomeRecentActivityAdapter;
+			sourceTree = "<group>";
+		};
+		F24A84292F09769B0033FEEA /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				F24A842A2F0976B80033FEEA /* HomeRecentActiviryRow.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
 		F2B896FB2F05584100574736 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +223,7 @@
 		F2B897002F0596DF00574736 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F24A83FC2F0961B30033FEEA /* Home */,
 				F2B897012F0596E300574736 /* TabBar */,
 			);
 			path = Main;
@@ -336,6 +417,7 @@
 		F2F90AF02F032B2B00319ACB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F24A84062F0965970033FEEA /* Modifiers */,
 				F2F90AEE2F032B2B00319ACB /* Fonts */,
 				F2F90AEF2F032B2B00319ACB /* Assets.xcassets */,
 			);
@@ -371,6 +453,7 @@
 				F2F90AFA2F032B2B00319ACB /* Extension+View.swift */,
 				F2B896F72F0551A000574736 /* Extension+Text.swift */,
 				F2B896FE2F05604100574736 /* Extension+UIAplication.swift */,
+				F24A84032F0963760033FEEA /* Extension+Image.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -505,12 +588,15 @@
 				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
 				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
 				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
+				F24A842B2F0976B80033FEEA /* HomeRecentActiviryRow.swift in Sources */,
 				F2B897052F05983200574736 /* TabItem.swift in Sources */,
+				F24A84022F0962A50033FEEA /* HomeCard.swift in Sources */,
 				F2F90B052F032B2B00319ACB /* Constants.swift in Sources */,
 				F2B897032F05980B00574736 /* TabBarVC.swift in Sources */,
 				F2F90B202F0332D900319ACB /* PaywallVC.swift in Sources */,
 				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
+				F24A84222F096C1D0033FEEA /* HomeCardsAdapter.swift in Sources */,
 				F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */,
 				F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */,
 				F2F90B082F032B2B00319ACB /* TextButton.swift in Sources */,
@@ -519,7 +605,9 @@
 				F24A83EE2F0814C60033FEEA /* AppDelegate.swift in Sources */,
 				F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */,
 				F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */,
+				F24A83FE2F0961BF0033FEEA /* HomeVC.swift in Sources */,
 				F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */,
+				F24A84242F096EB10033FEEA /* HomeVM.swift in Sources */,
 				F2F90B0C2F032B2B00319ACB /* OnbRouter.swift in Sources */,
 				F2B896FD2F05585400574736 /* ApphudService+Paywall.swift in Sources */,
 				F2F90B0D2F032B2B00319ACB /* OnbRouterModifier.swift in Sources */,
@@ -533,15 +621,19 @@
 				F2B897072F05997A00574736 /* TabBarBackground.swift in Sources */,
 				F2F90B142F032B2B00319ACB /* Extension+AppStorage.swift in Sources */,
 				F2B896FF2F05604100574736 /* Extension+UIAplication.swift in Sources */,
+				F24A84092F0966BD0033FEEA /* HomeCardsSection.swift in Sources */,
 				F2F90B152F032B2B00319ACB /* Extension+Color.swift in Sources */,
 				F2F90B162F032B2B00319ACB /* Extension+Font.swift in Sources */,
 				F2F90B262F033AAF00319ACB /* PaywallSections.swift in Sources */,
 				F2F90B182F032B2B00319ACB /* Extension+LinearGradient.swift in Sources */,
+				F24A84042F0963760033FEEA /* Extension+Image.swift in Sources */,
 				F2B896F82F0551A000574736 /* Extension+Text.swift in Sources */,
 				F24A83FB2F08496A0033FEEA /* TrackingService.swift in Sources */,
 				F2F90B192F032B2B00319ACB /* Extension+View.swift in Sources */,
 				F2F90B1C2F032B3C00319ACB /* OnbFourthScreenVC.swift in Sources */,
+				F24A84072F0965970033FEEA /* RoundedRectangleAsBackgroundModifier.swift in Sources */,
 				F2F90B1A2F032B2B00319ACB /* ContentView.swift in Sources */,
+				F24A842D2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import SwiftUI
 enum TabItem: Int {
     case home = 0
     case scan
+    case create
     case myQrCodes
     case history
 
@@ -17,6 +18,7 @@ enum TabItem: Int {
         switch self {
         case .home: return "Home"
         case .scan: return "Scan QR"
+        case .create: return ""
         case .myQrCodes: return "My QR Codes"
         case .history: return "History"
         }
@@ -26,6 +28,7 @@ enum TabItem: Int {
         switch self {
         case .home: return .iconHome
         case .scan: return .iconScan
+        case .create: return .iconAdd
         case .myQrCodes: return .iconFolder
         case .history: return .iconHistory
         }
