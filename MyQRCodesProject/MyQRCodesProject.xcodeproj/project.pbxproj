@@ -21,6 +21,17 @@
 		F24A84242F096EB10033FEEA /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84232F096EB10033FEEA /* HomeVM.swift */; };
 		F24A842B2F0976B80033FEEA /* HomeRecentActiviryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A842A2F0976B80033FEEA /* HomeRecentActiviryRow.swift */; };
 		F24A842D2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A842C2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift */; };
+		F24A84322F0990BD0033FEEA /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84312F0990BD0033FEEA /* ScanVC.swift */; };
+		F24A84352F0991300033FEEA /* ScanNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84342F0991300033FEEA /* ScanNotificationView.swift */; };
+		F24A84372F09926A0033FEEA /* ScanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84362F09926A0033FEEA /* ScanVM.swift */; };
+		F24A843B2F0994C70033FEEA /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A843A2F0994C70033FEEA /* CameraManager.swift */; };
+		F24A843D2F0995EC0033FEEA /* QrCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A843C2F0995EC0033FEEA /* QrCodeManager.swift */; };
+		F24A843F2F0996160033FEEA /* DefaultTextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A843E2F0996160033FEEA /* DefaultTextProcessor.swift */; };
+		F24A84452F099AFA0033FEEA /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84442F099AFA0033FEEA /* CameraPreviewView.swift */; };
+		F24A84472F099B070033FEEA /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84462F099B070033FEEA /* CameraPreview.swift */; };
+		F24A844D2F09A64D0033FEEA /* ScanBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A844C2F09A64D0033FEEA /* ScanBottomControls.swift */; };
+		F24A84512F09B0C40033FEEA /* ScannerFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84502F09B0C40033FEEA /* ScannerFrameView.swift */; };
+		F24A84532F09B6A50033FEEA /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84522F09B6A50033FEEA /* PhotoPicker.swift */; };
 		F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F52F054DB000574736 /* PaywallProductCard.swift */; };
 		F2B896F82F0551A000574736 /* Extension+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F72F0551A000574736 /* Extension+Text.swift */; };
 		F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */; };
@@ -77,6 +88,17 @@
 		F24A84232F096EB10033FEEA /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		F24A842A2F0976B80033FEEA /* HomeRecentActiviryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentActiviryRow.swift; sourceTree = "<group>"; };
 		F24A842C2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentActivityAdapter.swift; sourceTree = "<group>"; };
+		F24A84312F0990BD0033FEEA /* ScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
+		F24A84342F0991300033FEEA /* ScanNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanNotificationView.swift; sourceTree = "<group>"; };
+		F24A84362F09926A0033FEEA /* ScanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVM.swift; sourceTree = "<group>"; };
+		F24A843A2F0994C70033FEEA /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		F24A843C2F0995EC0033FEEA /* QrCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeManager.swift; sourceTree = "<group>"; };
+		F24A843E2F0996160033FEEA /* DefaultTextProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextProcessor.swift; sourceTree = "<group>"; };
+		F24A84442F099AFA0033FEEA /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		F24A84462F099B070033FEEA /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		F24A844C2F09A64D0033FEEA /* ScanBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBottomControls.swift; sourceTree = "<group>"; };
+		F24A84502F09B0C40033FEEA /* ScannerFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerFrameView.swift; sourceTree = "<group>"; };
+		F24A84522F09B6A50033FEEA /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		F2B896F52F054DB000574736 /* PaywallProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallProductCard.swift; sourceTree = "<group>"; };
 		F2B896F72F0551A000574736 /* Extension+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Text.swift"; sourceTree = "<group>"; };
 		F2B896F92F05574200574736 /* PaywallMonthlyProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallMonthlyProductCard.swift; sourceTree = "<group>"; };
@@ -212,6 +234,64 @@
 			path = Row;
 			sourceTree = "<group>";
 		};
+		F24A84302F0990AF0033FEEA /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84332F0991110033FEEA /* Views */,
+				F24A84312F0990BD0033FEEA /* ScanVC.swift */,
+				F24A84362F09926A0033FEEA /* ScanVM.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		F24A84332F0991110033FEEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84502F09B0C40033FEEA /* ScannerFrameView.swift */,
+				F24A844C2F09A64D0033FEEA /* ScanBottomControls.swift */,
+				F24A84342F0991300033FEEA /* ScanNotificationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F24A84382F0994890033FEEA /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84422F099AB20033FEEA /* CameraManager */,
+				F24A84522F09B6A50033FEEA /* PhotoPicker.swift */,
+				F24A843E2F0996160033FEEA /* DefaultTextProcessor.swift */,
+				F24A843C2F0995EC0033FEEA /* QrCodeManager.swift */,
+				F2F90AF32F032B2B00319ACB /* UDManager.swift */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		F24A84392F0994AE0033FEEA /* TrackingService */ = {
+			isa = PBXGroup;
+			children = (
+				F24A83FA2F08496A0033FEEA /* TrackingService.swift */,
+			);
+			path = TrackingService;
+			sourceTree = "<group>";
+		};
+		F24A84422F099AB20033FEEA /* CameraManager */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84432F099ABB0033FEEA /* Helpers */,
+				F24A843A2F0994C70033FEEA /* CameraManager.swift */,
+			);
+			path = CameraManager;
+			sourceTree = "<group>";
+		};
+		F24A84432F099ABB0033FEEA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84462F099B070033FEEA /* CameraPreview.swift */,
+				F24A84442F099AFA0033FEEA /* CameraPreviewView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F2B896FB2F05584100574736 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +303,7 @@
 		F2B897002F0596DF00574736 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F24A84302F0990AF0033FEEA /* Scan */,
 				F24A83FC2F0961B30033FEEA /* Home */,
 				F2B897012F0596E300574736 /* TabBar */,
 			);
@@ -435,10 +516,9 @@
 		F2F90AF42F032B2B00319ACB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F24A84392F0994AE0033FEEA /* TrackingService */,
 				F2F90AF22F032B2B00319ACB /* Apphud */,
 				F24A83F42F0846B40033FEEA /* Analytics */,
-				F24A83FA2F08496A0033FEEA /* TrackingService.swift */,
-				F2F90AF32F032B2B00319ACB /* UDManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -467,6 +547,7 @@
 				F2F90ADB2F032B2B00319ACB /* LauchScreen */,
 				F2F90AE92F032B2B00319ACB /* Modules */,
 				F2F90AF02F032B2B00319ACB /* Resources */,
+				F24A84382F0994890033FEEA /* BusinessLogic */,
 				F2F90AF42F032B2B00319ACB /* Services */,
 				F2F90AFB2F032B2B00319ACB /* Extension */,
 				F2F90AFC2F032B2B00319ACB /* ContentView.swift */,
@@ -590,15 +671,20 @@
 				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
 				F24A842B2F0976B80033FEEA /* HomeRecentActiviryRow.swift in Sources */,
 				F2B897052F05983200574736 /* TabItem.swift in Sources */,
+				F24A844D2F09A64D0033FEEA /* ScanBottomControls.swift in Sources */,
+				F24A84512F09B0C40033FEEA /* ScannerFrameView.swift in Sources */,
 				F24A84022F0962A50033FEEA /* HomeCard.swift in Sources */,
+				F24A84532F09B6A50033FEEA /* PhotoPicker.swift in Sources */,
 				F2F90B052F032B2B00319ACB /* Constants.swift in Sources */,
 				F2B897032F05980B00574736 /* TabBarVC.swift in Sources */,
 				F2F90B202F0332D900319ACB /* PaywallVC.swift in Sources */,
+				F24A84472F099B070033FEEA /* CameraPreview.swift in Sources */,
 				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
 				F24A84222F096C1D0033FEEA /* HomeCardsAdapter.swift in Sources */,
 				F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */,
 				F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */,
+				F24A843F2F0996160033FEEA /* DefaultTextProcessor.swift in Sources */,
 				F2F90B082F032B2B00319ACB /* TextButton.swift in Sources */,
 				F2F90B092F032B2B00319ACB /* LounchScreen.swift in Sources */,
 				F2F90B0A2F032B2B00319ACB /* OnbFirstScreenVC.swift in Sources */,
@@ -608,6 +694,7 @@
 				F24A83FE2F0961BF0033FEEA /* HomeVC.swift in Sources */,
 				F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */,
 				F24A84242F096EB10033FEEA /* HomeVM.swift in Sources */,
+				F24A84452F099AFA0033FEEA /* CameraPreviewView.swift in Sources */,
 				F2F90B0C2F032B2B00319ACB /* OnbRouter.swift in Sources */,
 				F2B896FD2F05585400574736 /* ApphudService+Paywall.swift in Sources */,
 				F2F90B0D2F032B2B00319ACB /* OnbRouterModifier.swift in Sources */,
@@ -616,11 +703,15 @@
 				F2F90B102F032B2B00319ACB /* AppTextStyle.swift in Sources */,
 				F2F90B112F032B2B00319ACB /* InterStyle.swift in Sources */,
 				F2F90B222F0332DF00319ACB /* PaywallViewModel.swift in Sources */,
+				F24A84322F0990BD0033FEEA /* ScanVC.swift in Sources */,
 				F2F90B122F032B2B00319ACB /* ApphudService.swift in Sources */,
 				F2F90B132F032B2B00319ACB /* UDManager.swift in Sources */,
 				F2B897072F05997A00574736 /* TabBarBackground.swift in Sources */,
+				F24A843B2F0994C70033FEEA /* CameraManager.swift in Sources */,
 				F2F90B142F032B2B00319ACB /* Extension+AppStorage.swift in Sources */,
 				F2B896FF2F05604100574736 /* Extension+UIAplication.swift in Sources */,
+				F24A84352F0991300033FEEA /* ScanNotificationView.swift in Sources */,
+				F24A843D2F0995EC0033FEEA /* QrCodeManager.swift in Sources */,
 				F24A84092F0966BD0033FEEA /* HomeCardsSection.swift in Sources */,
 				F2F90B152F032B2B00319ACB /* Extension+Color.swift in Sources */,
 				F2F90B162F032B2B00319ACB /* Extension+Font.swift in Sources */,
@@ -634,6 +725,7 @@
 				F24A84072F0965970033FEEA /* RoundedRectangleAsBackgroundModifier.swift in Sources */,
 				F2F90B1A2F032B2B00319ACB /* ContentView.swift in Sources */,
 				F24A842D2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift in Sources */,
+				F24A84372F09926A0033FEEA /* ScanVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

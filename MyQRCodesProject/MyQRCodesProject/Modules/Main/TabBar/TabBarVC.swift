@@ -24,7 +24,9 @@ struct TabBarVC: View {
                 case .home:
                     HomeVC(viewModel: HomeVM())
                 case .scan:
-                    ContentView()
+                    ScanVC(viewModel:
+                            ScanVM(cameraManger: CameraManager(), qrCodeManager: QrCodeManager())
+                    )
                 case .create:
                     ContentView()
                 case .myQrCodes:

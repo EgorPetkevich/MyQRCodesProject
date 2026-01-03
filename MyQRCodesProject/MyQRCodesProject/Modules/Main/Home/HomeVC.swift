@@ -33,6 +33,7 @@ struct HomeVC: View {
             .padding(.horizontal, 24)
             .padding(.bottom, tabState.bottomSafeAreaInset)
         }
+        .background(.appPrimaryBg)
     
     }
     

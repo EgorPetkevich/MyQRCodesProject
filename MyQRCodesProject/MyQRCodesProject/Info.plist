@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Please allow access to camera to scan QR Codes</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to photo library to scan QR Codes</string>
 	<key>AttributionCopyEndpoint</key>
 	<string>https://appsflyer-skadnetwork.com/</string>
 	<key>NSAdvertisingAttributionReportEndpoint</key>
