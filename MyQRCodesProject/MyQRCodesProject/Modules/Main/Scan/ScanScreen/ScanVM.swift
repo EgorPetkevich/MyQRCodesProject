@@ -21,6 +21,7 @@ final class ScanVM: ObservableObject {
     
     @Published var showGoSettingsAlert: Bool = false
     @Published var showErrorAlert: Bool = false
+    @Published var errorMessage: String?
     @Published var showLoader: Bool = false
     @Published var flashMode: Bool = false
     
@@ -70,6 +71,7 @@ final class ScanVM: ObservableObject {
         }
         cameraManager.qrNotFoundError = { [weak self] error in
             DispatchQueue.main.async {
+                self?.errorMessage = error
                 self?.showErrorAlert = true
             }
         }
@@ -113,8 +115,9 @@ final class ScanVM: ObservableObject {
                     self?.showResultScreen = self?.result != nil
                 }
                 
-            case .failure:
+            case .failure(let error):
                 DispatchQueue.main.async {
+                    self?.errorMessage = error.localizedDescription
                     self?.showErrorAlert = true
                 }
             }
@@ -127,6 +130,7 @@ final class ScanVM: ObservableObject {
             guard let ciImage = CIImage(image: image) else {
                 DispatchQueue.main.async {
                     self?.showLoader = false
+                    self?.errorMessage = "Unable to process image"
                     self?.showErrorAlert = true
                 }
                 return
@@ -143,6 +147,7 @@ final class ScanVM: ObservableObject {
             } else {
                 DispatchQueue.main.async {
                     self?.showLoader = false
+                    self?.errorMessage = "Unable to process image"
                     self?.showErrorAlert = true
                 }
             }

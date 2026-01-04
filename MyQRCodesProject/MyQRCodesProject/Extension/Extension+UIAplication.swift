@@ -15,4 +15,13 @@ extension UIApplication {
         }
     }
     
+    static func openSettings() {
+        if let appSettings =
+            URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(appSettings,
+                                      options: [:],
+                                      completionHandler: nil)
+        }
+    }
+    
 }

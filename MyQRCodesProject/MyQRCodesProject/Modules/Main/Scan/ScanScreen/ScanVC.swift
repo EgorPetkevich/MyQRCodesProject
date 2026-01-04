@@ -28,6 +28,7 @@ struct ScanVC: View {
             header
             
             ZStack {
+                
                 if let previewLayer = vm.previewLayer {
                     CameraPreview(previewLayer: previewLayer)
                 }
@@ -54,9 +55,8 @@ struct ScanVC: View {
                     Spacer()
                 }
                 .padding(.bottom, tabState.bottomSafeAreaInset)
+                  
             }
-            
-            
         }
         .ignoresSafeArea()
         .onAppear { vm.startScanning() }
@@ -79,8 +79,21 @@ struct ScanVC: View {
         .fullScreenCover(isPresented: $vm.showResultScreen) {
             resultView.onDisappear { vm.startScanning() }
         }
+        .alert(ErrorAlert.title, isPresented: $vm.showErrorAlert) {
+            Button(ErrorAlert.okButtonTitle, role: .cancel) { }
+        } message: {
+            Text(vm.errorMessage ?? ErrorAlert.textMessage)
+        }
         
-        
+        .alert(ErrorAlert.title, isPresented: $vm.showGoSettingsAlert) {
+            Button(ErrorAlert.goSettingsTitle) {
+                UIApplication.openSettings()
+            }
+            Button(ErrorAlert.okButtonTitle, role: .cancel) { }
+        } message: {
+            Text(ErrorAlert.textMessage)
+        }
+
     }
     
     private var header: some View {
@@ -105,7 +118,7 @@ struct ScanVC: View {
             switch result {
             case .link(let dto):
                 LinkScanResultVC(
-                    viewModel: LinkScanResultVM(linkDTO: dto)
+                    viewModel: LinkScanResultVM(linkDTO: dto, storage: LinkStorage())
                 )
 
             case .wifi:
@@ -124,3 +137,12 @@ struct ScanVC: View {
     
 }
   
+extension ScanVC {
+    enum ErrorAlert {
+        static let title: String = "QR Code Scanning Failed"
+        static let tryButtonTitle: String = "Try Again"
+        static let okButtonTitle: String = "Ok"
+        static let goSettingsTitle: String = "Go Settings"
+        static let textMessage: String = "Something went wrong.\nPlease try again."
+    }
+}

@@ -27,6 +27,9 @@
 		F229E0732F0AC3540042A145 /* LinkScanResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0722F0AC3540042A145 /* LinkScanResultVC.swift */; };
 		F229E0762F0AC4EE0042A145 /* LinkScanResultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0752F0AC4EE0042A145 /* LinkScanResultVM.swift */; };
 		F229E0792F0AD9F70042A145 /* SuccessfulScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0782F0AD9F70042A145 /* SuccessfulScanView.swift */; };
+		F229E07B2F0AE13C0042A145 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07A2F0AE13C0042A145 /* Extension+Date.swift */; };
+		F229E07D2F0AE1F50042A145 /* ResultActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */; };
+		F229E07F2F0AE3120042A145 /* ResultBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */; };
 		F24A83EE2F0814C60033FEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83ED2F0814C60033FEEA /* AppDelegate.swift */; };
 		F24A83F12F0814FF0033FEEA /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = F24A83F02F0814FF0033FEEA /* AppsFlyerLib */; };
 		F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */; };
@@ -115,6 +118,9 @@
 		F229E0722F0AC3540042A145 /* LinkScanResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkScanResultVC.swift; sourceTree = "<group>"; };
 		F229E0752F0AC4EE0042A145 /* LinkScanResultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkScanResultVM.swift; sourceTree = "<group>"; };
 		F229E0782F0AD9F70042A145 /* SuccessfulScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulScanView.swift; sourceTree = "<group>"; };
+		F229E07A2F0AE13C0042A145 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
+		F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultActionButton.swift; sourceTree = "<group>"; };
+		F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomControls.swift; sourceTree = "<group>"; };
 		F24A83ED2F0814C60033FEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
@@ -305,6 +311,8 @@
 		F229E0772F0AD9D20042A145 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */,
+				F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */,
 				F229E0782F0AD9F70042A145 /* SuccessfulScanView.swift */,
 			);
 			path = Views;
@@ -689,6 +697,7 @@
 				F2B896F72F0551A000574736 /* Extension+Text.swift */,
 				F2B896FE2F05604100574736 /* Extension+UIAplication.swift */,
 				F24A84032F0963760033FEEA /* Extension+Image.swift */,
+				F229E07A2F0AE13C0042A145 /* Extension+Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -842,6 +851,7 @@
 				F229E0732F0AC3540042A145 /* LinkScanResultVC.swift in Sources */,
 				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
+				F229E07F2F0AE3120042A145 /* ResultBottomControls.swift in Sources */,
 				F24A84222F096C1D0033FEEA /* HomeCardsAdapter.swift in Sources */,
 				F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */,
 				F229E06C2F0AB64C0042A145 /* LinkStorage.swift in Sources */,
@@ -855,12 +865,14 @@
 				F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */,
 				F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */,
 				F229E0542F0AAEBC0042A145 /* PersistenceController.swift in Sources */,
+				F229E07D2F0AE1F50042A145 /* ResultActionButton.swift in Sources */,
 				F229E06A2F0AB6280042A145 /* ContactStorage.swift in Sources */,
 				F229E05B2F0AAF2E0042A145 /* FetchDescriptor+MO.swift in Sources */,
 				F229E0792F0AD9F70042A145 /* SuccessfulScanView.swift in Sources */,
 				F229E05C2F0AAF2E0042A145 /* Storage+Error.swift in Sources */,
 				F229E0512F0AAE650042A145 /* BaseStorage.swift in Sources */,
 				F24A83FE2F0961BF0033FEEA /* HomeVC.swift in Sources */,
+				F229E07B2F0AE13C0042A145 /* Extension+Date.swift in Sources */,
 				F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */,
 				F229E03F2F0A9E1E0042A145 /* Description.swift in Sources */,
 				F229E0682F0AB6010042A145 /* WiFiStorage.swift in Sources */,
