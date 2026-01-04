@@ -19,6 +19,7 @@ struct MyQRCodesProjectApp: App {
     @State private var isLoadingPaywall = false
     @State private var showErrorAlert = false
     
+    private let persistence = PersistenceController.shared
     private let apphudService: ApphudService = .instance
     
     var body: some Scene {

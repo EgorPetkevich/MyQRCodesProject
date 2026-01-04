@@ -22,7 +22,7 @@ struct ScanVC: View {
     init(viewModel: ScanVM) {
         self._vm = StateObject(wrappedValue: viewModel)
     }
-
+    
     var body: some View {
         VStack(spacing: 0) {
             header
@@ -31,31 +31,31 @@ struct ScanVC: View {
                 if let previewLayer = vm.previewLayer {
                     CameraPreview(previewLayer: previewLayer)
                 }
-
+                
                 VStack {
                     Spacer()
-
+                    
                     ScanNotificationView()
                         .padding(.horizontal, 24)
-
+                    
                     Spacer()
-
+                    
                     ScannerFrameView()
-
+                    
                     Spacer()
-
+                    
                     ScanBottomControls(
                         onFlash: { vm.toggleFlash() },
                         onSwitch: { vm.switchCamera() },
                         onGallery: { showPhotoPicker = true }
                     )
                     .padding(.horizontal, 24)
-
+                    
                     Spacer()
                 }
                 .padding(.bottom, tabState.bottomSafeAreaInset)
             }
-               
+            
             
         }
         .ignoresSafeArea()
@@ -76,6 +76,11 @@ struct ScanVC: View {
             vm.processImageQRCode(image)
         }
         
+        .fullScreenCover(isPresented: $vm.showResultScreen) {
+            resultView.onDisappear { vm.startScanning() }
+        }
+        
+        
     }
     
     private var header: some View {
@@ -93,4 +98,29 @@ struct ScanVC: View {
         .frame(height: 100)
         .background(Color.appPrimaryBg)
     }
+    
+    @ViewBuilder
+    private var resultView: some View {
+        if let result = vm.result {
+            switch result {
+            case .link(let dto):
+                LinkScanResultVC(
+                    viewModel: LinkScanResultVM(linkDTO: dto)
+                )
+
+            case .wifi:
+                ContentView()
+
+            case .contact:
+                ContentView()
+
+            case .text:
+                ContentView()
+            }
+        } else {
+            EmptyView()
+        }
+    }
+    
 }
+  

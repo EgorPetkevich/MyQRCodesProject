@@ -8,21 +8,15 @@
 import Foundation
 import UIKit
 
-struct QrCodeModel {
-    var id: String
-    var date: Date
-    var name: String
-}
-
 protocol QrCodeManagerProtocol {
-    typealias ResultHandler = (Result<QrCodeModel, Error>) -> Void
+    typealias ResultHandler = (Result<any DTODescription, Error>) -> Void
     
     func getQRCodeData(_ str: String, completion: @escaping ResultHandler)
 }
 
 final class QrCodeManager {
     
-    typealias ResultHandler = (Result<QrCodeModel, Error>) -> Void
+    typealias ResultHandler = (Result<any DTODescription, Error>) -> Void
     
     // MARK: - Errors
     enum QrCodeManagerError: Error {
@@ -44,17 +38,8 @@ final class QrCodeManager {
             return
         }
         
-        if let phone = textProcessor.detectPhone(in: str) {
-            handlePhoneDetection(phone, originalString: str, completion: completion)
-            return
-        }
-        
-        if let geo = textProcessor.detectGeolocation(in: str) {
-            handleGeoDetection(geo: geo, originalString: str, completion: completion)
-        }
-        
-        if let mail = textProcessor.detectMail(in: str) {
-            handleMailDetection(mail, originalString: str, completion: completion)
+        if let vCard = textProcessor.detectVCard(in: str) {
+            handleVCardDetection(vCard, completion: completion)
             return
         }
         
@@ -63,40 +48,51 @@ final class QrCodeManager {
             return
         }
         
+        if let wifi = textProcessor.detectWiFi(in: str) {
+            handleWiFiDetection(wifi, completion: completion)
+            return
+        }
+        
         handleTextDetection(str, completion: completion)
     }
     
-    private func handleGeoDetection(
-        geo: String,
-        originalString: String,
+    private func handleWiFiDetection(
+        _ wifi: WiFiNetwork,
         completion: @escaping ResultHandler
     ) {
         let id = UUID().uuidString
-        let link = textProcessor.detectURL(in: originalString)
-//        let geoTModel = GeoTransferModel(
-//            date: .now,
-//            id: id,
-//            name: originalString,
-//            geo: geo,
-//            link: link?.relativeString
-//        )
-//        completion(.success(geoTModel))
+        let wifiDTO = WiFiDTO(
+            id: id,
+            createdAt: .now,
+            ssid: wifi.ssid,
+            isHidden: wifi.isHidden,
+            password: wifi.password,
+            security: wifi.security
+        )
+        completion(.success(wifiDTO))
     }
     
-    private func handlePhoneDetection(
-        _ phone: String,
-        originalString: String,
+    private func handleVCardDetection(
+        _ vCard: VCard,
         completion: @escaping ResultHandler
     ) {
         let id = UUID().uuidString
-        
-//        let phoneTModel = PhoneTransferModel(
-//            date: .now,
-//            id: id,
-//            name: originalString,
-//            phone: phone
-//        )
-//        completion(.success(phoneTModel))
+        let contactDTO = ContactDTO(
+            id: id,
+            createdAt: .now,
+            address: vCard.address,
+            birthday: vCard.birthday,
+            email: vCard.email,
+            firstName: vCard.firstName,
+            lastName: vCard.lastName,
+            jobTitle: vCard.jobTitle,
+            organization: vCard.organization,
+            phoneNumber: vCard.phoneNumber,
+            phoneNumberWork: vCard.phoneNumberWork,
+            prefix: vCard.prefix,
+            website: vCard.website
+        )
+        completion(.success(contactDTO))
     }
     
     private func handleURLDetection(
@@ -105,17 +101,12 @@ final class QrCodeManager {
         completion: @escaping ResultHandler
     ) {
         let id = UUID().uuidString
-        
-//        let linkTModel = LinkTransferModel(
-//            date: .now,
-//            id: id,
-//            name: originalString,
-//            link: originalString
-//        )
-//        DispatchQueue.main.async {
-//            completion(.success(linkTModel))
-//        }
-        
+        let linkDTO = LinkDTO(
+            id: id,
+            link: originalString,
+            createdAt: .now
+        )
+        completion(.success(linkDTO))
     }
     
     private func handleTextDetection(
@@ -123,31 +114,14 @@ final class QrCodeManager {
         completion: @escaping ResultHandler
     ) {
         let id = UUID().uuidString
-        
-//        let textTModel = TextTransferModel(
-//            date: .now,
-//            id: id,
-//            name: text,
-//            text: text
-//        )
-//        completion(.success(textTModel))
+        let textDTO = TextDTO(
+            id: id,
+            text: text,
+            createdAt: .now
+        )
+        completion(.success(textDTO))
     }
     
-    private func handleMailDetection(
-        _ email: String,
-        originalString: String,
-        completion: @escaping ResultHandler
-    ) {
-        let id = UUID().uuidString
-        
-//        let mailTModel = EmailTransferModel(
-//            date: .now,
-//            id: id,
-//            name: originalString,
-//            email: email
-//        )
-//        completion(.success(mailTModel))
-    }
                        
 }
 

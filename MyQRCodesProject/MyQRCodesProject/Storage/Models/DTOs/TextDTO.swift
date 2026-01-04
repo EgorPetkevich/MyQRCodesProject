@@ -1,0 +1,41 @@
+//
+//  LinkDTO.swift
+//  MyQRCodesProject
+//
+//  Created by George Popkich on 4.01.26.
+//
+
+import Foundation
+import CoreData
+
+struct TextDTO: DTODescription, Identifiable {
+    
+    typealias MO = TextMO
+    
+    var id: String
+    var text: String
+    var createdAt: Date
+    
+    init(id: String, text: String, createdAt: Date){
+        self.id = id
+        self.text = text
+        self.createdAt = createdAt
+    }
+    
+    init?(mo: TextMO) {
+        guard
+            let id = mo.id,
+            let text = mo.text,
+            let createdAt = mo.createdAt
+        else { return nil }
+        self.id = id
+        self.text = text
+        self.createdAt = createdAt
+    }
+    
+    func createMO(context: NSManagedObjectContext) -> TextMO? {
+        let mo = TextMO(context: context)
+        mo.apply(dto: self)
+        return mo
+    }
+}

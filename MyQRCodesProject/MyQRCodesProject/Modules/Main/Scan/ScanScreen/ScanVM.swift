@@ -10,12 +10,22 @@ import AVFoundation
 import UIKit
 import SwiftUI
 
+enum ScanResult {
+    case link(LinkDTO)
+    case wifi(WiFiDTO)
+    case contact(ContactDTO)
+    case text(TextDTO)
+}
+
 final class ScanVM: ObservableObject {
     
     @Published var showGoSettingsAlert: Bool = false
     @Published var showErrorAlert: Bool = false
     @Published var showLoader: Bool = false
     @Published var flashMode: Bool = false
+    
+    @Published var result: ScanResult?
+    @Published var showResultScreen: Bool = false
     
     private var cameraManager: CameraManagerProtocol
     private let qrCodeManager: QrCodeManagerProtocol
@@ -94,11 +104,16 @@ final class ScanVM: ObservableObject {
             DispatchQueue.main.async {
                 self?.showLoader = false
             }
+            
             switch result {
             case .success(let model):
-                //FIXME: Save model
-               print(model)
-            case .failure(_):
+                
+                DispatchQueue.main.async {
+                    self?.result = self?.mapToScanResult(model)
+                    self?.showResultScreen = self?.result != nil
+                }
+                
+            case .failure:
                 DispatchQueue.main.async {
                     self?.showErrorAlert = true
                 }
@@ -141,6 +156,21 @@ final class ScanVM: ObservableObject {
             name: UIApplication.willResignActiveNotification,
             object: nil
         )
+    }
+    
+    private func mapToScanResult(_ model: any DTODescription) -> ScanResult? {
+        switch model {
+        case let dto as LinkDTO:
+            return .link(dto)
+        case let dto as WiFiDTO:
+            return .wifi(dto)
+        case let dto as ContactDTO:
+            return .contact(dto)
+        case let dto as TextDTO:
+            return .text(dto)
+        default:
+            return nil
+        }
     }
 
 }

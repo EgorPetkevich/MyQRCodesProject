@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F229E03C2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F229E03A2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld */; };
+		F229E03F2F0A9E1E0042A145 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E03D2F0A9E1E0042A145 /* Description.swift */; };
+		F229E0432F0A9F2C0042A145 /* LinkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0422F0A9F2C0042A145 /* LinkDTO.swift */; };
+		F229E0462F0AA7D00042A145 /* LinkMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0452F0AA7D00042A145 /* LinkMO.swift */; };
+		F229E0482F0AAA210042A145 /* ContactDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0472F0AAA210042A145 /* ContactDTO.swift */; };
+		F229E04A2F0AABF10042A145 /* ContactMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0492F0AABF10042A145 /* ContactMO.swift */; };
+		F229E04C2F0AACB50042A145 /* WiFiDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E04B2F0AACB50042A145 /* WiFiDTO.swift */; };
+		F229E04E2F0AADB60042A145 /* WiFiMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E04D2F0AADB60042A145 /* WiFiMO.swift */; };
+		F229E0512F0AAE650042A145 /* BaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0502F0AAE650042A145 /* BaseStorage.swift */; };
+		F229E0542F0AAEBC0042A145 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0522F0AAEBC0042A145 /* PersistenceController.swift */; };
+		F229E05B2F0AAF2E0042A145 /* FetchDescriptor+MO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0552F0AAF2E0042A145 /* FetchDescriptor+MO.swift */; };
+		F229E05C2F0AAF2E0042A145 /* Storage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0562F0AAF2E0042A145 /* Storage+Error.swift */; };
+		F229E0682F0AB6010042A145 /* WiFiStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0672F0AB6010042A145 /* WiFiStorage.swift */; };
+		F229E06A2F0AB6280042A145 /* ContactStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0692F0AB6280042A145 /* ContactStorage.swift */; };
+		F229E06C2F0AB64C0042A145 /* LinkStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E06B2F0AB64C0042A145 /* LinkStorage.swift */; };
+		F229E06E2F0AB9950042A145 /* TextMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E06D2F0AB9950042A145 /* TextMO.swift */; };
+		F229E0702F0AB9B00042A145 /* TextDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E06F2F0AB9B00042A145 /* TextDTO.swift */; };
+		F229E0732F0AC3540042A145 /* LinkScanResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0722F0AC3540042A145 /* LinkScanResultVC.swift */; };
+		F229E0762F0AC4EE0042A145 /* LinkScanResultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0752F0AC4EE0042A145 /* LinkScanResultVM.swift */; };
+		F229E0792F0AD9F70042A145 /* SuccessfulScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0782F0AD9F70042A145 /* SuccessfulScanView.swift */; };
 		F24A83EE2F0814C60033FEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83ED2F0814C60033FEEA /* AppDelegate.swift */; };
 		F24A83F12F0814FF0033FEEA /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = F24A83F02F0814FF0033FEEA /* AppsFlyerLib */; };
 		F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */; };
@@ -75,6 +95,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F229E03B2F0A9D210042A145 /* QRCodesDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QRCodesDataBase.xcdatamodel; sourceTree = "<group>"; };
+		F229E03D2F0A9E1E0042A145 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
+		F229E0422F0A9F2C0042A145 /* LinkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDTO.swift; sourceTree = "<group>"; };
+		F229E0452F0AA7D00042A145 /* LinkMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkMO.swift; sourceTree = "<group>"; };
+		F229E0472F0AAA210042A145 /* ContactDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDTO.swift; sourceTree = "<group>"; };
+		F229E0492F0AABF10042A145 /* ContactMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMO.swift; sourceTree = "<group>"; };
+		F229E04B2F0AACB50042A145 /* WiFiDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiDTO.swift; sourceTree = "<group>"; };
+		F229E04D2F0AADB60042A145 /* WiFiMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiMO.swift; sourceTree = "<group>"; };
+		F229E0502F0AAE650042A145 /* BaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStorage.swift; sourceTree = "<group>"; };
+		F229E0522F0AAEBC0042A145 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		F229E0552F0AAF2E0042A145 /* FetchDescriptor+MO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FetchDescriptor+MO.swift"; sourceTree = "<group>"; };
+		F229E0562F0AAF2E0042A145 /* Storage+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Error.swift"; sourceTree = "<group>"; };
+		F229E0672F0AB6010042A145 /* WiFiStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiStorage.swift; sourceTree = "<group>"; };
+		F229E0692F0AB6280042A145 /* ContactStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStorage.swift; sourceTree = "<group>"; };
+		F229E06B2F0AB64C0042A145 /* LinkStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkStorage.swift; sourceTree = "<group>"; };
+		F229E06D2F0AB9950042A145 /* TextMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMO.swift; sourceTree = "<group>"; };
+		F229E06F2F0AB9B00042A145 /* TextDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDTO.swift; sourceTree = "<group>"; };
+		F229E0722F0AC3540042A145 /* LinkScanResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkScanResultVC.swift; sourceTree = "<group>"; };
+		F229E0752F0AC4EE0042A145 /* LinkScanResultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkScanResultVM.swift; sourceTree = "<group>"; };
+		F229E0782F0AD9F70042A145 /* SuccessfulScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulScanView.swift; sourceTree = "<group>"; };
 		F24A83ED2F0814C60033FEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
@@ -155,6 +195,121 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F229E0382F0A96360042A145 /* ScanResult */ = {
+			isa = PBXGroup;
+			children = (
+				F229E0772F0AD9D20042A145 /* Views */,
+				F229E0742F0AC3790042A145 /* Link */,
+			);
+			path = ScanResult;
+			sourceTree = "<group>";
+		};
+		F229E0392F0A9C730042A145 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F229E0592F0AAF2E0042A145 /* Consts */,
+				F229E0532F0AAEBC0042A145 /* PersistenceController */,
+				F229E04F2F0AAE5F0042A145 /* Storages */,
+				F229E0402F0A9F040042A145 /* Models */,
+				F229E03A2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		F229E03E2F0A9E1E0042A145 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F229E03D2F0A9E1E0042A145 /* Description.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F229E0402F0A9F040042A145 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F229E03E2F0A9E1E0042A145 /* Protocols */,
+				F229E0412F0A9F130042A145 /* DTOs */,
+				F229E0442F0AA7B30042A145 /* MOs */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F229E0412F0A9F130042A145 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				F229E06F2F0AB9B00042A145 /* TextDTO.swift */,
+				F229E04B2F0AACB50042A145 /* WiFiDTO.swift */,
+				F229E0472F0AAA210042A145 /* ContactDTO.swift */,
+				F229E0422F0A9F2C0042A145 /* LinkDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		F229E0442F0AA7B30042A145 /* MOs */ = {
+			isa = PBXGroup;
+			children = (
+				F229E06D2F0AB9950042A145 /* TextMO.swift */,
+				F229E0492F0AABF10042A145 /* ContactMO.swift */,
+				F229E0452F0AA7D00042A145 /* LinkMO.swift */,
+				F229E04D2F0AADB60042A145 /* WiFiMO.swift */,
+			);
+			path = MOs;
+			sourceTree = "<group>";
+		};
+		F229E04F2F0AAE5F0042A145 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				F229E06B2F0AB64C0042A145 /* LinkStorage.swift */,
+				F229E0692F0AB6280042A145 /* ContactStorage.swift */,
+				F229E0672F0AB6010042A145 /* WiFiStorage.swift */,
+				F229E0502F0AAE650042A145 /* BaseStorage.swift */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
+		F229E0532F0AAEBC0042A145 /* PersistenceController */ = {
+			isa = PBXGroup;
+			children = (
+				F229E0522F0AAEBC0042A145 /* PersistenceController.swift */,
+			);
+			path = PersistenceController;
+			sourceTree = "<group>";
+		};
+		F229E0592F0AAF2E0042A145 /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				F229E0552F0AAF2E0042A145 /* FetchDescriptor+MO.swift */,
+				F229E0562F0AAF2E0042A145 /* Storage+Error.swift */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
+		F229E0712F0AC3300042A145 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				F24A84302F0990AF0033FEEA /* ScanScreen */,
+				F229E0382F0A96360042A145 /* ScanResult */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		F229E0742F0AC3790042A145 /* Link */ = {
+			isa = PBXGroup;
+			children = (
+				F229E0722F0AC3540042A145 /* LinkScanResultVC.swift */,
+				F229E0752F0AC4EE0042A145 /* LinkScanResultVM.swift */,
+			);
+			path = Link;
+			sourceTree = "<group>";
+		};
+		F229E0772F0AD9D20042A145 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F229E0782F0AD9F70042A145 /* SuccessfulScanView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F24A83F42F0846B40033FEEA /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,14 +389,14 @@
 			path = Row;
 			sourceTree = "<group>";
 		};
-		F24A84302F0990AF0033FEEA /* Scan */ = {
+		F24A84302F0990AF0033FEEA /* ScanScreen */ = {
 			isa = PBXGroup;
 			children = (
 				F24A84332F0991110033FEEA /* Views */,
 				F24A84312F0990BD0033FEEA /* ScanVC.swift */,
 				F24A84362F09926A0033FEEA /* ScanVM.swift */,
 			);
-			path = Scan;
+			path = ScanScreen;
 			sourceTree = "<group>";
 		};
 		F24A84332F0991110033FEEA /* Views */ = {
@@ -303,7 +458,7 @@
 		F2B897002F0596DF00574736 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				F24A84302F0990AF0033FEEA /* Scan */,
+				F229E0712F0AC3300042A145 /* Scan */,
 				F24A83FC2F0961B30033FEEA /* Home */,
 				F2B897012F0596E300574736 /* TabBar */,
 			);
@@ -551,6 +706,7 @@
 				F2F90AF42F032B2B00319ACB /* Services */,
 				F2F90AFB2F032B2B00319ACB /* Extension */,
 				F2F90AFC2F032B2B00319ACB /* ContentView.swift */,
+				F229E0392F0A9C730042A145 /* Storage */,
 				F2F90AFD2F032B2B00319ACB /* Info.plist */,
 			);
 			path = MyQRCodesProject;
@@ -669,20 +825,27 @@
 				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
 				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
 				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
+				F229E0702F0AB9B00042A145 /* TextDTO.swift in Sources */,
+				F229E0432F0A9F2C0042A145 /* LinkDTO.swift in Sources */,
 				F24A842B2F0976B80033FEEA /* HomeRecentActiviryRow.swift in Sources */,
 				F2B897052F05983200574736 /* TabItem.swift in Sources */,
 				F24A844D2F09A64D0033FEEA /* ScanBottomControls.swift in Sources */,
 				F24A84512F09B0C40033FEEA /* ScannerFrameView.swift in Sources */,
 				F24A84022F0962A50033FEEA /* HomeCard.swift in Sources */,
+				F229E04C2F0AACB50042A145 /* WiFiDTO.swift in Sources */,
 				F24A84532F09B6A50033FEEA /* PhotoPicker.swift in Sources */,
 				F2F90B052F032B2B00319ACB /* Constants.swift in Sources */,
 				F2B897032F05980B00574736 /* TabBarVC.swift in Sources */,
 				F2F90B202F0332D900319ACB /* PaywallVC.swift in Sources */,
+				F229E0482F0AAA210042A145 /* ContactDTO.swift in Sources */,
 				F24A84472F099B070033FEEA /* CameraPreview.swift in Sources */,
+				F229E0732F0AC3540042A145 /* LinkScanResultVC.swift in Sources */,
 				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
 				F24A84222F096C1D0033FEEA /* HomeCardsAdapter.swift in Sources */,
 				F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */,
+				F229E06C2F0AB64C0042A145 /* LinkStorage.swift in Sources */,
+				F229E03C2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld in Sources */,
 				F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */,
 				F24A843F2F0996160033FEEA /* DefaultTextProcessor.swift in Sources */,
 				F2F90B082F032B2B00319ACB /* TextButton.swift in Sources */,
@@ -691,15 +854,27 @@
 				F24A83EE2F0814C60033FEEA /* AppDelegate.swift in Sources */,
 				F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */,
 				F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */,
+				F229E0542F0AAEBC0042A145 /* PersistenceController.swift in Sources */,
+				F229E06A2F0AB6280042A145 /* ContactStorage.swift in Sources */,
+				F229E05B2F0AAF2E0042A145 /* FetchDescriptor+MO.swift in Sources */,
+				F229E0792F0AD9F70042A145 /* SuccessfulScanView.swift in Sources */,
+				F229E05C2F0AAF2E0042A145 /* Storage+Error.swift in Sources */,
+				F229E0512F0AAE650042A145 /* BaseStorage.swift in Sources */,
 				F24A83FE2F0961BF0033FEEA /* HomeVC.swift in Sources */,
 				F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */,
+				F229E03F2F0A9E1E0042A145 /* Description.swift in Sources */,
+				F229E0682F0AB6010042A145 /* WiFiStorage.swift in Sources */,
+				F229E04A2F0AABF10042A145 /* ContactMO.swift in Sources */,
 				F24A84242F096EB10033FEEA /* HomeVM.swift in Sources */,
+				F229E06E2F0AB9950042A145 /* TextMO.swift in Sources */,
+				F229E04E2F0AADB60042A145 /* WiFiMO.swift in Sources */,
 				F24A84452F099AFA0033FEEA /* CameraPreviewView.swift in Sources */,
 				F2F90B0C2F032B2B00319ACB /* OnbRouter.swift in Sources */,
 				F2B896FD2F05585400574736 /* ApphudService+Paywall.swift in Sources */,
 				F2F90B0D2F032B2B00319ACB /* OnbRouterModifier.swift in Sources */,
 				F2F90B0E2F032B2B00319ACB /* OnbSecondScreenVC.swift in Sources */,
 				F2F90B0F2F032B2B00319ACB /* OnbThirdScreenVC.swift in Sources */,
+				F229E0462F0AA7D00042A145 /* LinkMO.swift in Sources */,
 				F2F90B102F032B2B00319ACB /* AppTextStyle.swift in Sources */,
 				F2F90B112F032B2B00319ACB /* InterStyle.swift in Sources */,
 				F2F90B222F0332DF00319ACB /* PaywallViewModel.swift in Sources */,
@@ -713,6 +888,7 @@
 				F24A84352F0991300033FEEA /* ScanNotificationView.swift in Sources */,
 				F24A843D2F0995EC0033FEEA /* QrCodeManager.swift in Sources */,
 				F24A84092F0966BD0033FEEA /* HomeCardsSection.swift in Sources */,
+				F229E0762F0AC4EE0042A145 /* LinkScanResultVM.swift in Sources */,
 				F2F90B152F032B2B00319ACB /* Extension+Color.swift in Sources */,
 				F2F90B162F032B2B00319ACB /* Extension+Font.swift in Sources */,
 				F2F90B262F033AAF00319ACB /* PaywallSections.swift in Sources */,
@@ -979,6 +1155,19 @@
 			productName = ApphudSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F229E03A2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F229E03B2F0A9D210042A145 /* QRCodesDataBase.xcdatamodel */,
+			);
+			currentVersion = F229E03B2F0A9D210042A145 /* QRCodesDataBase.xcdatamodel */;
+			path = QRCodesDataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F2F238622F02BB5500625BDA /* Project object */;
 }
