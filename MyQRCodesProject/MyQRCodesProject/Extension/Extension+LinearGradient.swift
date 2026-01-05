@@ -20,6 +20,26 @@ extension LinearGradient {
         endPoint: .bottomTrailing
     )
     
+    static let appSuccessButton = LinearGradient(
+        colors: [
+            Color(hex: "#77C97E"),
+            Color(hex: "#77C97E")
+        ],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+    
+    static let appAccentWarning = LinearGradient(
+        colors: [
+            Color(hex: "#FFB86C"),
+            Color(hex: "#FFB86C")
+        ],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+    
+    
+    
     static let appOnbBg = LinearGradient(
         colors: [
             .init(hex: "#E8F7FF"),

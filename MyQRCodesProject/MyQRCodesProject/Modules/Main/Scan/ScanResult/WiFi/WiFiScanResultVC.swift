@@ -1,5 +1,5 @@
 //
-//  LinkScanResultVC.swift
+//  WiFiScanResultVC.swift
 //  MyQRCodesProject
 //
 //  Created by George Popkich on 4.01.26.
@@ -7,19 +7,18 @@
 
 import SwiftUI
 
-struct LinkScanResultVC: View {
+struct WiFiScanResultVC: View {
     
     private enum Const {
         static let title: String = "Scan Result"
-        static let actionButtonTitle: String = "Open Link"
+        static let actionButtonTitle: String = "Connect Wi-Fi"
     }
     
     @Environment(\.dismiss) private var dismiss
     
-    @StateObject private var vm: LinkScanResultVM
+    @StateObject private var vm: WiFiScanResultVM
 
-    
-    init(viewModel: LinkScanResultVM) {
+    init(viewModel: WiFiScanResultVM) {
         self._vm = StateObject(wrappedValue: viewModel)
     }
 
@@ -37,7 +36,8 @@ struct LinkScanResultVC: View {
                     VStack(spacing: 13) {
                         ResultActionButton(
                             title: Const.actionButtonTitle,
-                            icon: Image(.resultLink),
+                            icon: Image(systemName: "wifi"),
+                            fillGradient: .appNextButton,
                             didTap: { vm.actionButtonDidTap() }
                         )
                         
@@ -53,6 +53,7 @@ struct LinkScanResultVC: View {
                 .padding(.vertical, 21)
             }
             .background(.appTextBorder)
+            
             
         }
         .ignoresSafeArea(edges: .top)
@@ -72,7 +73,13 @@ struct LinkScanResultVC: View {
             .animation(.easeInOut(duration: 0.25), value: vm.showCopiedToast)
             .animation(.easeInOut(duration: 0.25), value: vm.showSavedToast)
         }
-  
+        .alert(isPresented: $vm.showConnectErrorAlert) {
+            Alert(
+                title: Text("Wi-Fi Error"),
+                message: Text(vm.connectErrorMessage ?? "Unknown error"),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
     
     private var header: some View {
@@ -119,12 +126,11 @@ struct LinkScanResultVC: View {
                     .frame(width: 48, height: 48)
                     
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Website URL")
+                    Text("Wi-Fi Network")
                         .inter(size: 15, color: .appTextSecondary)
-                    Text(vm.linkDTO.link)
+                    
+                    Text(vm.wifiDTO.ssid)
                         .inter(size: 17, style: .semiBold)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
                 }
                 
                 Spacer()
@@ -135,8 +141,14 @@ struct LinkScanResultVC: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Full Content")
                         .inter(size: 15, color: .appTextSecondary)
-                    Text(vm.linkDTO.link)
-                        .inter(size: 17)
+
+                    infoRow(title: "SSID", value: vm.wifiDTO.ssid)
+                    infoRow(title: "Security", value: vm.wifiDTO.security ?? "Open")
+                    infoRow(title: "Hidden", value: vm.wifiDTO.isHidden ? "Yes" : "No")
+
+                    if let password = vm.wifiDTO.password {
+                        infoRow(title: "Password", value: password)
+                    }
                 }
                 .padding(16)
                 
@@ -154,7 +166,7 @@ struct LinkScanResultVC: View {
                 VStack(alignment: .leading) {
                     Text("Scanned")
                         .inter(size: 13, color: .appTextSecondary)
-                    Text(vm.linkDTO.createdAt.timeAgoString())
+                    Text(vm.wifiDTO.createdAt.timeAgoString())
                         .inter(size: 15, style: .medium)
                 }
                 Spacer()
@@ -162,7 +174,7 @@ struct LinkScanResultVC: View {
                 VStack(alignment: .leading) {
                     Text("Type")
                         .inter(size: 13, color: .appTextSecondary)
-                    Text("URL")
+                    Text("Wi-Fi")
                         .inter(size: 15, style: .medium)
                 }
             }
@@ -179,5 +191,15 @@ struct LinkScanResultVC: View {
         .frame(maxWidth: .infinity)
     }
     
+    @ViewBuilder
+    private func infoRow(title: String, value: String) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("\(title):")
+                .inter(size: 17, style: .semiBold)
+            Text(value)
+                .inter(size: 17)
+                .multilineTextAlignment(.leading)
+        }
+    }
     
 }

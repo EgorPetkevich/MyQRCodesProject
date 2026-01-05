@@ -8,6 +8,15 @@
 import Foundation
 import CoreData
 
+enum WiFiSecurityType {
+    case open
+    case wep
+    case wpa
+    case wpa2
+    case wpa3
+    case unknown
+}
+
 struct WiFiDTO: DTODescription, Identifiable {
     
     typealias MO = WiFiMO
@@ -18,6 +27,53 @@ struct WiFiDTO: DTODescription, Identifiable {
     var isHidden: Bool
     var password: String?
     var security: String?
+        
+    var securityType: WiFiSecurityType {
+        guard let security = security?.lowercased() else {
+            return .open
+        }
+
+        switch security {
+        case "wep":
+            return .wep
+        case "wpa":
+            return .wpa
+        case "wpa2":
+            return .wpa2
+        case "wpa3":
+            return .wpa3
+        case "open", "none":
+            return .open
+        default:
+            return .unknown
+        }
+    }
+    
+    var isWEP: Bool {
+        securityType == .wep
+    }
+    
+    var canConnect: Bool {
+        switch securityType {
+        case .open:
+            return true
+        case .wep, .wpa, .wpa2, .wpa3:
+            return password?.isEmpty == false
+        case .unknown:
+            return false
+        }
+    }
+    
+    var securityDisplayName: String {
+        switch securityType {
+        case .open: return "Open"
+        case .wep: return "WEP"
+        case .wpa: return "WPA"
+        case .wpa2: return "WPA2"
+        case .wpa3: return "WPA3"
+        case .unknown: return security ?? "Unknown"
+        }
+    }
     
     init(
         id: String,

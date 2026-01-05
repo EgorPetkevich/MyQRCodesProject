@@ -117,18 +117,13 @@ struct ScanVC: View {
         if let result = vm.result {
             switch result {
             case .link(let dto):
-                LinkScanResultVC(
-                    viewModel: LinkScanResultVM(linkDTO: dto, storage: LinkStorage())
-                )
-
-            case .wifi:
-                ContentView()
-
-            case .contact:
-                ContentView()
-
-            case .text:
-                ContentView()
+                LinkScanResultAssembler.make(dto: dto)
+            case .wifi(let dto):
+                WiFiScanResultAssembler.make(dto: dto)
+            case .contact(let dto):
+                ContactScanResultAssembler.make(dto: dto)
+            case .text(let dto):
+                TextScanResultAssembler.make(dto: dto)
             }
         } else {
             EmptyView()

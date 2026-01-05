@@ -1,5 +1,5 @@
 //
-//  LinkScanResultVC.swift
+//  TextScanResultVC.swift
 //  MyQRCodesProject
 //
 //  Created by George Popkich on 4.01.26.
@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct LinkScanResultVC: View {
+struct TextScanResultVC: View {
     
     private enum Const {
         static let title: String = "Scan Result"
-        static let actionButtonTitle: String = "Open Link"
+        static let actionButtonTitle: String = "Copy Text"
     }
     
     @Environment(\.dismiss) private var dismiss
     
-    @StateObject private var vm: LinkScanResultVM
+    @StateObject private var vm: TextScanResultVM
 
     
-    init(viewModel: LinkScanResultVM) {
+    init(viewModel: TextScanResultVM) {
         self._vm = StateObject(wrappedValue: viewModel)
     }
 
@@ -37,7 +37,8 @@ struct LinkScanResultVC: View {
                     VStack(spacing: 13) {
                         ResultActionButton(
                             title: Const.actionButtonTitle,
-                            icon: Image(.resultLink),
+                            icon: Image(systemName: "t.square"),
+                            fillGradient: .appAccentWarning,
                             didTap: { vm.actionButtonDidTap() }
                         )
                         
@@ -109,22 +110,19 @@ struct LinkScanResultVC: View {
     private var resultView: some View {
         VStack(spacing: 16) {
             HStack {
-                Image(.resultChain)
+                Image(systemName: "textformat.characters")
                     .size(23)
+                    .foregroundStyle(.appPrimaryBg)
                     .background(
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(.appAccentPrimary)
+                            .fill(.appAccentWarning)
                             .frame(width: 48, height: 48)
                     )
                     .frame(width: 48, height: 48)
                     
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Website URL")
-                        .inter(size: 15, color: .appTextSecondary)
-                    Text(vm.linkDTO.link)
+                    Text("Text")
                         .inter(size: 17, style: .semiBold)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
                 }
                 
                 Spacer()
@@ -135,7 +133,7 @@ struct LinkScanResultVC: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Full Content")
                         .inter(size: 15, color: .appTextSecondary)
-                    Text(vm.linkDTO.link)
+                    Text(vm.textDTO.text)
                         .inter(size: 17)
                 }
                 .padding(16)
@@ -154,7 +152,7 @@ struct LinkScanResultVC: View {
                 VStack(alignment: .leading) {
                     Text("Scanned")
                         .inter(size: 13, color: .appTextSecondary)
-                    Text(vm.linkDTO.createdAt.timeAgoString())
+                    Text(vm.textDTO.createdAt.timeAgoString())
                         .inter(size: 15, style: .medium)
                 }
                 Spacer()
@@ -162,7 +160,7 @@ struct LinkScanResultVC: View {
                 VStack(alignment: .leading) {
                     Text("Type")
                         .inter(size: 13, color: .appTextSecondary)
-                    Text("URL")
+                    Text("Text")
                         .inter(size: 15, style: .medium)
                 }
             }

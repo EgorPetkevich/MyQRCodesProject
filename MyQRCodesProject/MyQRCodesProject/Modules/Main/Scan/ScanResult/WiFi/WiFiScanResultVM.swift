@@ -1,0 +1,167 @@
+//
+//  WiFiScanResultVC.swift
+//  MyQRCodesProject
+//
+//  Created by George Popkich on 4.01.26.
+//
+
+import Foundation
+import UIKit
+import Combine
+import NetworkExtension
+import CoreLocation
+
+final class WiFiScanResultVM: NSObject, ObservableObject, CLLocationManagerDelegate {
+
+    @Published var showCopiedToast = false
+    @Published var showSavedToast = false
+    @Published var showConnectErrorAlert = false
+    @Published var connectErrorMessage: String?
+    
+    private let locationManager = CLLocationManager()
+
+    let wifiDTO: WiFiDTO
+    private let storage: WiFiStorage
+
+    private var bag = Set<AnyCancellable>()
+
+    init(wifiDTO: WiFiDTO, storage: WiFiStorage) {
+        self.wifiDTO = wifiDTO
+        self.storage = storage
+        super.init()
+        locationManager.delegate = self
+        requestLocationPermissionIfNeeded()
+    }
+    
+//    func actionButtonDidTap() {
+//        // Просто перекидываем в Wi-Fi настройки
+//        if let url = URL(string: "App-Prefs:root=WIFI") {
+//            if UIApplication.shared.canOpenURL(url) {
+//                UIApplication.shared.open(url)
+//            } else {
+//                connectErrorMessage = "Cannot open Wi-Fi settings on this device."
+//                showConnectErrorAlert = true
+//            }
+//        }
+//    }
+
+    func actionButtonDidTap() {
+        guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+              CLLocationManager.authorizationStatus() == .authorizedAlways else {
+            connectErrorMessage = "Location permission required to connect to Wi-Fi."
+            showConnectErrorAlert = true
+            return
+        }
+
+        guard wifiDTO.canConnect else {
+            connectErrorMessage = "Cannot connect to this Wi-Fi."
+            showConnectErrorAlert = true
+            return
+        }
+
+        let manager = NEHotspotConfigurationManager.shared
+        manager.removeConfiguration(forSSID: wifiDTO.ssid)
+
+        let configuration: NEHotspotConfiguration
+        if let password = wifiDTO.password {
+            configuration = NEHotspotConfiguration(
+                ssid: wifiDTO.ssid,
+                passphrase: password,
+                isWEP: wifiDTO.isWEP
+            )
+        } else {
+            configuration = NEHotspotConfiguration(ssid: wifiDTO.ssid)
+        }
+
+        configuration.hidden = wifiDTO.isHidden
+        configuration.joinOnce = true
+
+        manager.apply(configuration) { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error as NSError? {
+                    switch error.code {
+                    case NEHotspotConfigurationError.alreadyAssociated.rawValue:
+                        self?.connectErrorMessage = "Already connected to this network."
+                    case NEHotspotConfigurationError.userDenied.rawValue:
+                        self?.connectErrorMessage = "User denied connection."
+                    case NEHotspotConfigurationError.invalid.rawValue:
+                        self?.connectErrorMessage = "Invalid Wi-Fi configuration."
+                    default:
+                        self?.connectErrorMessage = "Wi-Fi connection failed. \(error.localizedDescription)"
+                    }
+                    self?.showConnectErrorAlert = true
+                }
+            }
+        }
+    }
+    
+    // MARK: - SAVE
+
+    func saveButtonDidTap() {
+        storage.save(dto: wifiDTO)
+            .catch { error in
+                print("[Storage]: \(error.localizedDescription)")
+                return Just(())
+            }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.showSavedToast = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self?.showSavedToast = false
+                }
+            }
+            .store(in: &bag)
+    }
+
+    // MARK: - COPY
+
+    func copyButtonDidTap() {
+        UIPasteboard.general.string = wifiDTO.ssid
+        showCopiedToast = true
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.showCopiedToast = false
+        }
+    }
+
+    // MARK: - SHARE (WiFi QR / text)
+
+    func shareDidTap() {
+        let text = """
+        Wi-Fi Network
+        SSID: \(wifiDTO.ssid)
+        Security: \(wifiDTO.securityDisplayName)
+        Password: \(wifiDTO.password ?? "—")
+        """
+
+        let activityVC = UIActivityViewController(
+            activityItems: [text],
+            applicationActivities: nil
+        )
+
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let root = scene.windows.first?.rootViewController {
+            root.present(activityVC, animated: true)
+        }
+    }
+    
+    func requestLocationPermissionIfNeeded() {
+        switch locationManager.authorizationStatus {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            connectErrorMessage = "Location permission required to connect to Wi-Fi."
+            showConnectErrorAlert = true
+        default:
+            break
+        }
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if manager.authorizationStatus == .authorizedWhenInUse ||
+           manager.authorizationStatus == .authorizedAlways {
+            // теперь можно вызывать apply(configuration)
+        }
+    }
+}
+

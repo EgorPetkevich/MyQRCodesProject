@@ -1,5 +1,5 @@
 //
-//  LinkScanResultVC.swift
+//  ContactScanResultVC.swift
 //  MyQRCodesProject
 //
 //  Created by George Popkich on 4.01.26.
@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct LinkScanResultVC: View {
+struct ContactScanResultVC: View {
     
     private enum Const {
         static let title: String = "Scan Result"
-        static let actionButtonTitle: String = "Open Link"
+        static let actionButtonTitle: String = "Call"
     }
     
     @Environment(\.dismiss) private var dismiss
     
-    @StateObject private var vm: LinkScanResultVM
+    @StateObject private var vm: ContactScanResultVM
 
     
-    init(viewModel: LinkScanResultVM) {
+    init(viewModel: ContactScanResultVM) {
         self._vm = StateObject(wrappedValue: viewModel)
     }
 
@@ -37,7 +37,8 @@ struct LinkScanResultVC: View {
                     VStack(spacing: 13) {
                         ResultActionButton(
                             title: Const.actionButtonTitle,
-                            icon: Image(.resultLink),
+                            icon: .init(systemName: "phone"),
+                            fillGradient: .appSuccessButton,
                             didTap: { vm.actionButtonDidTap() }
                         )
                         
@@ -56,6 +57,11 @@ struct LinkScanResultVC: View {
             
         }
         .ignoresSafeArea(edges: .top)
+        .sheet(isPresented: $vm.showShareSheet) {
+            if let url = vm.shareURL {
+                ActivityView(activityItems: [url])
+            }
+        }
         .overlay(alignment: .bottom) {
             VStack(spacing: 8) {
                 if vm.showCopiedToast {
@@ -109,22 +115,31 @@ struct LinkScanResultVC: View {
     private var resultView: some View {
         VStack(spacing: 16) {
             HStack {
-                Image(.resultChain)
+                Image(systemName: "phone")
                     .size(23)
+                    .foregroundStyle(.appPrimaryBg)
                     .background(
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(.appAccentPrimary)
+                            .fill(.appAccentSuccess)
                             .frame(width: 48, height: 48)
                     )
                     .frame(width: 48, height: 48)
                     
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Website URL")
+                    Text("Contact")
                         .inter(size: 15, color: .appTextSecondary)
-                    Text(vm.linkDTO.link)
-                        .inter(size: 17, style: .semiBold)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
+                    HStack() {
+                        Text("First Name:")
+                            .inter(size: 17, style: .semiBold)
+                        Text(vm.contactDTO.firstName ?? "")
+                            .inter(size: 17)
+                    }
+                    HStack() {
+                        Text("Last Name:")
+                            .inter(size: 17, style: .semiBold)
+                        Text(vm.contactDTO.lastName ?? "")
+                            .inter(size: 17)
+                    }
                 }
                 
                 Spacer()
@@ -133,11 +148,37 @@ struct LinkScanResultVC: View {
             Divider()
             HStack {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Full Content")
-                        .inter(size: 15, color: .appTextSecondary)
-                    Text(vm.linkDTO.link)
-                        .inter(size: 17)
-                }
+                       Text("Full Content")
+                           .inter(size: 15, color: .appTextSecondary)
+
+                       if let address = vm.contactDTO.address {
+                           infoRow(title: "Address", value: address)
+                       }
+
+                       if let phone = vm.contactDTO.phoneNumber {
+                           infoRow(title: "Phone", value: phone)
+                       }
+
+                       if let workPhone = vm.contactDTO.phoneNumberWork {
+                           infoRow(title: "Work Phone", value: workPhone)
+                       }
+
+                       if let email = vm.contactDTO.email {
+                           infoRow(title: "Email", value: email)
+                       }
+
+                       if let organization = vm.contactDTO.organization {
+                           infoRow(title: "Organization", value: organization)
+                       }
+
+                       if let jobTitle = vm.contactDTO.jobTitle {
+                           infoRow(title: "Job Title", value: jobTitle)
+                       }
+
+                       if let birthday = vm.contactDTO.birthday {
+                           infoRow(title: "Birthday", value: birthday.formattedBirthday())
+                       }
+                   }
                 .padding(16)
                 
                 Spacer()
@@ -154,7 +195,7 @@ struct LinkScanResultVC: View {
                 VStack(alignment: .leading) {
                     Text("Scanned")
                         .inter(size: 13, color: .appTextSecondary)
-                    Text(vm.linkDTO.createdAt.timeAgoString())
+                    Text(vm.contactDTO.createdAt.timeAgoString())
                         .inter(size: 15, style: .medium)
                 }
                 Spacer()
@@ -162,7 +203,7 @@ struct LinkScanResultVC: View {
                 VStack(alignment: .leading) {
                     Text("Type")
                         .inter(size: 13, color: .appTextSecondary)
-                    Text("URL")
+                    Text("vCard")
                         .inter(size: 15, style: .medium)
                 }
             }
@@ -179,5 +220,15 @@ struct LinkScanResultVC: View {
         .frame(maxWidth: .infinity)
     }
     
+    @ViewBuilder
+    private func infoRow(title: String, value: String) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("\(title):")
+                .inter(size: 17, style: .semiBold)
+            Text(value)
+                .inter(size: 17)
+                .multilineTextAlignment(.leading)
+        }
+    }
     
 }

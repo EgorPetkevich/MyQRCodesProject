@@ -1,5 +1,5 @@
 //
-//  LinkScanResultVC.swift
+//  TextScanResultVM.swift
 //  MyQRCodesProject
 //
 //  Created by George Popkich on 4.01.26.
@@ -9,30 +9,30 @@ import Foundation
 import UIKit
 import Combine
 
-final class LinkScanResultVM: ObservableObject {
+final class TextScanResultVM: ObservableObject {
     
     @Published var showSavedAlert: Bool = false
     
     @Published var showCopiedToast = false
     @Published var showSavedToast = false
     
-    var linkDTO: LinkDTO
+    var textDTO: TextDTO
     
-    private var storage: LinkStorage
+    private var storage: TextStorage
     
     private var bag = Set<AnyCancellable>()
     
-    init(linkDTO: LinkDTO, storage: LinkStorage) {
-        self.linkDTO = linkDTO
+    init(textDTO: TextDTO, storage: TextStorage) {
+        self.textDTO = textDTO
         self.storage = storage
     }
     
     func actionButtonDidTap() {
-        UIApplication.open(strUrl: linkDTO.link)
+        copyButtonDidTap()
     }
     
     func saveButtonDidTap() {
-        storage.save(dto: linkDTO)
+        storage.save(dto: textDTO)
             .catch { error in
                 print("[Storage]: \(error.localizedDescription)")
                 return Just(())
@@ -49,7 +49,7 @@ final class LinkScanResultVM: ObservableObject {
     }
 
     func copyButtonDidTap() {
-        UIPasteboard.general.string = linkDTO.link
+        UIPasteboard.general.string = textDTO.text
         showCopiedToast = true
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -58,9 +58,8 @@ final class LinkScanResultVM: ObservableObject {
     }
     
     func shareDidTap() {
-        guard let url = URL(string: linkDTO.link) else { return }
-       
-        let activityVC = UIActivityViewController(activityItems: [url],
+        let str = textDTO.text
+        let activityVC = UIActivityViewController(activityItems: [str],
                                                   applicationActivities: nil)
         if let scene =
             UIApplication.shared.connectedScenes.first as? UIWindowScene,

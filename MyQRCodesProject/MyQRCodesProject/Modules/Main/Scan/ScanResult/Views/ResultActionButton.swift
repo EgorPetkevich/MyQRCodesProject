@@ -15,14 +15,16 @@ struct ResultActionButton: View {
     }
     
     var title: String
-    var icon: ImageResource
+    var icon: Image
+    var fillGradient: LinearGradient = LinearGradient.appNextButton
     var didTap: (() -> Void)?
     
     var body: some View {
         Button(action: { didTap?() }) {
             HStack(spacing: 13) {
-                Image(icon)
+                icon
                     .size(18)
+                    .foregroundStyle(.appPrimaryBg)
                 
                 Text(title)
                     .inter(size: 17, style: .medium, color: .appPrimaryBg)
@@ -31,7 +33,7 @@ struct ResultActionButton: View {
             .frame(maxWidth: .infinity, minHeight: Const.height)
             .background(
                 RoundedRectangle(cornerRadius: Const.cornerRadius)
-                    .fill(LinearGradient.appNextButton)
+                    .fill(fillGradient)
                     .shadow(
                         color: .black.opacity(0.06),
                         radius: 16,
