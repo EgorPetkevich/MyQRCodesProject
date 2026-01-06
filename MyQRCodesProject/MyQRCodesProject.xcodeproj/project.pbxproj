@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F2061AC12F0D597B00C07C03 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2061AC02F0D597B00C07C03 /* KeyboardObserver.swift */; };
+		F2061AC52F0D7F2A00C07C03 /* QrCodePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2061AC42F0D7F2A00C07C03 /* QrCodePreviewVC.swift */; };
+		F2061AC72F0D7F2F00C07C03 /* CreatedQrPreviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2061AC62F0D7F2F00C07C03 /* CreatedQrPreviewVM.swift */; };
+		F2061ACA2F0D7FA800C07C03 /* QrCodePrevBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2061AC92F0D7FA800C07C03 /* QrCodePrevBottomControls.swift */; };
+		F2061ACC2F0D807A00C07C03 /* TheQrCodeIsReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2061ACB2F0D807A00C07C03 /* TheQrCodeIsReadyView.swift */; };
+		F2061ACE2F0D841E00C07C03 /* CreatedQrPreviewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2061ACD2F0D841E00C07C03 /* CreatedQrPreviewAssembler.swift */; };
 		F229E03C2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F229E03A2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld */; };
 		F229E03F2F0A9E1E0042A145 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E03D2F0A9E1E0042A145 /* Description.swift */; };
 		F229E0432F0A9F2C0042A145 /* LinkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E0422F0A9F2C0042A145 /* LinkDTO.swift */; };
@@ -31,7 +36,6 @@
 		F229E07B2F0AE13C0042A145 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07A2F0AE13C0042A145 /* Extension+Date.swift */; };
 		F229E07D2F0AE1F50042A145 /* ResultActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */; };
 		F229E07F2F0AE3120042A145 /* ResultBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */; };
-		F23E71F02F0D01DD00A8804E /* QRCodePayloadConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E71EF2F0D01DC00A8804E /* QRCodePayloadConvertible.swift */; };
 		F23E71F22F0D024C00A8804E /* DefaultQRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E71F12F0D024C00A8804E /* DefaultQRCodeGenerator.swift */; };
 		F23E71F42F0D02E300A8804E /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E71F32F0D02E300A8804E /* DocumentManager.swift */; };
 		F23E71F82F0D093E00A8804E /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E71F72F0D093E00A8804E /* CreateVC.swift */; };
@@ -126,6 +130,11 @@
 
 /* Begin PBXFileReference section */
 		F2061AC02F0D597B00C07C03 /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		F2061AC42F0D7F2A00C07C03 /* QrCodePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodePreviewVC.swift; sourceTree = "<group>"; };
+		F2061AC62F0D7F2F00C07C03 /* CreatedQrPreviewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedQrPreviewVM.swift; sourceTree = "<group>"; };
+		F2061AC92F0D7FA800C07C03 /* QrCodePrevBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodePrevBottomControls.swift; sourceTree = "<group>"; };
+		F2061ACB2F0D807A00C07C03 /* TheQrCodeIsReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheQrCodeIsReadyView.swift; sourceTree = "<group>"; };
+		F2061ACD2F0D841E00C07C03 /* CreatedQrPreviewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedQrPreviewAssembler.swift; sourceTree = "<group>"; };
 		F229E03B2F0A9D210042A145 /* QRCodesDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QRCodesDataBase.xcdatamodel; sourceTree = "<group>"; };
 		F229E03D2F0A9E1E0042A145 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		F229E0422F0A9F2C0042A145 /* LinkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDTO.swift; sourceTree = "<group>"; };
@@ -149,7 +158,6 @@
 		F229E07A2F0AE13C0042A145 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultActionButton.swift; sourceTree = "<group>"; };
 		F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomControls.swift; sourceTree = "<group>"; };
-		F23E71EF2F0D01DC00A8804E /* QRCodePayloadConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodePayloadConvertible.swift; sourceTree = "<group>"; };
 		F23E71F12F0D024C00A8804E /* DefaultQRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQRCodeGenerator.swift; sourceTree = "<group>"; };
 		F23E71F32F0D02E300A8804E /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		F23E71F72F0D093E00A8804E /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
@@ -259,16 +267,29 @@
 			isa = PBXGroup;
 			children = (
 				F23E71F52F0D092400A8804E /* CreateScreen */,
-				F2061AC32F0D7BE700C07C03 /* CreateResult */,
+				F2061AC32F0D7BE700C07C03 /* CreatedQrPreview */,
 			);
 			path = Create;
 			sourceTree = "<group>";
 		};
-		F2061AC32F0D7BE700C07C03 /* CreateResult */ = {
+		F2061AC32F0D7BE700C07C03 /* CreatedQrPreview */ = {
 			isa = PBXGroup;
 			children = (
+				F2061AC82F0D7FA300C07C03 /* Container */,
+				F2061AC42F0D7F2A00C07C03 /* QrCodePreviewVC.swift */,
+				F2061AC62F0D7F2F00C07C03 /* CreatedQrPreviewVM.swift */,
+				F2061ACD2F0D841E00C07C03 /* CreatedQrPreviewAssembler.swift */,
 			);
-			path = CreateResult;
+			path = CreatedQrPreview;
+			sourceTree = "<group>";
+		};
+		F2061AC82F0D7FA300C07C03 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				F2061ACB2F0D807A00C07C03 /* TheQrCodeIsReadyView.swift */,
+				F2061AC92F0D7FA800C07C03 /* QrCodePrevBottomControls.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		F229E0382F0A96360042A145 /* ScanResult */ = {
@@ -298,7 +319,6 @@
 		F229E03E2F0A9E1E0042A145 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F23E71EF2F0D01DC00A8804E /* QRCodePayloadConvertible.swift */,
 				F229E03D2F0A9E1E0042A145 /* Description.swift */,
 			);
 			path = Protocols;
@@ -987,6 +1007,7 @@
 				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
 				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
 				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
+				F2061AC72F0D7F2F00C07C03 /* CreatedQrPreviewVM.swift in Sources */,
 				F229E0702F0AB9B00042A145 /* TextDTO.swift in Sources */,
 				F229E0432F0A9F2C0042A145 /* LinkDTO.swift in Sources */,
 				F24A842B2F0976B80033FEEA /* HomeRecentActiviryRow.swift in Sources */,
@@ -1013,7 +1034,10 @@
 				F24A84222F096C1D0033FEEA /* HomeCardsAdapter.swift in Sources */,
 				F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */,
 				F2B3EEE22F0C2568009CFE87 /* ToastView.swift in Sources */,
+				F2061ACA2F0D7FA800C07C03 /* QrCodePrevBottomControls.swift in Sources */,
+				F2061ACC2F0D807A00C07C03 /* TheQrCodeIsReadyView.swift in Sources */,
 				F229E06C2F0AB64C0042A145 /* LinkStorage.swift in Sources */,
+				F2061ACE2F0D841E00C07C03 /* CreatedQrPreviewAssembler.swift in Sources */,
 				F229E03C2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld in Sources */,
 				F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */,
 				F24A843F2F0996160033FEEA /* DefaultTextProcessor.swift in Sources */,
@@ -1034,7 +1058,6 @@
 				F23E71F22F0D024C00A8804E /* DefaultQRCodeGenerator.swift in Sources */,
 				F229E05B2F0AAF2E0042A145 /* FetchDescriptor+MO.swift in Sources */,
 				F229E0792F0AD9F70042A145 /* SuccessfulScanView.swift in Sources */,
-				F23E71F02F0D01DD00A8804E /* QRCodePayloadConvertible.swift in Sources */,
 				F229E05C2F0AAF2E0042A145 /* Storage+Error.swift in Sources */,
 				F229E0512F0AAE650042A145 /* BaseStorage.swift in Sources */,
 				F24A83FE2F0961BF0033FEEA /* HomeVC.swift in Sources */,
@@ -1077,6 +1100,7 @@
 				F2061AC12F0D597B00C07C03 /* KeyboardObserver.swift in Sources */,
 				F2B3EEE52F0C2D01009CFE87 /* WiFiScanResultAssembler.swift in Sources */,
 				F23E72002F0D10AC00A8804E /* CreateQRFormView.swift in Sources */,
+				F2061AC52F0D7F2A00C07C03 /* QrCodePreviewVC.swift in Sources */,
 				F2F90B162F032B2B00319ACB /* Extension+Font.swift in Sources */,
 				F23E720B2F0D126D00A8804E /* CreateAssembler.swift in Sources */,
 				F2F90B262F033AAF00319ACB /* PaywallSections.swift in Sources */,

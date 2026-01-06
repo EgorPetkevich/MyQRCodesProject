@@ -73,6 +73,11 @@ struct TextScanResultVC: View {
             .animation(.easeInOut(duration: 0.25), value: vm.showCopiedToast)
             .animation(.easeInOut(duration: 0.25), value: vm.showSavedToast)
         }
+        .sheet(isPresented: $vm.showShareSheet) {
+            if !vm.shareItems.isEmpty {
+                ActivityView(activityItems: vm.shareItems)
+            }
+        }
   
     }
     

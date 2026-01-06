@@ -15,6 +15,9 @@ struct LinkDTO: DTODescription, Identifiable {
     var id: String
     var link: String
     var createdAt: Date
+    var qrPayload: String {
+        link
+    }
     
     init(id: String, link: String, createdAt: Date){
         self.id = id
@@ -40,8 +43,3 @@ struct LinkDTO: DTODescription, Identifiable {
     }
 }
 
-extension LinkDTO: QRCodePayloadConvertible {
-    var qrPayload: String {
-        link
-    }
-}

@@ -40,6 +40,13 @@ struct CreateVC: View {
         .sheet(isPresented: $showImagePicker) {
             PhotoPicker(image: $selectedImage)
         }
+        .fullScreenCover(isPresented: $vm.showResult) {
+            if let dto = vm.createdDTO {
+                AnyView(CreatedQrPreviewAssembler.make(dto: dto))
+            } else {
+                AnyView(EmptyView())
+            }
+        }
     }
     
     private var scrollContent: some View {

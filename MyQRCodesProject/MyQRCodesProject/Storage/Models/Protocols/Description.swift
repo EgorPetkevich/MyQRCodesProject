@@ -21,6 +21,7 @@ protocol DTODescription: Identifiable {
     
     var id: String { get set }
     var createdAt: Date { get set }
+    var qrPayload: String { get }
 
     func createMO(context: NSManagedObjectContext) -> MO?
 }

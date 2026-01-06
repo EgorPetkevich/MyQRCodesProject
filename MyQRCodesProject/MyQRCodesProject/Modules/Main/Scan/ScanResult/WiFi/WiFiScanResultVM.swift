@@ -17,6 +17,8 @@ final class WiFiScanResultVM: NSObject, ObservableObject, CLLocationManagerDeleg
     @Published var showSavedToast = false
     @Published var showConnectErrorAlert = false
     @Published var connectErrorMessage: String?
+    @Published var showShareSheet = false
+    @Published var shareItems: [Any] = []
     
     private let locationManager = CLLocationManager()
 
@@ -132,7 +134,7 @@ final class WiFiScanResultVM: NSObject, ObservableObject, CLLocationManagerDeleg
     }
     
     private func generateQrAndSave() {
-        guard let qrImage = qrGenerator.generate(from: wifiDTO) else {
+        guard let qrImage = qrGenerator.generate(from: wifiDTO.qrPayload) else {
             print("[QR]: Failed to generate image")
             return
         }
@@ -161,15 +163,8 @@ final class WiFiScanResultVM: NSObject, ObservableObject, CLLocationManagerDeleg
         Password: \(wifiDTO.password ?? "—")
         """
 
-        let activityVC = UIActivityViewController(
-            activityItems: [text],
-            applicationActivities: nil
-        )
-
-        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let root = scene.windows.first?.rootViewController {
-            root.present(activityVC, animated: true)
-        }
+        shareItems = [text]
+        showShareSheet = !shareItems.isEmpty
     }
     
     func requestLocationPermissionIfNeeded() {

@@ -15,6 +15,9 @@ struct TextDTO: DTODescription, Identifiable {
     var id: String
     var text: String
     var createdAt: Date
+    var qrPayload: String {
+        text
+    }
     
     init(id: String, text: String, createdAt: Date){
         self.id = id
@@ -37,11 +40,5 @@ struct TextDTO: DTODescription, Identifiable {
         let mo = TextMO(context: context)
         mo.apply(dto: self)
         return mo
-    }
-}
-
-extension TextDTO: QRCodePayloadConvertible {
-    var qrPayload: String {
-        text
     }
 }

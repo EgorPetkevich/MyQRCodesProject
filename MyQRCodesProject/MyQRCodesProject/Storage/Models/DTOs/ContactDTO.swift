@@ -83,7 +83,8 @@ struct ContactDTO: DTODescription, Identifiable {
     }
 }
 
-extension ContactDTO: QRCodePayloadConvertible {
+extension ContactDTO {
+    
     var qrPayload: String {
         var lines: [String] = []
         

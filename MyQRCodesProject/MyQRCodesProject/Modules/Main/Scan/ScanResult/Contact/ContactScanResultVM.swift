@@ -74,7 +74,7 @@ final class ContactScanResultVM: ObservableObject {
     }
     
     private func generateQrAndSave() {
-        guard let qrImage = qrGenerator.generate(from: contactDTO) else {
+        guard let qrImage = qrGenerator.generate(from: contactDTO.qrPayload) else {
             print("[QR]: Failed to generate image")
             return
         }
@@ -92,7 +92,7 @@ final class ContactScanResultVM: ObservableObject {
     }
     
     func shareDidTap() {
-        let vCard = makeVCard(from: contactDTO)
+        let vCard = qrGenerator.makeVCard(from: contactDTO)
 
         let url = FileManager.default.temporaryDirectory
             .appendingPathComponent("contact.vcf")
@@ -107,51 +107,6 @@ final class ContactScanResultVM: ObservableObject {
         } catch {
             print("Failed to share:", error)
         }
-    }
-    
-    private func makeVCard(from dto: ContactDTO) -> String {
-        var vCard = """
-        BEGIN:VCARD
-        VERSION:3.0
-        """
-        
-        if let firstName = dto.firstName,
-           let lastName = dto.lastName {
-            vCard += "\nN:\(lastName);\(firstName);;;"
-            vCard += "\nFN:\(firstName) \(lastName)"
-        }
-        
-        if let phone = dto.phoneNumber {
-            vCard += "\nTEL;TYPE=CELL:\(phone)"
-        }
-        
-        if let workPhone = dto.phoneNumberWork {
-            vCard += "\nTEL;TYPE=WORK:\(workPhone)"
-        }
-        
-        if let email = dto.email {
-            vCard += "\nEMAIL:\(email)"
-        }
-        
-        if let organization = dto.organization {
-            vCard += "\nORG:\(organization)"
-        }
-        
-        if let jobTitle = dto.jobTitle {
-            vCard += "\nTITLE:\(jobTitle)"
-        }
-        
-        if let address = dto.address {
-            vCard += "\nADR;TYPE=HOME:;;\(address);;;;;"
-        }
-        
-        if let birthday = dto.birthday {
-            vCard += "\nBDAY:\(birthday)"
-        }
-        
-        vCard += "\nEND:VCARD"
-        
-        return vCard
     }
     
 }

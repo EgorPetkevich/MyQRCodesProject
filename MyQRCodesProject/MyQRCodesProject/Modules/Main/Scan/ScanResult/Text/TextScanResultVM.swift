@@ -15,6 +15,8 @@ final class TextScanResultVM: ObservableObject {
     
     @Published var showCopiedToast = false
     @Published var showSavedToast = false
+    @Published var showShareSheet = false
+    @Published var shareItems: [Any] = []
     
     var textDTO: TextDTO
     
@@ -65,7 +67,7 @@ final class TextScanResultVM: ObservableObject {
     }
     
     private func generateQrAndSave() {
-        guard let qrImage = qrGenerator.generate(from: textDTO) else {
+        guard let qrImage = qrGenerator.generate(from: textDTO.qrPayload) else {
             print("[QR]: Failed to generate image")
             return
         }
@@ -83,14 +85,8 @@ final class TextScanResultVM: ObservableObject {
     }
     
     func shareDidTap() {
-        let str = textDTO.text
-        let activityVC = UIActivityViewController(activityItems: [str],
-                                                  applicationActivities: nil)
-        if let scene =
-            UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let root = scene.windows.first?.rootViewController {
-            root.present(activityVC, animated: true)
-        }
+        shareItems = [textDTO.text]
+        showShareSheet = !shareItems.isEmpty
     }
     
 }

@@ -15,6 +15,8 @@ final class LinkScanResultVM: ObservableObject {
     
     @Published var showCopiedToast = false
     @Published var showSavedToast = false
+    @Published var showShareSheet = false
+    @Published var shareItems: [Any] = []
     
     var linkDTO: LinkDTO
     
@@ -65,7 +67,7 @@ final class LinkScanResultVM: ObservableObject {
     }
     
     private func generateQrAndSave() {
-        guard let qrImage = qrGenerator.generate(from: linkDTO) else {
+        guard let qrImage = qrGenerator.generate(from: linkDTO.qrPayload) else {
             print("[QR]: Failed to generate image")
             return
         }
@@ -84,14 +86,8 @@ final class LinkScanResultVM: ObservableObject {
     
     func shareDidTap() {
         guard let url = URL(string: linkDTO.link) else { return }
-       
-        let activityVC = UIActivityViewController(activityItems: [url],
-                                                  applicationActivities: nil)
-        if let scene =
-            UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let root = scene.windows.first?.rootViewController {
-            root.present(activityVC, animated: true)
-        }
+        shareItems = [url]
+        showShareSheet = !shareItems.isEmpty
     }
     
 }

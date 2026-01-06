@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import Combine
 
 final class CreateVM: ObservableObject {
 
     @Published var selectedType: QRContentType = .url
-
+    @Published var showResult: Bool = false
+    @Published var createdDTO: (any DTODescription)?
+    
     // URL
     @Published var urlText: String = ""
 
@@ -35,8 +38,22 @@ final class CreateVM: ObservableObject {
     @Published var errorContact: String?
     @Published var errorWifi: String?
     
-    @Published var createdDTO: (any DTODescription)?
-
+    private var bag: Set<AnyCancellable> = []
+    
+    init() {
+        bind()
+    }
+    
+    private func bind() {
+        $createdDTO
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] dto in
+                guard let _ = dto else { return }
+                self?.showResult = true
+            }
+            .store(in: &bag)
+    }
+    
 
     func generateButtonDidTap() {
         clearErrors()

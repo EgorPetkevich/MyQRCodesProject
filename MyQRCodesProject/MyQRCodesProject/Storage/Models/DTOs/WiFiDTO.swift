@@ -112,7 +112,7 @@ struct WiFiDTO: DTODescription, Identifiable {
     }
 }
 
-extension WiFiDTO: QRCodePayloadConvertible {
+extension WiFiDTO  {
     var qrPayload: String {
         let type: String = {
             switch securityType {

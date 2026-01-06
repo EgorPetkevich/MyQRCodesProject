@@ -80,6 +80,11 @@ struct WiFiScanResultVC: View {
                 dismissButton: .default(Text("OK"))
             )
         }
+        .sheet(isPresented: $vm.showShareSheet) {
+            if !vm.shareItems.isEmpty {
+                ActivityView(activityItems: vm.shareItems)
+            }
+        }
     }
     
     private var header: some View {
