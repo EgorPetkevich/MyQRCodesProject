@@ -22,12 +22,22 @@ final class WiFiScanResultVM: NSObject, ObservableObject, CLLocationManagerDeleg
 
     let wifiDTO: WiFiDTO
     private let storage: WiFiStorage
+    
+    private let qrGenerator: QRCodeGeneratorProtocol
+    private let documentManager: DocumentManagerProtocol
 
     private var bag = Set<AnyCancellable>()
 
-    init(wifiDTO: WiFiDTO, storage: WiFiStorage) {
+    init(
+        wifiDTO: WiFiDTO,
+        storage: WiFiStorage,
+        qrGenerator: QRCodeGeneratorProtocol,
+        documentManager: DocumentManagerProtocol
+    ) {
         self.wifiDTO = wifiDTO
         self.storage = storage
+        self.qrGenerator = qrGenerator
+        self.documentManager = documentManager
         super.init()
         locationManager.delegate = self
         requestLocationPermissionIfNeeded()
@@ -99,18 +109,35 @@ final class WiFiScanResultVM: NSObject, ObservableObject, CLLocationManagerDeleg
 
     func saveButtonDidTap() {
         storage.save(dto: wifiDTO)
-            .catch { error in
-                print("[Storage]: \(error.localizedDescription)")
-                return Just(())
-            }
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.showSavedToast = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self?.showSavedToast = false
+            .sink(
+                receiveCompletion: { completion in
+                    if case let .failure(error) = completion {
+                        print("[Storage]: \(error.localizedDescription)")
+                    }
+                },
+                receiveValue: { [weak self] in
+                    guard let self else { return }
+                    
+                    self.generateQrAndSave()
+                    self.showSavedToast = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        self.showSavedToast = false
+                    }
+                    
                 }
-            }
+            )
             .store(in: &bag)
+    }
+    
+    private func generateQrAndSave() {
+        guard let qrImage = qrGenerator.generate(from: wifiDTO) else {
+            print("[QR]: Failed to generate image")
+            return
+        }
+
+        documentManager.saveQr(image: qrImage, with: wifiDTO.id)
     }
 
     // MARK: - COPY

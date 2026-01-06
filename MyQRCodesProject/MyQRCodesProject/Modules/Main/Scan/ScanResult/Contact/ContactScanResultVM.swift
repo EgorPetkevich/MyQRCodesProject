@@ -22,12 +22,21 @@ final class ContactScanResultVM: ObservableObject {
     var contactDTO: ContactDTO
     
     private var storage: ContactStorage
+    private let qrGenerator: QRCodeGeneratorProtocol
+    private let documentManager: DocumentManagerProtocol
     
     private var bag = Set<AnyCancellable>()
     
-    init(contactDTO: ContactDTO, storage: ContactStorage) {
+    init(
+        contactDTO: ContactDTO,
+        storage: ContactStorage,
+        qrGenerator: QRCodeGeneratorProtocol,
+        documentManager: DocumentManagerProtocol
+    ) {
         self.contactDTO = contactDTO
         self.storage = storage
+        self.qrGenerator = qrGenerator
+        self.documentManager = documentManager
     }
     
     func actionButtonDidTap() {
@@ -42,19 +51,35 @@ final class ContactScanResultVM: ObservableObject {
     
     func saveButtonDidTap() {
         storage.save(dto: contactDTO)
-            .catch { error in
-                print("[Storage]: \(error.localizedDescription)")
-                return Just(())
-            }
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.showSavedToast = true
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self?.showSavedToast = false
+            .sink(
+                receiveCompletion: { completion in
+                    if case let .failure(error) = completion {
+                        print("[Storage]: \(error.localizedDescription)")
+                    }
+                },
+                receiveValue: { [weak self] in
+                    guard let self else { return }
+                    
+                    self.generateQrAndSave()
+                    self.showSavedToast = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        self.showSavedToast = false
+                    }
+                    
                 }
-            }
+            )
             .store(in: &bag)
+    }
+    
+    private func generateQrAndSave() {
+        guard let qrImage = qrGenerator.generate(from: contactDTO) else {
+            print("[QR]: Failed to generate image")
+            return
+        }
+
+        documentManager.saveQr(image: qrImage, with: contactDTO.id)
     }
     
     func copyButtonDidTap() {

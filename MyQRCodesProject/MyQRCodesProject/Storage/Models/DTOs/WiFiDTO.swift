@@ -111,3 +111,22 @@ struct WiFiDTO: DTODescription, Identifiable {
         return mo
     }
 }
+
+extension WiFiDTO: QRCodePayloadConvertible {
+    var qrPayload: String {
+        let type: String = {
+            switch securityType {
+            case .wep: return "WEP"
+            case .wpa, .wpa2, .wpa3: return "WPA"
+            case .open: return "nopass"
+            case .unknown: return "nopass"
+            }
+        }()
+        
+        let ssidPart = "S:\(ssid);"
+        let passPart = password.map { "P:\($0);" } ?? ""
+        let hiddenPart = "H:\(isHidden ? "true" : "false");"
+        
+        return "WIFI:T:\(type);\(ssidPart)\(passPart)\(hiddenPart);;"
+    }
+}

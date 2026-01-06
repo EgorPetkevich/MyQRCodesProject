@@ -39,3 +39,9 @@ struct LinkDTO: DTODescription, Identifiable {
         return mo
     }
 }
+
+extension LinkDTO: QRCodePayloadConvertible {
+    var qrPayload: String {
+        link
+    }
+}

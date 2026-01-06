@@ -14,7 +14,9 @@ final class LinkScanResultAssembler {
     static func make(dto: LinkDTO) -> some View {
         let vm = LinkScanResultVM(
             linkDTO: dto,
-            storage: LinkStorage()
+            storage: LinkStorage(),
+            qrGenerator: DefaultQRCodeGenerator(),
+            documentManager: DocumentManager.instance
         )
         let vc = LinkScanResultVC(viewModel: vm)
         return vc

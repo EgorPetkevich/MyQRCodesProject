@@ -39,3 +39,9 @@ struct TextDTO: DTODescription, Identifiable {
         return mo
     }
 }
+
+extension TextDTO: QRCodePayloadConvertible {
+    var qrPayload: String {
+        text
+    }
+}

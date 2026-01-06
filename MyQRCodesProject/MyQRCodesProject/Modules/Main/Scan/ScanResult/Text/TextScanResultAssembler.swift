@@ -14,7 +14,9 @@ final class TextScanResultAssembler {
     static func make(dto: TextDTO) -> some View {
         let vm = TextScanResultVM(
             textDTO: dto,
-            storage: TextStorage()
+            storage: TextStorage(),
+            qrGenerator: DefaultQRCodeGenerator(),
+            documentManager: DocumentManager.instance
         )
         let vc = TextScanResultVC(viewModel: vm)
         return vc

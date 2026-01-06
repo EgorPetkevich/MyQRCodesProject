@@ -14,7 +14,9 @@ final class ContactScanResultAssembler {
     static func make(dto: ContactDTO) -> some View {
         let vm = ContactScanResultVM(
             contactDTO: dto,
-            storage: ContactStorage()
+            storage: ContactStorage(),
+            qrGenerator: DefaultQRCodeGenerator(),
+            documentManager: DocumentManager.instance
         )
         let vc = ContactScanResultVC(viewModel: vm)
         return vc

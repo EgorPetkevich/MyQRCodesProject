@@ -19,12 +19,21 @@ final class TextScanResultVM: ObservableObject {
     var textDTO: TextDTO
     
     private var storage: TextStorage
+    private let qrGenerator: QRCodeGeneratorProtocol
+    private let documentManager: DocumentManagerProtocol
     
     private var bag = Set<AnyCancellable>()
     
-    init(textDTO: TextDTO, storage: TextStorage) {
+    init(
+        textDTO: TextDTO,
+        storage: TextStorage,
+        qrGenerator: QRCodeGeneratorProtocol,
+        documentManager: DocumentManagerProtocol
+    ) {
         self.textDTO = textDTO
         self.storage = storage
+        self.qrGenerator = qrGenerator
+        self.documentManager = documentManager
     }
     
     func actionButtonDidTap() {
@@ -33,19 +42,35 @@ final class TextScanResultVM: ObservableObject {
     
     func saveButtonDidTap() {
         storage.save(dto: textDTO)
-            .catch { error in
-                print("[Storage]: \(error.localizedDescription)")
-                return Just(())
-            }
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.showSavedToast = true
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self?.showSavedToast = false
+            .sink(
+                receiveCompletion: { completion in
+                    if case let .failure(error) = completion {
+                        print("[Storage]: \(error.localizedDescription)")
+                    }
+                },
+                receiveValue: { [weak self] in
+                    guard let self else { return }
+                    
+                    self.generateQrAndSave()
+                    self.showSavedToast = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        self.showSavedToast = false
+                    }
+                    
                 }
-            }
+            )
             .store(in: &bag)
+    }
+    
+    private func generateQrAndSave() {
+        guard let qrImage = qrGenerator.generate(from: textDTO) else {
+            print("[QR]: Failed to generate image")
+            return
+        }
+
+        documentManager.saveQr(image: qrImage, with: textDTO.id)
     }
 
     func copyButtonDidTap() {

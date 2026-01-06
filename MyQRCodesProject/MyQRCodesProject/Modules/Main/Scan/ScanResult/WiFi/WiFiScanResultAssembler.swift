@@ -14,7 +14,9 @@ final class WiFiScanResultAssembler {
     static func make(dto: WiFiDTO) -> some View {
         let vm = WiFiScanResultVM(
             wifiDTO: dto,
-            storage: WiFiStorage()
+            storage: WiFiStorage(),
+            qrGenerator: DefaultQRCodeGenerator(),
+            documentManager: DocumentManager.instance
         )
         let vc = WiFiScanResultVC(viewModel: vm)
         return vc

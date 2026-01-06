@@ -83,3 +83,51 @@ struct ContactDTO: DTODescription, Identifiable {
     }
 }
 
+extension ContactDTO: QRCodePayloadConvertible {
+    var qrPayload: String {
+        var lines: [String] = []
+        
+        lines.append("BEGIN:VCARD")
+        lines.append("VERSION:3.0")
+        
+        let fullName = [firstName, lastName].compactMap { $0 }.joined(separator: " ")
+        lines.append("FN:\(fullName)")
+        lines.append("N:\(lastName ?? "");\(firstName ?? "");;;")
+        
+        if let organization {
+            lines.append("ORG:\(organization)")
+        }
+        
+        if let jobTitle {
+            lines.append("TITLE:\(jobTitle)")
+        }
+        
+        if let phoneNumber {
+            lines.append("TEL;TYPE=CELL:\(phoneNumber)")
+        }
+        
+        if let phoneNumberWork {
+            lines.append("TEL;TYPE=WORK:\(phoneNumberWork)")
+        }
+        
+        if let email {
+            lines.append("EMAIL:\(email)")
+        }
+        
+        if let website {
+            lines.append("URL:\(website)")
+        }
+        
+        if let address {
+            lines.append("ADR:;;\(address);;;;")
+        }
+        
+        if let birthday {
+            lines.append("BDAY:\(birthday)")
+        }
+        
+        lines.append("END:VCARD")
+        
+        return lines.joined(separator: "\n")
+    }
+}

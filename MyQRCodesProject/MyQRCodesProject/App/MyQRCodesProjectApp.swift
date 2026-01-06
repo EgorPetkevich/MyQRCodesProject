@@ -46,6 +46,7 @@ struct MyQRCodesProjectApp: App {
     }
     
     init() {
+        createQRCodeImagesDirectoryIfNeeded()
         //FIXME: uncomment the line below
 //        Apphud.start(apiKey: Constants.apphudKey)
     }
@@ -65,7 +66,7 @@ struct MyQRCodesProjectApp: App {
         TabBarVC()
     }
     
-    func initializeApphud() {
+    private func initializeApphud() {
         guard
             !apphudService.hasActiveSubscription()
         else { return configLoaded = true }
@@ -73,7 +74,7 @@ struct MyQRCodesProjectApp: App {
         loadPaywall(for: .main)
     }
     
-    func loadPaywall(for id: PaywallType) {
+    private func loadPaywall(for id: PaywallType) {
         guard !isLoadingPaywall else { return }
         isLoadingPaywall = true
 
@@ -89,6 +90,13 @@ struct MyQRCodesProjectApp: App {
         }
     }
     
+    private func createQRCodeImagesDirectoryIfNeeded() {
+        if !UDManager.get(.createQrCodeImagesDirectory) {
+            DocumentManager.createDirectory(name: .qrImages)
+            DocumentManager.createDirectory(name: .bgImages)
+            UDManager.set(.createQrCodeImagesDirectory, value: true)
+        }
+    }
     
 }
 
