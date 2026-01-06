@@ -21,14 +21,9 @@ struct TabBarVC: View {
         ZStack {
             Group {
                 switch tabBarState.selection {
-                case .home:
-                    HomeVC(viewModel: HomeVM())
-                case .scan:
-                    ScanVC(viewModel:
-                            ScanVM(cameraManger: CameraManager(), qrCodeManager: QrCodeManager())
-                    )
-                case .create:
-                    ContentView()
+                case .home:   HomeAssembler.make()
+                case .scan:   ScanAssembler.make()
+                case .create: CreateAssembler.make()
                 case .myQrCodes:
                     ContentView()
                 case .history:

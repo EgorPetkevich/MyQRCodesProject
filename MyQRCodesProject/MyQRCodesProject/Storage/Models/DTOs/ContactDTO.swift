@@ -28,17 +28,17 @@ struct ContactDTO: DTODescription, Identifiable {
     
     init(id: String,
          createdAt: Date,
-         address: String?,
-         birthday: String?,
-         email: String?,
-         firstName: String?,
-         lastName: String?,
-         jobTitle: String?,
-         organization: String?,
-         phoneNumber: String?,
-         phoneNumberWork: String?,
-         prefix: String?,
-         website: String?
+         address: String? = nil,
+         birthday: String? = nil,
+         email: String? = nil,
+         firstName: String? = nil,
+         lastName: String? = nil,
+         jobTitle: String? = nil,
+         organization: String? = nil,
+         phoneNumber: String? = nil,
+         phoneNumberWork: String? = nil,
+         prefix: String? = nil,
+         website: String? = nil
     ) {
         self.id = id
         self.createdAt = createdAt
