@@ -16,6 +16,7 @@ extension LinkMO: MODescription {
         }
         self.id = linkDTO.id
         self.createdAt = linkDTO.createdAt
+        self.scanned = linkDTO.scanned
         self.link = linkDTO.link
     }
     

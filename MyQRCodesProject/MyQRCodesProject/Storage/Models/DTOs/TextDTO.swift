@@ -15,14 +15,16 @@ struct TextDTO: DTODescription, Identifiable {
     var id: String
     var text: String
     var createdAt: Date
+    var scanned: Bool
     var qrPayload: String {
         text
     }
     
-    init(id: String, text: String, createdAt: Date){
+    init(id: String, text: String, createdAt: Date, scanned: Bool){
         self.id = id
         self.text = text
         self.createdAt = createdAt
+        self.scanned = scanned
     }
     
     init?(mo: TextMO) {
@@ -34,6 +36,7 @@ struct TextDTO: DTODescription, Identifiable {
         self.id = id
         self.text = text
         self.createdAt = createdAt
+        self.scanned = mo.scanned
     }
     
     func createMO(context: NSManagedObjectContext) -> TextMO? {

@@ -43,5 +43,12 @@ extension Date {
         }
     }
     
+    var formattedLong: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "MMM d, yyyy"
+        return formatter.string(from: self)
+    }
+    
 }
 

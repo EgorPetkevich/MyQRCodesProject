@@ -17,6 +17,7 @@ extension ContactMO: MODescription {
         }
         self.id = contactDTO.id
         self.createdAt = contactDTO.createdAt
+        self.scanned = contactDTO.scanned
         self.address = contactDTO.address
         self.birthday = contactDTO.birthday
         self.email = contactDTO.email

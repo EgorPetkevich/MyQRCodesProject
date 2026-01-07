@@ -54,23 +54,23 @@ final class CreatedQrPreviewVM<DTO: DTODescription>: ObservableObject {
     }
     
     func shareDidTap() {
-           switch dto {
-           case let wifiDTO as WiFiDTO:
-               shareItems = [wifiText(from: wifiDTO)]
-           case let textDTO as TextDTO:
-               shareItems = [textDTO.text]
-           case let linkDTO as LinkDTO:
-               if let url = URL(string: linkDTO.link) {
-                   shareItems = [url]
-               }
-           case let contactDTO as ContactDTO:
-               shareContactDTO(contactDTO)
-           default:
-               return
-           }
-
-           showShareSheet = !shareItems.isEmpty
-       }
+        switch dto {
+        case let wifiDTO as WiFiDTO:
+            shareItems = [wifiText(from: wifiDTO)]
+        case let textDTO as TextDTO:
+            shareItems = [textDTO.text]
+        case let linkDTO as LinkDTO:
+            if let url = URL(string: linkDTO.link) {
+                shareItems = [url]
+            }
+        case let contactDTO as ContactDTO:
+            shareContactDTO(contactDTO)
+        default:
+            return
+        }
+        
+        showShareSheet = !shareItems.isEmpty
+    }
 
     
     func saveDidTap() {

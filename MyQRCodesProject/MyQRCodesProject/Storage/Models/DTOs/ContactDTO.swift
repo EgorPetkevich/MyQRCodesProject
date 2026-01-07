@@ -14,6 +14,7 @@ struct ContactDTO: DTODescription, Identifiable {
     
     var id: String
     var createdAt: Date
+    var scanned: Bool
     var address: String?
     var birthday: String?
     var email: String?
@@ -28,6 +29,7 @@ struct ContactDTO: DTODescription, Identifiable {
     
     init(id: String,
          createdAt: Date,
+         scanned: Bool,
          address: String? = nil,
          birthday: String? = nil,
          email: String? = nil,
@@ -42,6 +44,7 @@ struct ContactDTO: DTODescription, Identifiable {
     ) {
         self.id = id
         self.createdAt = createdAt
+        self.scanned = scanned
         self.address = address
         self.birthday = birthday
         self.email = email
@@ -63,6 +66,7 @@ struct ContactDTO: DTODescription, Identifiable {
         else { return nil }
         self.id = id
         self.createdAt = createdAt
+        self.scanned = mo.scanned
         self.address = mo.address
         self.birthday = mo.birthday
         self.email = mo.email

@@ -13,16 +13,19 @@
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="phoneNumberWork" optional="YES" attributeType="String"/>
         <attribute name="prefix" optional="YES" attributeType="String"/>
+        <attribute name="scanned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="website" optional="YES" attributeType="String"/>
     </entity>
     <entity name="LinkMO" representedClassName="LinkMO" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="scanned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="TextMO" representedClassName="TextMO" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="scanned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="text" optional="YES" attributeType="String"/>
     </entity>
     <entity name="WiFiMO" representedClassName="WiFiMO" syncable="YES" codeGenerationType="class">
@@ -30,6 +33,7 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isHidden" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="scanned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="security" optional="YES" attributeType="String"/>
         <attribute name="ssid" optional="YES" attributeType="String"/>
     </entity>

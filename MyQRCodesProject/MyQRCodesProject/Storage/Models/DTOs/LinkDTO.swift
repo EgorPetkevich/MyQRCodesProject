@@ -15,14 +15,16 @@ struct LinkDTO: DTODescription, Identifiable {
     var id: String
     var link: String
     var createdAt: Date
+    var scanned: Bool
     var qrPayload: String {
         link
     }
     
-    init(id: String, link: String, createdAt: Date){
+    init(id: String, link: String, createdAt: Date, scanned: Bool){
         self.id = id
         self.link = link
         self.createdAt = createdAt
+        self.scanned = scanned
     }
     
     init?(mo: LinkMO) {
@@ -34,6 +36,7 @@ struct LinkDTO: DTODescription, Identifiable {
         self.id = id
         self.link = link
         self.createdAt = createdAt
+        self.scanned = mo.scanned
     }
     
     func createMO(context: NSManagedObjectContext) -> LinkMO? {

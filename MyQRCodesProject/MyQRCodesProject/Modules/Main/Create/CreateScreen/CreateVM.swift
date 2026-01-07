@@ -86,7 +86,8 @@ final class CreateVM: ObservableObject {
         let linkDTO = LinkDTO(
             id: UUID().uuidString,
             link: urlTextTrimmed,
-            createdAt: .now
+            createdAt: .now,
+            scanned: false
         )
         
         createdDTO = linkDTO
@@ -103,7 +104,8 @@ final class CreateVM: ObservableObject {
         let TextDTO = TextDTO(
             id: UUID().uuidString,
             text: plainText,
-            createdAt: .now
+            createdAt: .now,
+            scanned: false
         )
         createdDTO = TextDTO
     }
@@ -127,6 +129,7 @@ final class CreateVM: ObservableObject {
         let contactDTO = ContactDTO(
             id: UUID().uuidString,
             createdAt: .now,
+            scanned: false,
             email: emailTrimmed,
             firstName: firstNameTrimmed,
             lastName: lastNameTrimmed,
@@ -144,6 +147,7 @@ final class CreateVM: ObservableObject {
         let wifiDTO = WiFiDTO(
             id: UUID().uuidString,
             createdAt: .now,
+            scanned: false,
             ssid: ssid,
             isHidden: isHidden,
             password: password,

@@ -60,19 +60,19 @@ final class DocumentManager {
         let documentURL = FileManager.default.urls(for: .documentDirectory,
                                                    in: .userDomainMask).first!
         let userPhotosURL = documentURL.appendingPathComponent(directory.rawValue)
+        let imageURL = userPhotosURL.appendingPathComponent("\(path).jpg")
         
-        let userProfileURL = userPhotosURL.appendingPathComponent("\(path).jpg")
+        guard FileManager.default.fileExists(atPath: imageURL.path) else {
+            return nil
+        }
         
         do {
-            let data = try Data(contentsOf: userProfileURL)
-            if let image = UIImage(data: data) {
-                print("File contents: \(image)")
-                return image
-            }
+            let data = try Data(contentsOf: imageURL)
+            return UIImage(data: data)
         } catch {
-            print("Error reading file: \(error)")
+            print("Error reading file at \(imageURL.path): \(error)")
+            return nil
         }
-        return nil
     }
 }
 

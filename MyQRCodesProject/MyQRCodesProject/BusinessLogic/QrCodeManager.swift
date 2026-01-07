@@ -64,6 +64,7 @@ final class QrCodeManager {
         let wifiDTO = WiFiDTO(
             id: id,
             createdAt: .now,
+            scanned: true,
             ssid: wifi.ssid,
             isHidden: wifi.isHidden,
             password: wifi.password,
@@ -80,6 +81,7 @@ final class QrCodeManager {
         let contactDTO = ContactDTO(
             id: id,
             createdAt: .now,
+            scanned: true,
             address: vCard.address,
             birthday: vCard.birthday,
             email: vCard.email,
@@ -104,7 +106,8 @@ final class QrCodeManager {
         let linkDTO = LinkDTO(
             id: id,
             link: originalString,
-            createdAt: .now
+            createdAt: .now,
+            scanned: true
         )
         completion(.success(linkDTO))
     }
@@ -117,7 +120,8 @@ final class QrCodeManager {
         let textDTO = TextDTO(
             id: id,
             text: text,
-            createdAt: .now
+            createdAt: .now,
+            scanned: true
         )
         completion(.success(textDTO))
     }

@@ -24,8 +24,7 @@ struct TabBarVC: View {
                 case .home:   HomeAssembler.make()
                 case .scan:   ScanAssembler.make()
                 case .create: CreateAssembler.make()
-                case .myQrCodes:
-                    ContentView()
+                case .myQrCodes: MyQrCodesAssembler.make()
                 case .history:
                     ContentView()
                         

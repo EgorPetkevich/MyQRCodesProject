@@ -24,4 +24,13 @@ extension String {
         return formatter.string(from: date)
     }
     
+    var tecItQRCodeBase: String? {
+        guard let url = URL(string: self) else { return nil }
+        var components = URLComponents()
+        components.scheme = url.scheme
+        components.host = url.host
+        components.path = url.path
+        return components.url?.absoluteString
+    }
+    
 }

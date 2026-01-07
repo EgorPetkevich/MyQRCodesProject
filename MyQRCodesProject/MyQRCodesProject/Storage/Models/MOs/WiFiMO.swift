@@ -16,6 +16,7 @@ extension WiFiMO: MODescription {
         }
         self.id = wifiDTO.id
         self.createdAt = wifiDTO.createdAt
+        self.scanned = wifiDTO.scanned
         self.ssid = wifiDTO.ssid
         self.isHidden = wifiDTO.isHidden
         self.password = wifiDTO.password

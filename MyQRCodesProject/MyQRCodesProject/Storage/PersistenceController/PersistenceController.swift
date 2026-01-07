@@ -11,6 +11,12 @@ final class PersistenceController {
     static let shared = PersistenceController()
 
     let container: NSPersistentContainer
+    
+    var mainContext: NSManagedObjectContext {
+        let context =  container.viewContext
+        context.automaticallyMergesChangesFromParent = true
+        return context
+    }
 
     private init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "QRCodesDataBase")

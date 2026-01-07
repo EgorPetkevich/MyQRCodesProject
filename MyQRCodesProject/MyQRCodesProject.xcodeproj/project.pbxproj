@@ -36,6 +36,15 @@
 		F229E07B2F0AE13C0042A145 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07A2F0AE13C0042A145 /* Extension+Date.swift */; };
 		F229E07D2F0AE1F50042A145 /* ResultActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */; };
 		F229E07F2F0AE3120042A145 /* ResultBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */; };
+		F22EEDFC2F0EA82600B1E60C /* MyQrCodesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFB2F0EA82600B1E60C /* MyQrCodesVC.swift */; };
+		F22EEDFE2F0EA82B00B1E60C /* MyQrCodesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFD2F0EA82B00B1E60C /* MyQrCodesVM.swift */; };
+		F22EEE002F0EA83100B1E60C /* MyQrCodesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFF2F0EA83100B1E60C /* MyQrCodesAssembler.swift */; };
+		F22EEE022F0EAA8800B1E60C /* FRCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEE012F0EAA8800B1E60C /* FRCManager.swift */; };
+		F22EEE0A2F0EB52600B1E60C /* QRCodesFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEE092F0EB52600B1E60C /* QRCodesFetchService.swift */; };
+		F22EEE0F2F0EBAF800B1E60C /* SortPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEE0E2F0EBAF800B1E60C /* SortPillView.swift */; };
+		F22EEE112F0EBD7600B1E60C /* MyQrCodesSortSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEE102F0EBD7600B1E60C /* MyQrCodesSortSection.swift */; };
+		F22EEE162F0EC64000B1E60C /* MyQrCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEE152F0EC64000B1E60C /* MyQrCardView.swift */; };
+		F22EEE1A2F0EF6DC00B1E60C /* OptionsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEE192F0EF6DC00B1E60C /* OptionsMenuView.swift */; };
 		F23E71F22F0D024C00A8804E /* DefaultQRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E71F12F0D024C00A8804E /* DefaultQRCodeGenerator.swift */; };
 		F23E71F42F0D02E300A8804E /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E71F32F0D02E300A8804E /* DocumentManager.swift */; };
 		F23E71F82F0D093E00A8804E /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E71F72F0D093E00A8804E /* CreateVC.swift */; };
@@ -158,6 +167,15 @@
 		F229E07A2F0AE13C0042A145 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultActionButton.swift; sourceTree = "<group>"; };
 		F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomControls.swift; sourceTree = "<group>"; };
+		F22EEDFB2F0EA82600B1E60C /* MyQrCodesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesVC.swift; sourceTree = "<group>"; };
+		F22EEDFD2F0EA82B00B1E60C /* MyQrCodesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesVM.swift; sourceTree = "<group>"; };
+		F22EEDFF2F0EA83100B1E60C /* MyQrCodesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesAssembler.swift; sourceTree = "<group>"; };
+		F22EEE012F0EAA8800B1E60C /* FRCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCManager.swift; sourceTree = "<group>"; };
+		F22EEE092F0EB52600B1E60C /* QRCodesFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodesFetchService.swift; sourceTree = "<group>"; };
+		F22EEE0E2F0EBAF800B1E60C /* SortPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPillView.swift; sourceTree = "<group>"; };
+		F22EEE102F0EBD7600B1E60C /* MyQrCodesSortSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesSortSection.swift; sourceTree = "<group>"; };
+		F22EEE152F0EC64000B1E60C /* MyQrCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCardView.swift; sourceTree = "<group>"; };
+		F22EEE192F0EF6DC00B1E60C /* OptionsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsMenuView.swift; sourceTree = "<group>"; };
 		F23E71F12F0D024C00A8804E /* DefaultQRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQRCodeGenerator.swift; sourceTree = "<group>"; };
 		F23E71F32F0D02E300A8804E /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		F23E71F72F0D093E00A8804E /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
@@ -371,6 +389,8 @@
 		F229E0532F0AAEBC0042A145 /* PersistenceController */ = {
 			isa = PBXGroup;
 			children = (
+				F22EEE092F0EB52600B1E60C /* QRCodesFetchService.swift */,
+				F22EEE012F0EAA8800B1E60C /* FRCManager.swift */,
 				F229E0522F0AAEBC0042A145 /* PersistenceController.swift */,
 			);
 			path = PersistenceController;
@@ -412,6 +432,68 @@
 				F229E0782F0AD9F70042A145 /* SuccessfulScanView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F22EEDFA2F0EA80F00B1E60C /* MyQrCodes */ = {
+			isa = PBXGroup;
+			children = (
+				F22EEE0B2F0EBACE00B1E60C /* Adapter */,
+				F22EEDFB2F0EA82600B1E60C /* MyQrCodesVC.swift */,
+				F22EEDFD2F0EA82B00B1E60C /* MyQrCodesVM.swift */,
+				F22EEDFF2F0EA83100B1E60C /* MyQrCodesAssembler.swift */,
+			);
+			path = MyQrCodes;
+			sourceTree = "<group>";
+		};
+		F22EEE0B2F0EBACE00B1E60C /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				F22EEE0C2F0EBAD800B1E60C /* SortSection */,
+				F22EEE132F0EC58C00B1E60C /* MyQrCodesSection */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		F22EEE0C2F0EBAD800B1E60C /* SortSection */ = {
+			isa = PBXGroup;
+			children = (
+				F22EEE0D2F0EBAE300B1E60C /* Pills */,
+				F22EEE102F0EBD7600B1E60C /* MyQrCodesSortSection.swift */,
+			);
+			path = SortSection;
+			sourceTree = "<group>";
+		};
+		F22EEE0D2F0EBAE300B1E60C /* Pills */ = {
+			isa = PBXGroup;
+			children = (
+				F22EEE0E2F0EBAF800B1E60C /* SortPillView.swift */,
+			);
+			path = Pills;
+			sourceTree = "<group>";
+		};
+		F22EEE132F0EC58C00B1E60C /* MyQrCodesSection */ = {
+			isa = PBXGroup;
+			children = (
+				F22EEE182F0EF6D400B1E60C /* Container */,
+				F22EEE142F0EC5FB00B1E60C /* Cards */,
+			);
+			path = MyQrCodesSection;
+			sourceTree = "<group>";
+		};
+		F22EEE142F0EC5FB00B1E60C /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				F22EEE152F0EC64000B1E60C /* MyQrCardView.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		F22EEE182F0EF6D400B1E60C /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				F22EEE192F0EF6DC00B1E60C /* OptionsMenuView.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		F23E71F52F0D092400A8804E /* CreateScreen */ = {
@@ -637,6 +719,7 @@
 		F2B897002F0596DF00574736 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F22EEDFA2F0EA80F00B1E60C /* MyQrCodes */,
 				F2061AC22F0D7BCB00C07C03 /* Create */,
 				F229E0712F0AC3300042A145 /* Scan */,
 				F24A83FC2F0961B30033FEEA /* Home */,
@@ -1004,6 +1087,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22EEDFC2F0EA82600B1E60C /* MyQrCodesVC.swift in Sources */,
 				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
 				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
 				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
@@ -1011,6 +1095,7 @@
 				F229E0702F0AB9B00042A145 /* TextDTO.swift in Sources */,
 				F229E0432F0A9F2C0042A145 /* LinkDTO.swift in Sources */,
 				F24A842B2F0976B80033FEEA /* HomeRecentActiviryRow.swift in Sources */,
+				F22EEE162F0EC64000B1E60C /* MyQrCardView.swift in Sources */,
 				F2B897052F05983200574736 /* TabItem.swift in Sources */,
 				F24A844D2F09A64D0033FEEA /* ScanBottomControls.swift in Sources */,
 				F24A84512F09B0C40033FEEA /* ScannerFrameView.swift in Sources */,
@@ -1018,7 +1103,9 @@
 				F229E04C2F0AACB50042A145 /* WiFiDTO.swift in Sources */,
 				F24A84532F09B6A50033FEEA /* PhotoPicker.swift in Sources */,
 				F2F90B052F032B2B00319ACB /* Constants.swift in Sources */,
+				F22EEE112F0EBD7600B1E60C /* MyQrCodesSortSection.swift in Sources */,
 				F2B3EEF02F0C3D22009CFE87 /* TextScanResultVC.swift in Sources */,
+				F22EEE0F2F0EBAF800B1E60C /* SortPillView.swift in Sources */,
 				F2B3EEDE2F0C1E39009CFE87 /* ContactScanAssembler.swift in Sources */,
 				F2B3EEE92F0C2D06009CFE87 /* WiFiScanResultVM.swift in Sources */,
 				F2B897032F05980B00574736 /* TabBarVC.swift in Sources */,
@@ -1030,6 +1117,7 @@
 				F23E71FD2F0D0CC100A8804E /* QRContentType.swift in Sources */,
 				F23E71FA2F0D094500A8804E /* CreateVM.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
+				F22EEE1A2F0EF6DC00B1E60C /* OptionsMenuView.swift in Sources */,
 				F229E07F2F0AE3120042A145 /* ResultBottomControls.swift in Sources */,
 				F24A84222F096C1D0033FEEA /* HomeCardsAdapter.swift in Sources */,
 				F2F90B282F033D7600319ACB /* PaywallDescriptionCard.swift in Sources */,
@@ -1085,6 +1173,7 @@
 				F24A84322F0990BD0033FEEA /* ScanVC.swift in Sources */,
 				F2F90B122F032B2B00319ACB /* ApphudService.swift in Sources */,
 				F2F90B132F032B2B00319ACB /* UDManager.swift in Sources */,
+				F22EEDFE2F0EA82B00B1E60C /* MyQrCodesVM.swift in Sources */,
 				F2B897072F05997A00574736 /* TabBarBackground.swift in Sources */,
 				F2B3EEF22F0C3D24009CFE87 /* TextScanResultVM.swift in Sources */,
 				F24A843B2F0994C70033FEEA /* CameraManager.swift in Sources */,
@@ -1097,6 +1186,7 @@
 				F229E0762F0AC4EE0042A145 /* LinkScanResultVM.swift in Sources */,
 				F2F90B152F032B2B00319ACB /* Extension+Color.swift in Sources */,
 				F23E71F82F0D093E00A8804E /* CreateVC.swift in Sources */,
+				F22EEE022F0EAA8800B1E60C /* FRCManager.swift in Sources */,
 				F2061AC12F0D597B00C07C03 /* KeyboardObserver.swift in Sources */,
 				F2B3EEE52F0C2D01009CFE87 /* WiFiScanResultAssembler.swift in Sources */,
 				F23E72002F0D10AC00A8804E /* CreateQRFormView.swift in Sources */,
@@ -1111,8 +1201,10 @@
 				F24A83FB2F08496A0033FEEA /* TrackingService.swift in Sources */,
 				F2F90B192F032B2B00319ACB /* Extension+View.swift in Sources */,
 				F2F90B1C2F032B3C00319ACB /* OnbFourthScreenVC.swift in Sources */,
+				F22EEE0A2F0EB52600B1E60C /* QRCodesFetchService.swift in Sources */,
 				F24A84072F0965970033FEEA /* RoundedRectangleAsBackgroundModifier.swift in Sources */,
 				F23E71F42F0D02E300A8804E /* DocumentManager.swift in Sources */,
+				F22EEE002F0EA83100B1E60C /* MyQrCodesAssembler.swift in Sources */,
 				F2F90B1A2F032B2B00319ACB /* ContentView.swift in Sources */,
 				F24A842D2F0976BF0033FEEA /* HomeRecentActivityAdapter.swift in Sources */,
 				F2B3EEE72F0C2D04009CFE87 /* WiFiScanResultVC.swift in Sources */,

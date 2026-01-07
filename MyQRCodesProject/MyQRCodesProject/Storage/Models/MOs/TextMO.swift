@@ -16,6 +16,7 @@ extension TextMO: MODescription {
         }
         self.id = textDTO.id
         self.createdAt = textDTO.createdAt
+        self.scanned = textDTO.scanned
         self.text = textDTO.text
     }
     

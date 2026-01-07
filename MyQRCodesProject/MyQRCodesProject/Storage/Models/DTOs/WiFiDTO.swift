@@ -8,6 +8,77 @@
 import Foundation
 import CoreData
 
+struct WiFiDTO: DTODescription, Identifiable {
+    
+    typealias MO = WiFiMO
+    
+    var id: String
+    var createdAt: Date
+    var scanned: Bool
+    var ssid: String
+    var isHidden: Bool
+    var password: String?
+    var security: String?
+    
+    init(
+        id: String,
+        createdAt: Date,
+        scanned: Bool,
+        ssid: String,
+        isHidden: Bool,
+        password: String?,
+        security: String?
+    ){
+        self.id = id
+        self.createdAt = createdAt
+        self.scanned = scanned
+        self.ssid = ssid
+        self.isHidden = isHidden
+        self.password = password
+        self.security = security
+    }
+    
+    init?(mo: WiFiMO) {
+        guard
+            let id = mo.id,
+            let createdAt = mo.createdAt,
+            let ssid = mo.ssid
+        else { return nil }
+        self.id = id
+        self.createdAt = createdAt
+        self.scanned = mo.scanned
+        self.ssid = ssid
+        self.isHidden = mo.isHidden
+        self.password = mo.password
+        self.security = mo.security
+    }
+    
+    func createMO(context: NSManagedObjectContext) -> WiFiMO? {
+        let mo = WiFiMO(context: context)
+        mo.apply(dto: self)
+        return mo
+    }
+}
+
+extension WiFiDTO  {
+    var qrPayload: String {
+        let type: String = {
+            switch securityType {
+            case .wep: return "WEP"
+            case .wpa, .wpa2, .wpa3: return "WPA"
+            case .open: return "nopass"
+            case .unknown: return "nopass"
+            }
+        }()
+        
+        let ssidPart = "S:\(ssid);"
+        let passPart = password.map { "P:\($0);" } ?? ""
+        let hiddenPart = "H:\(isHidden ? "true" : "false");"
+        
+        return "WIFI:T:\(type);\(ssidPart)\(passPart)\(hiddenPart);;"
+    }
+}
+
 enum WiFiSecurityType {
     case open
     case wep
@@ -17,17 +88,8 @@ enum WiFiSecurityType {
     case unknown
 }
 
-struct WiFiDTO: DTODescription, Identifiable {
+extension WiFiDTO {
     
-    typealias MO = WiFiMO
-    
-    var id: String
-    var createdAt: Date
-    var ssid: String
-    var isHidden: Bool
-    var password: String?
-    var security: String?
-        
     var securityType: WiFiSecurityType {
         guard let security = security?.lowercased() else {
             return .open
@@ -75,58 +137,4 @@ struct WiFiDTO: DTODescription, Identifiable {
         }
     }
     
-    init(
-        id: String,
-        createdAt: Date,
-        ssid: String,
-        isHidden: Bool,
-        password: String?,
-        security: String?
-    ){
-        self.id = id
-        self.createdAt = createdAt
-        self.ssid = ssid
-        self.isHidden = isHidden
-        self.password = password
-        self.security = security
-    }
-    
-    init?(mo: WiFiMO) {
-        guard
-            let id = mo.id,
-            let createdAt = mo.createdAt,
-            let ssid = mo.ssid
-        else { return nil }
-        self.id = id
-        self.createdAt = createdAt
-        self.ssid = ssid
-        self.isHidden = mo.isHidden
-        self.password = mo.password
-        self.security = mo.security
-    }
-    
-    func createMO(context: NSManagedObjectContext) -> WiFiMO? {
-        let mo = WiFiMO(context: context)
-        mo.apply(dto: self)
-        return mo
-    }
-}
-
-extension WiFiDTO  {
-    var qrPayload: String {
-        let type: String = {
-            switch securityType {
-            case .wep: return "WEP"
-            case .wpa, .wpa2, .wpa3: return "WPA"
-            case .open: return "nopass"
-            case .unknown: return "nopass"
-            }
-        }()
-        
-        let ssidPart = "S:\(ssid);"
-        let passPart = password.map { "P:\($0);" } ?? ""
-        let hiddenPart = "H:\(isHidden ? "true" : "false");"
-        
-        return "WIFI:T:\(type);\(ssidPart)\(passPart)\(hiddenPart);;"
-    }
 }
