@@ -10,6 +10,7 @@ import AppsFlyerLib
 import AppTrackingTransparency
 import AppMetricaCore
 import GoogleMobileAds
+import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -35,6 +36,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     @objc func didBecomeActiveNotification() {
         TrackingService.shared.requestATTAndStart()
         MobileAds.shared.start()
+        FirebaseApp.configure()
         if let reporterConfiguration = MutableReporterConfiguration(apiKey: Constants.appMetricaKey) {
             reporterConfiguration.areLogsEnabled = true
             AppMetrica.activateReporter(with: reporterConfiguration)

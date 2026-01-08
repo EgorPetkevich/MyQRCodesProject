@@ -8,6 +8,7 @@
 import Foundation
 import AppMetricaCore
 import AppsFlyerLib
+import FirebaseAnalytics
 
 protocol AnalyticsServiceProtocol {
     func track(_ event: AnalyticsEvent)
@@ -19,6 +20,9 @@ final class AnalyticsService: AnalyticsServiceProtocol {
 
     func track(_ event: AnalyticsEvent) {
 
+        // Firebase
+        Analytics.logEvent(event.name, parameters: event.parameters)
+        
         // AppMetrica
         guard let reporter = AppMetrica.reporter(for: Constants.appMetricaKey) else {
             print("REPORT ERROR: Failed to create AppMetrica reporter")
