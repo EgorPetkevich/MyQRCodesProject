@@ -62,25 +62,7 @@ final class WiFiScanResultVM: NSObject, ObservableObject, CLLocationManagerDeleg
         analytics.track(.showInterstitialAd)
     }
     
-//    func actionButtonDidTap() {
-//        // Просто перекидываем в Wi-Fi настройки
-//        if let url = URL(string: "App-Prefs:root=WIFI") {
-//            if UIApplication.shared.canOpenURL(url) {
-//                UIApplication.shared.open(url)
-//            } else {
-//                connectErrorMessage = "Cannot open Wi-Fi settings on this device."
-//                showConnectErrorAlert = true
-//            }
-//        }
-//    }
-
     func actionButtonDidTap() {
-        guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-              CLLocationManager.authorizationStatus() == .authorizedAlways else {
-            connectErrorMessage = "Location permission required to connect to Wi-Fi."
-            showConnectErrorAlert = true
-            return
-        }
 
         guard wifiDTO.canConnect else {
             connectErrorMessage = "Cannot connect to this Wi-Fi."

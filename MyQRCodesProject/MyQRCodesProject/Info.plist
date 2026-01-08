@@ -2,26 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
-	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
-	<dict>
-		<key>NEHotspotConfiguration</key>
-		<string>We need location to connect to Wi-Fi networks</string>
-	</dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We need location to connect to Wi-Fi networks</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need location to find and connect to Wi-Fi networks</string>
 	<key>AttributionCopyEndpoint</key>
 	<string>https://appsflyer-skadnetwork.com/</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>NSAdvertisingAttributionReportEndpoint</key>
 	<string>https://appsflyer-skadnetwork.com/</string>
 	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSExceptionDomains</key>
-		<dict/>
-	</dict>
+	<dict/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-VariableFont_opsz,wght.ttf</string>
