@@ -57,13 +57,13 @@ struct MyQRCodesProjectApp: App {
 //        if isLoadingPaywall || !configLoaded {
 //            LounchScreen()
 //        } else if onboardingPassed {
-//            TabBarVC()
+//            TabBarVC(apphudService: apphudService)
 //        } else {
 //            OnbFirstScreenVC()
 //                .withRouter(OnbRouter())
 //        }
         //FIXME: remove the line below
-        TabBarVC()
+        TabBarVC(apphudService: apphudService)
     }
     
     private func initializeApphud() {

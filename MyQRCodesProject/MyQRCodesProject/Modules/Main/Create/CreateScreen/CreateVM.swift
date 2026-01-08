@@ -13,6 +13,8 @@ final class CreateVM: ObservableObject {
     @Published var selectedType: QRContentType = .url
     @Published var showResult: Bool = false
     @Published var createdDTO: (any DTODescription)?
+    @Published var showImagePicker = false
+    @Published var showPaywall = false
     
     // URL
     @Published var urlText: String = ""
@@ -38,9 +40,13 @@ final class CreateVM: ObservableObject {
     @Published var errorContact: String?
     @Published var errorWifi: String?
     
+    
+    var apphudService: ApphudService
+    
     private var bag: Set<AnyCancellable> = []
     
-    init() {
+    init(apphudService: ApphudService) {
+        self.apphudService = apphudService
         bind()
     }
     
@@ -54,7 +60,14 @@ final class CreateVM: ObservableObject {
             .store(in: &bag)
     }
     
-
+    func designOptionsDidTap() {
+        if apphudService.hasActiveSubscription() {
+            showImagePicker = true
+        } else {
+            showPaywall = true
+        }   
+    }
+    
     func generateButtonDidTap() {
         clearErrors()
 

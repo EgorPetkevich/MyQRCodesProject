@@ -54,7 +54,8 @@ final class LinkScanResultVM: ObservableObject {
                 receiveValue: { [weak self] in
                     guard let self else { return }
                     
-                    self.generateQrAndSave()
+//                    self.generateQrAndSave()
+                    UDManager.appendResentId(linkDTO.id)
                     self.showSavedToast = true
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

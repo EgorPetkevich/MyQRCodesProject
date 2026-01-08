@@ -61,8 +61,9 @@ final class ContactScanResultVM: ObservableObject {
                 receiveValue: { [weak self] in
                     guard let self else { return }
                     
-                    self.generateQrAndSave()
+//                    self.generateQrAndSave()
                     self.showSavedToast = true
+                    UDManager.appendResentId(contactDTO.id)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.showSavedToast = false

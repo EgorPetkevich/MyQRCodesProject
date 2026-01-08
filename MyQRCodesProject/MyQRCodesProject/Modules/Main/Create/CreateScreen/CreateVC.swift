@@ -19,7 +19,8 @@ struct CreateVC: View {
     @FocusState private var focusedField: CreateField?
     @StateObject private var keyboard = KeyboardObserver()
     @State private var selectedImage: UIImage? = nil
-    @State private var showImagePicker = false
+   
+    @State private var showPaywall = false
     
     @StateObject private var vm: CreateVM
     
@@ -37,15 +38,18 @@ struct CreateVC: View {
         .onTapGesture {
             UIApplication.shared.hideKeyboard()
         }
-        .sheet(isPresented: $showImagePicker) {
+        .sheet(isPresented: $vm.showImagePicker) {
             PhotoPicker(image: $selectedImage)
         }
         .fullScreenCover(isPresented: $vm.showResult) {
             if let dto = vm.createdDTO {
-                AnyView(CreatedQrPreviewAssembler.make(dto: dto))
+                AnyView(CreatedQrPreviewAssembler.make(dto: dto, designImage: selectedImage))
             } else {
                 AnyView(EmptyView())
             }
+        }
+        .fullScreenCover(isPresented: $vm.showPaywall) {
+            PaywallVC(viewModel: PaywallViewModel(apphudService: vm.apphudService))
         }
     }
     
@@ -148,7 +152,8 @@ struct CreateVC: View {
                 .inter(size: 17, style: .semiBold)
             
             Button(action: {
-                showImagePicker = true
+                //MARK: Pro Feature
+                vm.designOptionsDidTap()
             }) {
                 
                 VStack {

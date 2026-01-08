@@ -62,8 +62,8 @@ struct MyQrCardView: View {
             .loadImage(from: .bgImages, with: dto.id) {
             Image(uiImage: image)
                 .resizable()
-                .scaledToFill()
-                .frame(maxWidth: .infinity, maxHeight: 96)
+                .scaledToFit()
+                .frame(maxHeight: 96)
         } else {
             ZStack {
                 RoundedRectangle(cornerRadius: 16)
@@ -160,7 +160,7 @@ struct MyQrCardView: View {
     private func textContent(_ dto: TextDTO) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                Text("Text")
+                Text("Text Message")
                     .inter(size: 15, style: .semiBold)
                 Spacer()
                 

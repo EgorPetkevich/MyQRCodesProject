@@ -21,4 +21,22 @@ final class UDManager {
         ud.bool(forKey: key.rawValue)
     }
     
+    static func appendResentId(_ id: String) {
+        var ids = ud.stringArray(forKey: AppStorageKeys.resentActivityIds.rawValue) ?? []
+        
+        ids.removeAll { $0 == id }
+    
+        ids.insert(id, at: 0)
+        
+        if ids.count > 10 {
+            ids = Array(ids.prefix(10))
+        }
+        
+        ud.set(ids, forKey: AppStorageKeys.resentActivityIds.rawValue)
+    }
+    
+    static func getResentIds() -> [String] {
+        ud.stringArray(forKey: AppStorageKeys.resentActivityIds.rawValue) ?? []
+    }
+    
 }

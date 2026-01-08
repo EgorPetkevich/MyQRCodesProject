@@ -10,6 +10,8 @@ import SwiftUI
 enum AppStorageKeys: String {
     case onboardingPassed
     case createQrCodeImagesDirectory
+    
+    case resentActivityIds
 }
 
 extension AppStorage where Value == Bool {

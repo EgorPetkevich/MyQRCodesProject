@@ -16,6 +16,8 @@ final class TabBarState {
 struct TabBarVC: View {
     
     @State private var tabBarState = TabBarState()
+    
+    var apphudService: ApphudService
 
     var body: some View {
         ZStack {
@@ -23,11 +25,9 @@ struct TabBarVC: View {
                 switch tabBarState.selection {
                 case .home:   HomeAssembler.make()
                 case .scan:   ScanAssembler.make()
-                case .create: CreateAssembler.make()
+                case .create: CreateAssembler.make(apphudService: apphudService)
                 case .myQrCodes: MyQrCodesAssembler.make()
-                case .history:
-                    ContentView()
-                        
+                case .history: HistoryAssembler.make()
                 }
             }
             .environment(tabBarState)

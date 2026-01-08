@@ -36,6 +36,12 @@
 		F229E07B2F0AE13C0042A145 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07A2F0AE13C0042A145 /* Extension+Date.swift */; };
 		F229E07D2F0AE1F50042A145 /* ResultActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */; };
 		F229E07F2F0AE3120042A145 /* ResultBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */; };
+		F22B70A02F0F4AA6007FC7D8 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B709F2F0F4AA6007FC7D8 /* HistoryVC.swift */; };
+		F22B70A22F0F4AAD007FC7D8 /* HistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B70A12F0F4AAD007FC7D8 /* HistoryVM.swift */; };
+		F22B70A42F0F4AB5007FC7D8 /* HistoryAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B70A32F0F4AB5007FC7D8 /* HistoryAssembler.swift */; };
+		F22B70A92F0F4B43007FC7D8 /* HistoryPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B70A82F0F4B43007FC7D8 /* HistoryPillView.swift */; };
+		F22B70AB2F0F4B63007FC7D8 /* HistorySortSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B70AA2F0F4B63007FC7D8 /* HistorySortSection.swift */; };
+		F22B70AF2F0F4D2B007FC7D8 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B70AE2F0F4D2B007FC7D8 /* HistoryRow.swift */; };
 		F22EEDFC2F0EA82600B1E60C /* MyQrCodesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFB2F0EA82600B1E60C /* MyQrCodesVC.swift */; };
 		F22EEDFE2F0EA82B00B1E60C /* MyQrCodesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFD2F0EA82B00B1E60C /* MyQrCodesVM.swift */; };
 		F22EEE002F0EA83100B1E60C /* MyQrCodesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFF2F0EA83100B1E60C /* MyQrCodesAssembler.swift */; };
@@ -167,6 +173,12 @@
 		F229E07A2F0AE13C0042A145 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		F229E07C2F0AE1F50042A145 /* ResultActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultActionButton.swift; sourceTree = "<group>"; };
 		F229E07E2F0AE3120042A145 /* ResultBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomControls.swift; sourceTree = "<group>"; };
+		F22B709F2F0F4AA6007FC7D8 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		F22B70A12F0F4AAD007FC7D8 /* HistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVM.swift; sourceTree = "<group>"; };
+		F22B70A32F0F4AB5007FC7D8 /* HistoryAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAssembler.swift; sourceTree = "<group>"; };
+		F22B70A82F0F4B43007FC7D8 /* HistoryPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPillView.swift; sourceTree = "<group>"; };
+		F22B70AA2F0F4B63007FC7D8 /* HistorySortSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySortSection.swift; sourceTree = "<group>"; };
+		F22B70AE2F0F4D2B007FC7D8 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		F22EEDFB2F0EA82600B1E60C /* MyQrCodesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesVC.swift; sourceTree = "<group>"; };
 		F22EEDFD2F0EA82B00B1E60C /* MyQrCodesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesVM.swift; sourceTree = "<group>"; };
 		F22EEDFF2F0EA83100B1E60C /* MyQrCodesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesAssembler.swift; sourceTree = "<group>"; };
@@ -432,6 +444,59 @@
 				F229E0782F0AD9F70042A145 /* SuccessfulScanView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F22B709E2F0F4A9D007FC7D8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				F22B70A52F0F4B0E007FC7D8 /* Adapter */,
+				F22B709F2F0F4AA6007FC7D8 /* HistoryVC.swift */,
+				F22B70A12F0F4AAD007FC7D8 /* HistoryVM.swift */,
+				F22B70A32F0F4AB5007FC7D8 /* HistoryAssembler.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		F22B70A52F0F4B0E007FC7D8 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				F22B70A62F0F4B18007FC7D8 /* SortSection */,
+				F22B70AC2F0F4D12007FC7D8 /* HistorySection */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		F22B70A62F0F4B18007FC7D8 /* SortSection */ = {
+			isa = PBXGroup;
+			children = (
+				F22B70AA2F0F4B63007FC7D8 /* HistorySortSection.swift */,
+				F22B70A72F0F4B20007FC7D8 /* Pillls */,
+			);
+			path = SortSection;
+			sourceTree = "<group>";
+		};
+		F22B70A72F0F4B20007FC7D8 /* Pillls */ = {
+			isa = PBXGroup;
+			children = (
+				F22B70A82F0F4B43007FC7D8 /* HistoryPillView.swift */,
+			);
+			path = Pillls;
+			sourceTree = "<group>";
+		};
+		F22B70AC2F0F4D12007FC7D8 /* HistorySection */ = {
+			isa = PBXGroup;
+			children = (
+				F22B70AD2F0F4D22007FC7D8 /* Rows */,
+			);
+			path = HistorySection;
+			sourceTree = "<group>";
+		};
+		F22B70AD2F0F4D22007FC7D8 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				F22B70AE2F0F4D2B007FC7D8 /* HistoryRow.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 		F22EEDFA2F0EA80F00B1E60C /* MyQrCodes */ = {
@@ -719,6 +784,7 @@
 		F2B897002F0596DF00574736 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F22B709E2F0F4A9D007FC7D8 /* History */,
 				F22EEDFA2F0EA80F00B1E60C /* MyQrCodes */,
 				F2061AC22F0D7BCB00C07C03 /* Create */,
 				F229E0712F0AC3300042A145 /* Scan */,
@@ -1088,6 +1154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F22EEDFC2F0EA82600B1E60C /* MyQrCodesVC.swift in Sources */,
+				F22B70A22F0F4AAD007FC7D8 /* HistoryVM.swift in Sources */,
+				F22B70A02F0F4AA6007FC7D8 /* HistoryVC.swift in Sources */,
 				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
 				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
 				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
@@ -1106,6 +1174,7 @@
 				F22EEE112F0EBD7600B1E60C /* MyQrCodesSortSection.swift in Sources */,
 				F2B3EEF02F0C3D22009CFE87 /* TextScanResultVC.swift in Sources */,
 				F22EEE0F2F0EBAF800B1E60C /* SortPillView.swift in Sources */,
+				F22B70AF2F0F4D2B007FC7D8 /* HistoryRow.swift in Sources */,
 				F2B3EEDE2F0C1E39009CFE87 /* ContactScanAssembler.swift in Sources */,
 				F2B3EEE92F0C2D06009CFE87 /* WiFiScanResultVM.swift in Sources */,
 				F2B897032F05980B00574736 /* TabBarVC.swift in Sources */,
@@ -1139,7 +1208,9 @@
 				F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */,
 				F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */,
 				F2B3EEF42F0C3DA2009CFE87 /* TextStorage.swift in Sources */,
+				F22B70A92F0F4B43007FC7D8 /* HistoryPillView.swift in Sources */,
 				F2B3EEEE2F0C3D20009CFE87 /* TextScanResultAssembler.swift in Sources */,
+				F22B70A42F0F4AB5007FC7D8 /* HistoryAssembler.swift in Sources */,
 				F229E0542F0AAEBC0042A145 /* PersistenceController.swift in Sources */,
 				F229E07D2F0AE1F50042A145 /* ResultActionButton.swift in Sources */,
 				F229E06A2F0AB6280042A145 /* ContactStorage.swift in Sources */,
@@ -1188,6 +1259,7 @@
 				F23E71F82F0D093E00A8804E /* CreateVC.swift in Sources */,
 				F22EEE022F0EAA8800B1E60C /* FRCManager.swift in Sources */,
 				F2061AC12F0D597B00C07C03 /* KeyboardObserver.swift in Sources */,
+				F22B70AB2F0F4B63007FC7D8 /* HistorySortSection.swift in Sources */,
 				F2B3EEE52F0C2D01009CFE87 /* WiFiScanResultAssembler.swift in Sources */,
 				F23E72002F0D10AC00A8804E /* CreateQRFormView.swift in Sources */,
 				F2061AC52F0D7F2A00C07C03 /* QrCodePreviewVC.swift in Sources */,

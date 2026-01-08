@@ -17,6 +17,7 @@ final class CreatedQrPreviewVM<DTO: DTODescription>: ObservableObject {
     @Published var shareItems: [Any] = []
     
     private let dto: DTO
+    private let designImage: UIImage?
     
     private let storage: BaseStorage<DTO>
     
@@ -27,11 +28,13 @@ final class CreatedQrPreviewVM<DTO: DTODescription>: ObservableObject {
 
     init(
         dto: DTO,
+        designImage: UIImage?,
         storage: BaseStorage<DTO>,
         qrGenerator: QRCodeGeneratorProtocol,
         documentManager: DocumentManagerProtocol
     ) {
         self.dto = dto
+        self.designImage = designImage
         self.storage = storage
         self.qrGenerator = qrGenerator
         self.documentManager = documentManager
@@ -85,7 +88,9 @@ final class CreatedQrPreviewVM<DTO: DTODescription>: ObservableObject {
                 receiveValue: { [weak self] in
                     guard let self else { return }
                     
-                    self.generateQrAndSave()
+//                    self.generateQrAndSave()
+                    UDManager.appendResentId(dto.id)
+                    self.saveDesignImage()
                     self.showSavedToast = true
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -95,6 +100,14 @@ final class CreatedQrPreviewVM<DTO: DTODescription>: ObservableObject {
                 }
             )
             .store(in: &bag)
+    }
+    
+    private func saveDesignImage() {
+        guard let designImage else {
+            print("[DesignImage]: Optional image is nil")
+            return
+        }
+        documentManager.saveBg(image: designImage, with: dto.id)
     }
     
     private func generateQrAndSave() {

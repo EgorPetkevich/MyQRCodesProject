@@ -50,5 +50,12 @@ extension Date {
         return formatter.string(from: self)
     }
     
+    var formattedTime: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "hh:mm aaa"
+        return formatter.string(from: self)
+    }
+    
 }
 

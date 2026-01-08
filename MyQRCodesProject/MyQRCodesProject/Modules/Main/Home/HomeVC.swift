@@ -34,6 +34,16 @@ struct HomeVC: View {
             .padding(.bottom, tabState.bottomSafeAreaInset)
         }
         .background(.appPrimaryBg)
+        .onAppear {
+            vm.onAppear()
+        }
+        .fullScreenCover(isPresented: $vm.showDetails) {
+            if let dto = vm.selectedDTO {
+                AnyView(CreatedQrPreviewAssembler.make(dto: dto))
+            } else {
+                AnyView(EmptyView())
+            }
+        }
     
     }
     
@@ -69,22 +79,13 @@ struct HomeVC: View {
     }
     
     private var resentActivity: some View {
-           HomeRecentActivityAdapter(
-            title: Const.recentActivityTitle,
-            getItems())
-        { model in
-                HomeRecentActiviryRow(model: model)
-            }
+        ForEach(vm.dtos, id: \.id) { dto in
+            HomeRecentActiviryRow(
+                dto: dto,
+                onTap: { vm.selectedDTO = dto }
+            )
+        }
     }
-    
-    //FIXME: remove test funcion
-    private func getItems() -> [RecentActivityModel] {
-        [
-            RecentActivityModel(icon: .homeFolder,
-                                bgIconColor: .appAccentPrimary,
-                                title: "Test",
-                                subtitle: "some time ago")
-        ]
-    }
+   
 }
 

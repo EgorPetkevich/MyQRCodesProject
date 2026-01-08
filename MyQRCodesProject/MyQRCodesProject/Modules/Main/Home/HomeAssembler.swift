@@ -13,7 +13,7 @@ final class HomeAssembler {
     private init() {}
     
     static func make() -> some View {
-        let vm = HomeVM()
+        let vm = HomeVM(storage: QRCodesFetchService())
         let vc = HomeVC(viewModel: vm)
         return vc
     }

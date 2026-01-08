@@ -54,7 +54,8 @@ final class TextScanResultVM: ObservableObject {
                 receiveValue: { [weak self] in
                     guard let self else { return }
                     
-                    self.generateQrAndSave()
+//                    self.generateQrAndSave()
+                    UDManager.appendResentId(textDTO.id)
                     self.showSavedToast = true
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

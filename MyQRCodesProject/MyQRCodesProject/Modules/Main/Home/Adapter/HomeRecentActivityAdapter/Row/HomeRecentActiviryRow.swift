@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct RecentActivityModel: Hashable {
-    var icon: ImageResource
-    var bgIconColor: ColorResource
+struct RecentActivityModel {
+    var icon: Image
+    var bgIconColor: Color
     var title: String
     var subtitle: String
 }
@@ -22,8 +22,12 @@ struct HomeRecentActiviryRow: View {
         static let rowHeight: CGFloat = 80
     }
     
-    var model: RecentActivityModel
+    var dto: any DTODescription
     var onTap: (() -> Void)?
+    
+    private var model: RecentActivityModel {
+        getRecentActivityModel(dto)
+    }
     
     var body: some View {
         Button(action: { onTap?() }) {
@@ -31,10 +35,11 @@ struct HomeRecentActiviryRow: View {
                 
                 ZStack {
                     Circle()
-                        .fill(Color(model.bgIconColor))
+                        .fill(model.bgIconColor)
                         .frame(width: Const.iconSize, height: Const.iconSize)
-                    Image(model.icon)
+                    model.icon
                         .size(12)
+                        .foregroundStyle(.appPrimaryBg)
                 }
                 
                 VStack(alignment: .leading) {
@@ -63,5 +68,37 @@ struct HomeRecentActiviryRow: View {
             )
             .setShadow(with: Const.cardRadius)
         }
+    }
+    
+    private func getRecentActivityModel(_ dto: any DTODescription) -> RecentActivityModel {
+        var icon = Image(.myqrcodesQr)
+        var bgIconColor: Color = .appAccentPrimary
+        let scannedTitle: String = dto.scanned ? "Scanned" : "Created"
+        var title: String = ""
+    
+        switch dto {
+            case is LinkDTO:
+            title = "\(scannedTitle) website link"
+        case is WiFiDTO:
+            title = "\(scannedTitle) WiFi QR"
+            icon = Image(.homePlus)
+            bgIconColor = .appAccentSuccess
+        case is ContactDTO:
+            title = "\(scannedTitle) contact VCard"
+            icon = Image(systemName: "phone")
+            bgIconColor = .appAccentSuccess
+        case is TextDTO:
+            title = "\(scannedTitle) text message"
+            icon = Image(systemName: "textformat")
+            bgIconColor = .appAccentWarning
+        default:
+            title = ""
+        }
+        
+        return  RecentActivityModel(icon: icon,
+                                    bgIconColor: bgIconColor,
+                                    title: title,
+                                    subtitle: dto.createdAt.timeAgoString())
+        
     }
 }

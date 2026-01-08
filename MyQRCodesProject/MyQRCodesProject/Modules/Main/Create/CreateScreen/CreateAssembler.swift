@@ -11,8 +11,8 @@ final class CreateAssembler {
     
     private init() {}
     
-    static func make() -> some View {
-        let vm = CreateVM()
+    static func make(apphudService: ApphudService) -> some View {
+        let vm = CreateVM(apphudService: apphudService)
         let vc = CreateVC(viewModel: vm)
         return vc
     }
