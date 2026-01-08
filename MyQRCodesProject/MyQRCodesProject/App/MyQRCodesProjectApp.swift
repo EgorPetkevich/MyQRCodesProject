@@ -10,17 +10,25 @@ import ApphudSDK
 
 @main
 struct MyQRCodesProjectApp: App {
-    //FIXME: uncomment the line below
-//    @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegate
+
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     
     @AppStorage(.onboardingPassed) private var onboardingPassed: Bool = false
+    
+    @Environment(\.scenePhase) private var scenePhase
     
     @State private var configLoaded = false
     @State private var isLoadingPaywall = false
     @State private var showErrorAlert = false
+    @State private var afterOnbording = false
+    @State private var wasInBackground = false
+    
+    @State private var showInAppPaywall = false
+    @State private var isPaywallVisible = false
     
     private let persistence = PersistenceController.shared
     private let apphudService: ApphudService = .instance
+    private let analyticsService = AnalyticsService()
     
     var body: some Scene {
         WindowGroup {
@@ -36,34 +44,59 @@ struct MyQRCodesProjectApp: App {
                 } message: {
                     Text(ErrorAlert.textMessage)
                 }
-                .onReceive(
-                    NotificationCenter.default
-                        .publisher(for: UIApplication.didBecomeActiveNotification)
-                ) { _ in
-                    
+                .fullScreenCover(
+                    isPresented: $showInAppPaywall,
+                    onDismiss: { isPaywallVisible = false }
+                ) {
+                    PaywallVC(viewModel: PaywallViewModel(apphudService: apphudService))
+                }
+                .onChange(of: scenePhase) { oldPhase, newPhase in
+                    switch newPhase {
+                    case .background:
+                        wasInBackground = true
+                    case .active:
+                        guard wasInBackground else { return }
+                        wasInBackground = false
+                        coverInAppPaywall()
+                    default:
+                        break
+                    }
+                }
+                .onChange(of: configLoaded) { oldValue, newValue in
+                    if newValue && !afterOnbording { coverInAppPaywall() }
+                }
+                .onChange(of: onboardingPassed) { _, newValue in
+                    if newValue {
+                        afterOnbording = true
+                        configLoaded = false
+                        loadInAppPaywall()
+                    }
                 }
         }
     }
     
     init() {
-        createQRCodeImagesDirectoryIfNeeded()
-        //FIXME: uncomment the line below
-//        Apphud.start(apiKey: Constants.apphudKey)
+        onFirstLaunch()
+        Apphud.start(apiKey: Constants.apphudKey)
     }
     
     @ViewBuilder
     private var contentView: some View {
-        //FIXME: uncomment the condition below
-//        if isLoadingPaywall || !configLoaded {
-//            LounchScreen()
-//        } else if onboardingPassed {
-//            TabBarVC(apphudService: apphudService)
-//        } else {
-//            OnbFirstScreenVC()
-//                .withRouter(OnbRouter())
-//        }
-        //FIXME: remove the line below
-        TabBarVC(apphudService: apphudService)
+        if isLoadingPaywall || !configLoaded {
+            LounchScreen()
+        } else if onboardingPassed {
+            TabBarVC(apphudService: apphudService)
+        } else {
+            OnbFirstScreenVC()
+                .withRouter(OnbRouter())
+        }
+    }
+    
+    private func onFirstLaunch() {
+        let isFirstLaunch = !UDManager.get(.didLaunchBefore)
+        createQRCodeImagesDirectoryIfNeeded()
+        UDManager.set(.didLaunchBefore, value: true)
+        analyticsService.track(.appLaunched(isFirstLaunch: isFirstLaunch))
     }
     
     private func initializeApphud() {
@@ -88,6 +121,37 @@ struct MyQRCodesProjectApp: App {
                 showErrorAlert = true
             }
         }
+    }
+    
+    private func loadInAppPaywall() {
+        if apphudService.hasActiveSubscription() {
+            configLoaded = true
+            return
+        }
+        
+        guard !isLoadingPaywall else { return }
+        isLoadingPaywall = true
+
+        Task {
+            defer { isLoadingPaywall = false }
+
+            let success = await apphudService.loadPaywallDataOrFalse(for: .main)
+            if success {
+                configLoaded = true
+            } else {
+                showErrorAlert = true
+            }
+        }
+    }
+    
+    private func coverInAppPaywall() {
+        guard configLoaded && onboardingPassed else { return }
+        guard !apphudService.hasActiveSubscription(),
+              !isPaywallVisible
+        else { return }
+        analyticsService.track(.paywallShown(id: PaywallType.main.rawValue))
+        isPaywallVisible = true
+        showInAppPaywall = true
     }
     
     private func createQRCodeImagesDirectoryIfNeeded() {

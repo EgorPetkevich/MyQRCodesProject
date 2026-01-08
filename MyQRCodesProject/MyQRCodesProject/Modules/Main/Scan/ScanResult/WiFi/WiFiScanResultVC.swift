@@ -15,6 +15,7 @@ struct WiFiScanResultVC: View {
     }
     
     @Environment(\.dismiss) private var dismiss
+    @Environment(TabBarState.self) private var tabBarState
     
     @StateObject private var vm: WiFiScanResultVM
 
@@ -50,13 +51,19 @@ struct WiFiScanResultVC: View {
                     
                 }
                 .padding(.horizontal, 24)
-                .padding(.vertical, 21)
+                .padding(.top, 21)
+                .padding(.bottom, tabBarState.bottomSafeAreaInset)
             }
             .background(.appTextBorder)
             
             
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .ignoresSafeArea(edges: .top)
+        .onAppear {
+            vm.onAppear()
+        }
         .overlay(alignment: .bottom) {
             VStack(spacing: 8) {
                 if vm.showCopiedToast {
@@ -69,7 +76,7 @@ struct WiFiScanResultVC: View {
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
-            .padding(.bottom, 32)
+            .padding(.bottom, tabBarState.bottomSafeAreaInset + 32)
             .animation(.easeInOut(duration: 0.25), value: vm.showCopiedToast)
             .animation(.easeInOut(duration: 0.25), value: vm.showSavedToast)
         }

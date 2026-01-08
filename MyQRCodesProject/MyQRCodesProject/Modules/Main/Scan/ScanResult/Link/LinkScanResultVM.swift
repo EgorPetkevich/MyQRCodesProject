@@ -19,23 +19,39 @@ final class LinkScanResultVM: ObservableObject {
     @Published var shareItems: [Any] = []
     
     var linkDTO: LinkDTO
+    private let showAds: Bool
     
     private var storage: LinkStorage
     private let qrGenerator: QRCodeGeneratorProtocol
     private let documentManager: DocumentManagerProtocol
+    private let analytics: AnalyticsServiceProtocol
+    private let adManagerService: AdManagerServiceProtocol
+    private let apphudService: ApphudService = .instance
     
     private var bag = Set<AnyCancellable>()
     
     init(
         linkDTO: LinkDTO,
+        showAds: Bool,
         storage: LinkStorage,
         qrGenerator: QRCodeGeneratorProtocol,
-        documentManager: DocumentManagerProtocol
+        documentManager: DocumentManagerProtocol,
+        analytics: AnalyticsServiceProtocol,
+        adManagerService: AdManagerServiceProtocol
     ) {
         self.linkDTO = linkDTO
+        self.showAds = showAds
         self.storage = storage
         self.qrGenerator = qrGenerator
         self.documentManager = documentManager
+        self.analytics = analytics
+        self.adManagerService = adManagerService
+    }
+    
+    func onAppear() {
+        guard !apphudService.hasActiveSubscription(), showAds else { return }
+        adManagerService.showInterstitialAd()
+        analytics.track(.showInterstitialAd)
     }
     
     func actionButtonDidTap() {
@@ -57,6 +73,7 @@ final class LinkScanResultVM: ObservableObject {
 //                    self.generateQrAndSave()
                     UDManager.appendResentId(linkDTO.id)
                     self.showSavedToast = true
+                    self.analytics.track(.qrCodeDidSaved(byId: linkDTO.id))
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.showSavedToast = false

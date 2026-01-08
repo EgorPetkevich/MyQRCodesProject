@@ -2,9 +2,11 @@
 //  AnalyticsService.swift
 //  MyQRCodesProject
 //
-//  Created by George Popkich on 2.01.26.
+//  Created by George Popkich on 8.01.26.
 //
 
+import Foundation
+import AppMetricaCore
 import AppsFlyerLib
 
 protocol AnalyticsServiceProtocol {
@@ -12,17 +14,23 @@ protocol AnalyticsServiceProtocol {
 }
 
 final class AnalyticsService: AnalyticsServiceProtocol {
-
+    
     static let shared = AnalyticsService()
-
-    private init() {}
 
     func track(_ event: AnalyticsEvent) {
 
-        // AppsFlyer
-        AppsFlyerLib.shared().logEvent(
-            event.name,
-            withValues: event.parameters
+        // AppMetrica
+        guard let reporter = AppMetrica.reporter(for: Constants.appMetricaKey) else {
+            print("REPORT ERROR: Failed to create AppMetrica reporter")
+            return
+        }
+        reporter.resumeSession()
+        reporter.reportEvent(
+            name: event.name,
+            parameters: event.parameters
         )
+        
+        // AppsFlyerLib
+        AppsFlyerLib.shared().logEvent(event.name, withValues: event.parameters)
     }
 }

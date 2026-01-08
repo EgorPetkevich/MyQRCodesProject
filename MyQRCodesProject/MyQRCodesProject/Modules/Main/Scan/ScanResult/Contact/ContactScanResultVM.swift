@@ -20,23 +20,39 @@ final class ContactScanResultVM: ObservableObject {
     @Published var showSavedToast = false
     
     var contactDTO: ContactDTO
+    private let showAds: Bool
     
     private var storage: ContactStorage
     private let qrGenerator: QRCodeGeneratorProtocol
     private let documentManager: DocumentManagerProtocol
+    private let analytics: AnalyticsServiceProtocol
+    private let adManagerService: AdManagerServiceProtocol
+    private let apphudService: ApphudService = .instance
     
     private var bag = Set<AnyCancellable>()
     
     init(
         contactDTO: ContactDTO,
+        showAds: Bool,
         storage: ContactStorage,
         qrGenerator: QRCodeGeneratorProtocol,
-        documentManager: DocumentManagerProtocol
+        documentManager: DocumentManagerProtocol,
+        analytics: AnalyticsServiceProtocol,
+        adManagerService: AdManagerServiceProtocol
     ) {
         self.contactDTO = contactDTO
+        self.showAds = showAds
         self.storage = storage
         self.qrGenerator = qrGenerator
         self.documentManager = documentManager
+        self.analytics = analytics
+        self.adManagerService = adManagerService
+    }
+    
+    func onAppear() {
+        guard !apphudService.hasActiveSubscription(), showAds else { return }
+        adManagerService.showInterstitialAd()
+        analytics.track(.showInterstitialAd)
     }
     
     func actionButtonDidTap() {
@@ -64,6 +80,7 @@ final class ContactScanResultVM: ObservableObject {
 //                    self.generateQrAndSave()
                     self.showSavedToast = true
                     UDManager.appendResentId(contactDTO.id)
+                    self.analytics.track(.qrCodeDidSaved(byId: contactDTO.id))
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.showSavedToast = false

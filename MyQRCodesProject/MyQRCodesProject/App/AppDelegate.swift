@@ -8,6 +8,8 @@
 import UIKit
 import AppsFlyerLib
 import AppTrackingTransparency
+import AppMetricaCore
+import GoogleMobileAds
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -15,7 +17,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
-        
         TrackingService.shared.setup()
         
         // SceneDelegate support
@@ -33,6 +34,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     // SceneDelegate support
     @objc func didBecomeActiveNotification() {
         TrackingService.shared.requestATTAndStart()
+        MobileAds.shared.start()
+        if let reporterConfiguration = MutableReporterConfiguration(apiKey: Constants.appMetricaKey) {
+            reporterConfiguration.areLogsEnabled = true
+            AppMetrica.activateReporter(with: reporterConfiguration)
+        }
     }
     
 }

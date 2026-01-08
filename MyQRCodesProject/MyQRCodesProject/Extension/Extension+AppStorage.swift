@@ -10,7 +10,7 @@ import SwiftUI
 enum AppStorageKeys: String {
     case onboardingPassed
     case createQrCodeImagesDirectory
-    
+    case didLaunchBefore
     case resentActivityIds
 }
 

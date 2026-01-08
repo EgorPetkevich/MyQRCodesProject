@@ -42,6 +42,17 @@
 		F22B70A92F0F4B43007FC7D8 /* HistoryPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B70A82F0F4B43007FC7D8 /* HistoryPillView.swift */; };
 		F22B70AB2F0F4B63007FC7D8 /* HistorySortSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B70AA2F0F4B63007FC7D8 /* HistorySortSection.swift */; };
 		F22B70AF2F0F4D2B007FC7D8 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B70AE2F0F4D2B007FC7D8 /* HistoryRow.swift */; };
+		F22B712B2F0F8449007FC7D8 /* AppMetricaCore in Frameworks */ = {isa = PBXBuildFile; productRef = F22B712A2F0F8449007FC7D8 /* AppMetricaCore */; };
+		F22B712E2F0F859A007FC7D8 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F22B712D2F0F859A007FC7D8 /* GoogleMobileAds */; };
+		F22B71312F0F869C007FC7D8 /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B71302F0F869C007FC7D8 /* AdService.swift */; };
+		F22B71342F0F8701007FC7D8 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B71332F0F8701007FC7D8 /* AnalyticsService.swift */; };
+		F22B71372F0F871B007FC7D8 /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B71362F0F871B007FC7D8 /* AnalyticsEvent.swift */; };
+		F22B71452F0FA667007FC7D8 /* PaywallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B71442F0FA667007FC7D8 /* PaywallType.swift */; };
+		F22B71472F0FA670007FC7D8 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B71462F0FA670007FC7D8 /* ProductType.swift */; };
+		F22B71492F0FA69A007FC7D8 /* PaywallProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B71482F0FA69A007FC7D8 /* PaywallProduct.swift */; };
+		F22B714C2F0FA6AD007FC7D8 /* ApphudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B714B2F0FA6AD007FC7D8 /* ApphudError.swift */; };
+		F22B714E2F0FA6C7007FC7D8 /* Extension+Sequnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B714D2F0FA6C7007FC7D8 /* Extension+Sequnce.swift */; };
+		F22B71502F0FA6E7007FC7D8 /* Extension+SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B714F2F0FA6E7007FC7D8 /* Extension+SKProduct.swift */; };
 		F22EEDFC2F0EA82600B1E60C /* MyQrCodesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFB2F0EA82600B1E60C /* MyQrCodesVC.swift */; };
 		F22EEDFE2F0EA82B00B1E60C /* MyQrCodesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFD2F0EA82B00B1E60C /* MyQrCodesVM.swift */; };
 		F22EEE002F0EA83100B1E60C /* MyQrCodesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22EEDFF2F0EA83100B1E60C /* MyQrCodesAssembler.swift */; };
@@ -64,8 +75,6 @@
 		F23E720B2F0D126D00A8804E /* CreateAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E720A2F0D126D00A8804E /* CreateAssembler.swift */; };
 		F24A83EE2F0814C60033FEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83ED2F0814C60033FEEA /* AppDelegate.swift */; };
 		F24A83F12F0814FF0033FEEA /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = F24A83F02F0814FF0033FEEA /* AppsFlyerLib */; };
-		F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */; };
-		F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */; };
 		F24A83FB2F08496A0033FEEA /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83FA2F08496A0033FEEA /* TrackingService.swift */; };
 		F24A83FE2F0961BF0033FEEA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A83FD2F0961BF0033FEEA /* HomeVC.swift */; };
 		F24A84022F0962A50033FEEA /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A84012F0962A50033FEEA /* HomeCard.swift */; };
@@ -179,6 +188,15 @@
 		F22B70A82F0F4B43007FC7D8 /* HistoryPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPillView.swift; sourceTree = "<group>"; };
 		F22B70AA2F0F4B63007FC7D8 /* HistorySortSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySortSection.swift; sourceTree = "<group>"; };
 		F22B70AE2F0F4D2B007FC7D8 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
+		F22B71302F0F869C007FC7D8 /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
+		F22B71332F0F8701007FC7D8 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		F22B71362F0F871B007FC7D8 /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		F22B71442F0FA667007FC7D8 /* PaywallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallType.swift; sourceTree = "<group>"; };
+		F22B71462F0FA670007FC7D8 /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
+		F22B71482F0FA69A007FC7D8 /* PaywallProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallProduct.swift; sourceTree = "<group>"; };
+		F22B714B2F0FA6AD007FC7D8 /* ApphudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApphudError.swift; sourceTree = "<group>"; };
+		F22B714D2F0FA6C7007FC7D8 /* Extension+Sequnce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Sequnce.swift"; sourceTree = "<group>"; };
+		F22B714F2F0FA6E7007FC7D8 /* Extension+SKProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+SKProduct.swift"; sourceTree = "<group>"; };
 		F22EEDFB2F0EA82600B1E60C /* MyQrCodesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesVC.swift; sourceTree = "<group>"; };
 		F22EEDFD2F0EA82B00B1E60C /* MyQrCodesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesVM.swift; sourceTree = "<group>"; };
 		F22EEDFF2F0EA83100B1E60C /* MyQrCodesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQrCodesAssembler.swift; sourceTree = "<group>"; };
@@ -200,8 +218,6 @@
 		F23E72082F0D121600A8804E /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
 		F23E720A2F0D126D00A8804E /* CreateAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAssembler.swift; sourceTree = "<group>"; };
 		F24A83ED2F0814C60033FEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
-		F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		F24A83FA2F08496A0033FEEA /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
 		F24A83FD2F0961BF0033FEEA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		F24A84012F0962A50033FEEA /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
@@ -285,6 +301,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22B712E2F0F859A007FC7D8 /* GoogleMobileAds in Frameworks */,
+				F22B712B2F0F8449007FC7D8 /* AppMetricaCore in Frameworks */,
 				F2F238892F02BFAD00625BDA /* ApphudSDK in Frameworks */,
 				F24A83F12F0814FF0033FEEA /* AppsFlyerLib in Frameworks */,
 			);
@@ -499,6 +517,50 @@
 			path = Rows;
 			sourceTree = "<group>";
 		};
+		F22B712F2F0F868C007FC7D8 /* AdService */ = {
+			isa = PBXGroup;
+			children = (
+				F22B71302F0F869C007FC7D8 /* AdService.swift */,
+			);
+			path = AdService;
+			sourceTree = "<group>";
+		};
+		F22B71322F0F86F6007FC7D8 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				F22B71352F0F8708007FC7D8 /* Events */,
+				F22B71332F0F8701007FC7D8 /* AnalyticsService.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		F22B71352F0F8708007FC7D8 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				F22B71362F0F871B007FC7D8 /* AnalyticsEvent.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		F22B71432F0FA65F007FC7D8 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				F22B714A2F0FA6A8007FC7D8 /* Error */,
+				F22B71482F0FA69A007FC7D8 /* PaywallProduct.swift */,
+				F22B71462F0FA670007FC7D8 /* ProductType.swift */,
+				F22B71442F0FA667007FC7D8 /* PaywallType.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		F22B714A2F0FA6A8007FC7D8 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				F22B714B2F0FA6AD007FC7D8 /* ApphudError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		F22EEDFA2F0EA80F00B1E60C /* MyQrCodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,23 +659,6 @@
 				F23E72042F0D114000A8804E /* ContentTypeCard.swift */,
 			);
 			path = Cards;
-			sourceTree = "<group>";
-		};
-		F24A83F42F0846B40033FEEA /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				F24A83F72F0846E60033FEEA /* Event */,
-				F24A83F52F0846BB0033FEEA /* AnalyticsService.swift */,
-			);
-			path = Analytics;
-			sourceTree = "<group>";
-		};
-		F24A83F72F0846E60033FEEA /* Event */ = {
-			isa = PBXGroup;
-			children = (
-				F24A83F82F0846EB0033FEEA /* AnalyticsEvent.swift */,
-			);
-			path = Event;
 			sourceTree = "<group>";
 		};
 		F24A83FC2F0961B30033FEEA /* Home */ = {
@@ -992,6 +1037,7 @@
 		F2F90AF22F032B2B00319ACB /* Apphud */ = {
 			isa = PBXGroup;
 			children = (
+				F22B71432F0FA65F007FC7D8 /* Container */,
 				F2F90AF12F032B2B00319ACB /* ApphudService.swift */,
 			);
 			path = Apphud;
@@ -1000,9 +1046,10 @@
 		F2F90AF42F032B2B00319ACB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F22B71322F0F86F6007FC7D8 /* Analytics */,
+				F22B712F2F0F868C007FC7D8 /* AdService */,
 				F24A84392F0994AE0033FEEA /* TrackingService */,
 				F2F90AF22F032B2B00319ACB /* Apphud */,
-				F24A83F42F0846B40033FEEA /* Analytics */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1020,6 +1067,8 @@
 				F24A84032F0963760033FEEA /* Extension+Image.swift */,
 				F229E07A2F0AE13C0042A145 /* Extension+Date.swift */,
 				F2B3EEEA2F0C2E24009CFE87 /* Extension+String.swift */,
+				F22B714D2F0FA6C7007FC7D8 /* Extension+Sequnce.swift */,
+				F22B714F2F0FA6E7007FC7D8 /* Extension+SKProduct.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1092,6 +1141,8 @@
 			packageProductDependencies = (
 				F2F238882F02BFAD00625BDA /* ApphudSDK */,
 				F24A83F02F0814FF0033FEEA /* AppsFlyerLib */,
+				F22B712A2F0F8449007FC7D8 /* AppMetricaCore */,
+				F22B712D2F0F859A007FC7D8 /* GoogleMobileAds */,
 			);
 			productName = MyQRCodesProject;
 			productReference = F2F2386A2F02BB5500625BDA /* MyQRCodesProject.app */;
@@ -1124,6 +1175,8 @@
 			packageReferences = (
 				F2F238872F02BFAD00625BDA /* XCRemoteSwiftPackageReference "ApphudSDK" */,
 				F24A83EF2F0814FF0033FEEA /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+				F22B71292F0F83F4007FC7D8 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */,
+				F22B712C2F0F859A007FC7D8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F2F2386B2F02BB5500625BDA /* Products */;
@@ -1156,6 +1209,7 @@
 				F22EEDFC2F0EA82600B1E60C /* MyQrCodesVC.swift in Sources */,
 				F22B70A22F0F4AAD007FC7D8 /* HistoryVM.swift in Sources */,
 				F22B70A02F0F4AA6007FC7D8 /* HistoryVC.swift in Sources */,
+				F22B71502F0FA6E7007FC7D8 /* Extension+SKProduct.swift in Sources */,
 				F2F90B032F032B2B00319ACB /* AppRouter.swift in Sources */,
 				F2F90B042F032B2B00319ACB /* MyQRCodesProjectApp.swift in Sources */,
 				F2B896FA2F05574200574736 /* PaywallMonthlyProductCard.swift in Sources */,
@@ -1175,6 +1229,7 @@
 				F2B3EEF02F0C3D22009CFE87 /* TextScanResultVC.swift in Sources */,
 				F22EEE0F2F0EBAF800B1E60C /* SortPillView.swift in Sources */,
 				F22B70AF2F0F4D2B007FC7D8 /* HistoryRow.swift in Sources */,
+				F22B71312F0F869C007FC7D8 /* AdService.swift in Sources */,
 				F2B3EEDE2F0C1E39009CFE87 /* ContactScanAssembler.swift in Sources */,
 				F2B3EEE92F0C2D06009CFE87 /* WiFiScanResultVM.swift in Sources */,
 				F2B897032F05980B00574736 /* TabBarVC.swift in Sources */,
@@ -1185,7 +1240,9 @@
 				F2F90B062F032B2B00319ACB /* ActionButton.swift in Sources */,
 				F23E71FD2F0D0CC100A8804E /* QRContentType.swift in Sources */,
 				F23E71FA2F0D094500A8804E /* CreateVM.swift in Sources */,
+				F22B71342F0F8701007FC7D8 /* AnalyticsService.swift in Sources */,
 				F2F90B072F032B2B00319ACB /* PageControl.swift in Sources */,
+				F22B71472F0FA670007FC7D8 /* ProductType.swift in Sources */,
 				F22EEE1A2F0EF6DC00B1E60C /* OptionsMenuView.swift in Sources */,
 				F229E07F2F0AE3120042A145 /* ResultBottomControls.swift in Sources */,
 				F24A84222F096C1D0033FEEA /* HomeCardsAdapter.swift in Sources */,
@@ -1196,18 +1253,19 @@
 				F229E06C2F0AB64C0042A145 /* LinkStorage.swift in Sources */,
 				F2061ACE2F0D841E00C07C03 /* CreatedQrPreviewAssembler.swift in Sources */,
 				F229E03C2F0A9D210042A145 /* QRCodesDataBase.xcdatamodeld in Sources */,
-				F24A83F62F0846BB0033FEEA /* AnalyticsService.swift in Sources */,
 				F24A843F2F0996160033FEEA /* DefaultTextProcessor.swift in Sources */,
 				F2F90B082F032B2B00319ACB /* TextButton.swift in Sources */,
 				F2B3EED72F0C1A15009CFE87 /* ContactScanResultVM.swift in Sources */,
 				F2F90B092F032B2B00319ACB /* LounchScreen.swift in Sources */,
 				F2B3EED92F0C1A6E009CFE87 /* LinkScanResultAssembler.swift in Sources */,
+				F22B714E2F0FA6C7007FC7D8 /* Extension+Sequnce.swift in Sources */,
 				F2F90B0A2F032B2B00319ACB /* OnbFirstScreenVC.swift in Sources */,
 				F23E72022F0D10B700A8804E /* InputField.swift in Sources */,
 				F24A83EE2F0814C60033FEEA /* AppDelegate.swift in Sources */,
 				F2B896F62F054DB000574736 /* PaywallProductCard.swift in Sources */,
 				F2F90B0B2F032B2B00319ACB /* OnbPath.swift in Sources */,
 				F2B3EEF42F0C3DA2009CFE87 /* TextStorage.swift in Sources */,
+				F22B71372F0F871B007FC7D8 /* AnalyticsEvent.swift in Sources */,
 				F22B70A92F0F4B43007FC7D8 /* HistoryPillView.swift in Sources */,
 				F2B3EEEE2F0C3D20009CFE87 /* TextScanResultAssembler.swift in Sources */,
 				F22B70A42F0F4AB5007FC7D8 /* HistoryAssembler.swift in Sources */,
@@ -1222,7 +1280,6 @@
 				F24A83FE2F0961BF0033FEEA /* HomeVC.swift in Sources */,
 				F23E72072F0D11B800A8804E /* ScanAssembler.swift in Sources */,
 				F229E07B2F0AE13C0042A145 /* Extension+Date.swift in Sources */,
-				F24A83F92F0846EB0033FEEA /* AnalyticsEvent.swift in Sources */,
 				F229E03F2F0A9E1E0042A145 /* Description.swift in Sources */,
 				F229E0682F0AB6010042A145 /* WiFiStorage.swift in Sources */,
 				F229E04A2F0AABF10042A145 /* ContactMO.swift in Sources */,
@@ -1252,6 +1309,7 @@
 				F2B896FF2F05604100574736 /* Extension+UIAplication.swift in Sources */,
 				F24A84352F0991300033FEEA /* ScanNotificationView.swift in Sources */,
 				F24A843D2F0995EC0033FEEA /* QrCodeManager.swift in Sources */,
+				F22B71452F0FA667007FC7D8 /* PaywallType.swift in Sources */,
 				F2B3EED52F0C1928009CFE87 /* ContactScanResultVC.swift in Sources */,
 				F24A84092F0966BD0033FEEA /* HomeCardsSection.swift in Sources */,
 				F229E0762F0AC4EE0042A145 /* LinkScanResultVM.swift in Sources */,
@@ -1273,6 +1331,8 @@
 				F24A83FB2F08496A0033FEEA /* TrackingService.swift in Sources */,
 				F2F90B192F032B2B00319ACB /* Extension+View.swift in Sources */,
 				F2F90B1C2F032B3C00319ACB /* OnbFourthScreenVC.swift in Sources */,
+				F22B71492F0FA69A007FC7D8 /* PaywallProduct.swift in Sources */,
+				F22B714C2F0FA6AD007FC7D8 /* ApphudError.swift in Sources */,
 				F22EEE0A2F0EB52600B1E60C /* QRCodesFetchService.swift in Sources */,
 				F24A84072F0965970033FEEA /* RoundedRectangleAsBackgroundModifier.swift in Sources */,
 				F23E71F42F0D02E300A8804E /* DocumentManager.swift in Sources */,
@@ -1511,6 +1571,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F22B71292F0F83F4007FC7D8 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appmetrica/appmetrica-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.16.0;
+			};
+		};
+		F22B712C2F0F859A007FC7D8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.14.0;
+			};
+		};
 		F24A83EF2F0814FF0033FEEA /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
@@ -1530,6 +1606,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F22B712A2F0F8449007FC7D8 /* AppMetricaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F22B71292F0F83F4007FC7D8 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaCore;
+		};
+		F22B712D2F0F859A007FC7D8 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F22B712C2F0F859A007FC7D8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		F24A83F02F0814FF0033FEEA /* AppsFlyerLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F24A83EF2F0814FF0033FEEA /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;

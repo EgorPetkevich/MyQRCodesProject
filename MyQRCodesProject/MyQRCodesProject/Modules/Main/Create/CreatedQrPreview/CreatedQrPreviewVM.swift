@@ -18,27 +18,36 @@ final class CreatedQrPreviewVM<DTO: DTODescription>: ObservableObject {
     
     private let dto: DTO
     private let designImage: UIImage?
+    private let showAds: Bool
     
     private let storage: BaseStorage<DTO>
     
     private let qrGenerator: QRCodeGeneratorProtocol
     private let documentManager: DocumentManagerProtocol
+    private let analytics: AnalyticsServiceProtocol
+    private let adManagerService: AdManagerServiceProtocol
+    private let apphudService: ApphudService = .instance
     
     private var bag: Set<AnyCancellable> = []
 
     init(
         dto: DTO,
+        showAds: Bool,
         designImage: UIImage?,
         storage: BaseStorage<DTO>,
         qrGenerator: QRCodeGeneratorProtocol,
-        documentManager: DocumentManagerProtocol
+        documentManager: DocumentManagerProtocol,
+        analytics: AnalyticsServiceProtocol,
+        adManagerService: AdManagerServiceProtocol
     ) {
         self.dto = dto
+        self.showAds = showAds
         self.designImage = designImage
         self.storage = storage
         self.qrGenerator = qrGenerator
         self.documentManager = documentManager
-        
+        self.analytics = analytics
+        self.adManagerService = adManagerService
         commonInit()
     }
     
@@ -47,6 +56,12 @@ final class CreatedQrPreviewVM<DTO: DTODescription>: ObservableObject {
             guard let self else { return }
             getQrCodeImage()
         }
+    }
+    
+    func onAppear() {
+        guard !apphudService.hasActiveSubscription(), showAds else { return }
+        adManagerService.showInterstitialAd()
+        analytics.track(.showInterstitialAd)
     }
     
     func getQrCodeImage()  {
@@ -92,7 +107,7 @@ final class CreatedQrPreviewVM<DTO: DTODescription>: ObservableObject {
                     UDManager.appendResentId(dto.id)
                     self.saveDesignImage()
                     self.showSavedToast = true
-                    
+                    self.analytics.track(.qrCodeDidSaved(byId: dto.id))
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.showSavedToast = false
                     }

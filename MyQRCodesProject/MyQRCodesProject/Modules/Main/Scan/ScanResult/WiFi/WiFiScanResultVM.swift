@@ -23,26 +23,43 @@ final class WiFiScanResultVM: NSObject, ObservableObject, CLLocationManagerDeleg
     private let locationManager = CLLocationManager()
 
     let wifiDTO: WiFiDTO
+    private let showAds: Bool
     private let storage: WiFiStorage
     
     private let qrGenerator: QRCodeGeneratorProtocol
     private let documentManager: DocumentManagerProtocol
+    private let analytics: AnalyticsServiceProtocol
+    private let adManagerService: AdManagerServiceProtocol
+    private let apphudService: ApphudService = .instance
 
     private var bag = Set<AnyCancellable>()
 
     init(
         wifiDTO: WiFiDTO,
+        showAds: Bool,
         storage: WiFiStorage,
         qrGenerator: QRCodeGeneratorProtocol,
-        documentManager: DocumentManagerProtocol
+        documentManager: DocumentManagerProtocol,
+        analytics: AnalyticsServiceProtocol,
+        adManagerService: AdManagerServiceProtocol
     ) {
         self.wifiDTO = wifiDTO
+        self.showAds = showAds
         self.storage = storage
         self.qrGenerator = qrGenerator
         self.documentManager = documentManager
+        self.analytics = analytics
+        self.adManagerService = adManagerService
+        
         super.init()
         locationManager.delegate = self
         requestLocationPermissionIfNeeded()
+    }
+    
+    func onAppear() {
+        guard !apphudService.hasActiveSubscription(), showAds else { return }
+        adManagerService.showInterstitialAd()
+        analytics.track(.showInterstitialAd)
     }
     
 //    func actionButtonDidTap() {

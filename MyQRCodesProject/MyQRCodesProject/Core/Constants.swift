@@ -13,6 +13,7 @@ final class Constants {
     static let apphudKey: String = "app_Z44sHCCXqhP5FCBDa8SxKBLB7VLpga"
     static let appFlyerDevKey: String = "GAgckFyN4yETigBtP4qtRG"
     static let appId: String = "6749377146"
+    static let appMetricaKey: String = "b6132939-1606-4fff-9f73-a44b184724df"
     
     //FIXME: - urls
     static let privacyUrl: String = "https://www.google.com/policies/privacy/"

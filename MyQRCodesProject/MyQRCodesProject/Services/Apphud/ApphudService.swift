@@ -9,32 +9,7 @@ import Foundation
 import ApphudSDK
 import Network
 
-enum PaywallType: String {
-    case main = "main_paywall"
-}
-
-enum ProductType {
-    case weekly
-    case monthly
-//    case yearly
-    
-    var decodingName: String {
-        switch self {
-        case .weekly:
-            return "sonicforge_weekly"
-        case .monthly:
-            return "sonicforge_monthly"
-//        case .yearly:
-//            return "sonicforge_yearly"
-        }
-    }
-}
-
 final class ApphudService {
-    
-//    private enum Const {
-//        static let trialKeyword = "trial"
-//    }
     
     enum PaywallLoadState: Equatable {
         case idle
@@ -43,14 +18,12 @@ final class ApphudService {
         case failed(ApphudError)
     }
     
-    //Published Properties (Outputs)
-//    @Published var config = PaywallConfig()
     @Published var products: [PaywallProduct] = []
     @Published var paywallType: PaywallType = .main
     
     @Published private(set) var paywallLoadState: PaywallLoadState = .idle
     
-    
+    private let analyticService = AnalyticsService.shared
     static let instance = ApphudService()
     
     private init() {}
@@ -60,10 +33,6 @@ final class ApphudService {
 // MARK: - Public API
 
 extension ApphudService {
-    
-//    func isTrialAvailable() -> Bool {
-//        products.contains { $0.id.contains(Const.trialKeyword) }
-//    }
     
     func getProduct(with type: ProductType) -> PaywallProduct? {
         products.first {
@@ -130,6 +99,7 @@ extension ApphudService {
         
         Apphud.purchase(apphudProduct) { result in
             if let subscription = result.subscription, subscription.isActive() {
+                self.analyticService.track(.purchase(productId: product.id, price: product.price ?? ""))
                 completion(.success(()))
             } else {
                 completion(.failure(ApphudError.unknownPurchaseError))
@@ -175,7 +145,6 @@ private extension ApphudService {
         }
         
         self.products = await paywall.products.asyncMap { await PaywallProduct(product: $0) }
-//        self.config = try decodeConfig(from: paywall)
         
         return true
     }
@@ -193,21 +162,6 @@ private extension ApphudService {
         }
     }
     
-//    func decodeConfig(from paywall: ApphudPaywall) throws -> PaywallConfig {
-//        guard let json = paywall.json else {
-//            throw ApphudError.remoteConfigFetchFailed
-//        }
-//
-//        do {
-//            let data = try JSONSerialization.data(withJSONObject: json)
-//            let decoder = JSONDecoder()
-//            decoder.keyDecodingStrategy = .convertFromSnakeCase
-//            return try decoder.decode(PaywallConfig.self, from: data)
-//        } catch {
-//            throw ApphudError.remoteConfigFetchFailed
-//        }
-//    }
-    
     func isNetworkReachable() async -> Bool {
         await withCheckedContinuation { cont in
             let monitor = NWPathMonitor()
@@ -220,83 +174,5 @@ private extension ApphudService {
         }
     }
    
-    
-}
-
-
-import StoreKit
-
-struct PaywallProduct: Identifiable {
-    let id: String
-    let price: String?
-    let period: Product.SubscriptionPeriod.Unit.FormatStyle?
-    let apphudProduct: ApphudProduct?
-
-    init(product: ApphudProduct) async {
-        self.id = product.productId
-        self.price = product.skProduct?.formattedPrice
-        self.period = try? await product.product()?.subscriptionPeriodUnitFormatStyle
-        self.apphudProduct = product
-    }
-}
-
-//struct PaywallConfig: Decodable {
-//    
-//    var onboardingCloseDelay: Double = 0
-//    var paywallCloseDelay: Double = 0
-//    var onboardingButtonTitle: String?
-//    var paywallButtonTitle: String?
-//    var onboardingSubtitleAlpha: Double = 1.0
-//    var isPagingEnabled: Bool = false
-//    var isReviewEnabled: Bool = false
-//    
-//}
-
-enum ApphudError: Error, LocalizedError {
-    case productNotFound
-    case purchaseFailed
-    case restoreFailed
-    case remoteConfigFetchFailed
-    case paywallsFetchFailed
-    case unknownPurchaseError
-
-    var errorDescription: String? {
-        switch self {
-        case .productNotFound:
-            return "Product not found."
-        case .purchaseFailed:
-            return "Purchase failed."
-        case .restoreFailed:
-            return "Failed to restore purchases."
-        case .remoteConfigFetchFailed:
-            return "Failed to fetch Remote Config."
-        case .paywallsFetchFailed:
-            return "Failed to fetch paywalls."
-        case .unknownPurchaseError:
-            return "An unknown error occurred during purchase."
-        }
-    }
-}
-
-extension Sequence {
-    
-    func asyncMap<T>(_ transform: (Element) async -> T) async -> [T] {
-        var results = [T]()
-        for element in self {
-            results.append(await transform(element))
-        }
-        return results
-    }
-    
-}
-
-extension SKProduct {
-    
-    var formattedPrice: String? {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = priceLocale
-        return formatter.string(from: price)
-    }
     
 }

@@ -24,6 +24,14 @@ extension UIApplication {
         }
     }
     
+    var firstKeyWindowRootVC: UIViewController? {
+        connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first { $0.isKeyWindow }?
+            .rootViewController
+    }
+    
     func hideKeyboard() {
         sendAction(
             #selector(UIResponder.resignFirstResponder),

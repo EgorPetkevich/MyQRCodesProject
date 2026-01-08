@@ -9,11 +9,8 @@ import SwiftUI
 
 struct CreatedQrPreviewVC<DTO: DTODescription>: View {
     
-//    private enum Const {
-//        static let title: String = "Create QR Code"
-//    }
-    
     @Environment(\.dismiss) private var dismiss
+    @Environment(TabBarState.self) private var tabBarState
     
     @StateObject private var vm: CreatedQrPreviewVM<DTO>
 
@@ -41,13 +38,19 @@ struct CreatedQrPreviewVC<DTO: DTODescription>: View {
                     }
                 }
                 .padding(.horizontal, 24)
-                .padding(.vertical, 25)
+                .padding(.top, 25)
+                .padding(.bottom, tabBarState.bottomSafeAreaInset)
             }
             .background(.appTextBorder)
             
             
         }
         .ignoresSafeArea(edges: .top)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .onAppear {
+            vm.onAppear()
+        }
         .overlay(alignment: .bottom) {
             VStack(spacing: 8) {
 
@@ -56,7 +59,7 @@ struct CreatedQrPreviewVC<DTO: DTODescription>: View {
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
-            .padding(.bottom, 32)
+            .padding(.bottom, tabBarState.bottomSafeAreaInset + 32)
             .animation(.easeInOut(duration: 0.25), value: vm.showSavedToast)
         }
         .sheet(isPresented: $vm.showShareSheet) {
